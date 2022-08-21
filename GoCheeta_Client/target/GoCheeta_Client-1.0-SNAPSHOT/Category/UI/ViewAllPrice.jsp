@@ -26,7 +26,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="/GoCheeta_Client/Category/controller/deleteCategory.jsp" class="btn btn-info" style="width:80px;height:40px;text-align:center;margin-left:10%;margin-top:10%">Add</a>
+        <a href="/GoCheeta_Client/Category/UI/AddNewCategory.jsp" class="btn btn-info" style="width:80px;height:40px;text-align:center;margin-left:10%;margin-top:10%">Add</a>
         <table  class="table table-bordered" style="width:80%;margin-left:15%;margin-right:2%;margin-left:10%;margin-top:2%">
             <thead>
                 <th scope="col"style="width:10%;text-align:center; ">Category ID</th>
