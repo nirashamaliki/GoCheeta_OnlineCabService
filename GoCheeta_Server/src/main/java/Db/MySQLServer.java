@@ -267,7 +267,7 @@ public class MySQLServer implements DBUtil {
     }
      
     
-    //Users
+    //Users Booking
    
     @Override
     public List<User> getUsers() {
@@ -278,7 +278,7 @@ public class MySQLServer implements DBUtil {
             List<User> users = new ArrayList<>();
 
             while (rs.next()) {
-               User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString("option"));
+               User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
                users.add(user);
             }
             

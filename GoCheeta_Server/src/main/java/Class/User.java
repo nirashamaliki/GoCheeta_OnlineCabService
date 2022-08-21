@@ -18,11 +18,12 @@ package Class;
     private String price;
     private String time;
     private String v_type;
+    private String driver_mobile;
     private String option="No Active";
     
     
 
-    public User(int order_Id,String mobile,String pick_location, String drop_loction, String area_branch, String distance,String price,String time,String v_type,String option) {
+    public User(int order_Id,String mobile,String pick_location, String drop_loction, String area_branch, String distance,String price,String time,String v_type,String driver_mobile,String option) {
          
         super(mobile);
         
@@ -35,6 +36,7 @@ package Class;
         this.time = time;
         this.option = option;
         this.v_type = v_type;
+        this.driver_mobile = driver_mobile;
        
     }
 
@@ -109,5 +111,15 @@ package Class;
     public void setOption(String option) {
         this.option = option;
     }
+
+    public String  getDriver_mobile() {
+        return driver_mobile;
+    }
+
+    public void setDriver_mobile(String  driver_mobile) {
+        this.driver_mobile = driver_mobile;
+    }
+    
+    
    
 }

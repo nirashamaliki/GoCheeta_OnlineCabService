@@ -15,7 +15,7 @@ public interface  DBUtil {
     public Customer getCustomerbyId(int customerId);
     public boolean updateCustomer(Customer customer);
     
-//user
+//user booking
     public List<User> getUsers(); 
     
 //Driver    
