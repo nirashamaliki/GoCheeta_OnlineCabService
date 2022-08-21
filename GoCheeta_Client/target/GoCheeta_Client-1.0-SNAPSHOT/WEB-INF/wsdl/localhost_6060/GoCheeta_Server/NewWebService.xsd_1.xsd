@@ -259,6 +259,7 @@
 <xs:sequence>
 <xs:element name="area_branch" type="xs:string" minOccurs="0"/>
 <xs:element name="distance" type="xs:string" minOccurs="0"/>
+<xs:element name="driver_mobile" type="xs:int"/>
 <xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
 <xs:element name="option" type="xs:string" minOccurs="0"/>
 <xs:element name="order_Id" type="xs:int"/>

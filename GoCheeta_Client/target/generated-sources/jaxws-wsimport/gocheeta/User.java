@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="area_branch" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="distance" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="drop_loction" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="option" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "user", propOrder = {
     "areaBranch",
     "distance",
+    "driverMobile",
     "dropLoction",
     "option",
     "orderId",
@@ -53,6 +55,8 @@ public class User
     @XmlElement(name = "area_branch")
     protected String areaBranch;
     protected String distance;
+    @XmlElement(name = "driver_mobile")
+    protected int driverMobile;
     @XmlElement(name = "drop_loction")
     protected String dropLoction;
     protected String option;
@@ -111,6 +115,22 @@ public class User
      */
     public void setDistance(String value) {
         this.distance = value;
+    }
+
+    /**
+     * Gets the value of the driverMobile property.
+     * 
+     */
+    public int getDriverMobile() {
+        return driverMobile;
+    }
+
+    /**
+     * Sets the value of the driverMobile property.
+     * 
+     */
+    public void setDriverMobile(int value) {
+        this.driverMobile = value;
     }
 
     /**

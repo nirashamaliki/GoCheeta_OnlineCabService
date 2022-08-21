@@ -34,8 +34,9 @@
                 <th scope="col"style="text-align:center; ">Price</th> 
                 <th scope="col"style="text-align:center; ">Time</th>
                 <th scope="col"style="text-align:center; ">Vehicle Type</th>
+                <th scope="col"style="width:15%;text-align:center; ">Driver Mobile</th>
                 <th scope="col"style="width:15%;text-align:center; ">Active/No Active</th>
-                <th scope="col"style="width:15%;text-align:center; ">Option</th>
+               
                 
            
             </thead>
@@ -51,12 +52,10 @@
                 <td><% out.print(user.getPrice()); %></td>
                 <td><% out.print(user.getTime()); %></td>
                 <td><% out.print(user.getVType()); %></td>
+                <td><% out.print(user.getDriverMobile()); %></td>
                 <td><% out.print(user.getOption()); %></td>      
               
-                <td style="width:15%;text-align: center">
-                   <a href="/GoCheeta_Client/Customer/Function/editCustomer.jsp?id=<% out.print(user.getOrderId()); %>" class="btn btn-primary"style="width:80px;height:40px;text-align:center;margin-right:5px;">Update</button>
-                   <a href="/GoCheeta_Client/Customer/controller/deleteCustomer.jsp?id=<% out.print(user.getOrderId()); %>" class="btn btn-danger" style="width:80px;height:40px;text-align:center;margin-left:5px;">Delete</button>
-                </td>
+              
             </tr>
             <% } %>
         </tbody>

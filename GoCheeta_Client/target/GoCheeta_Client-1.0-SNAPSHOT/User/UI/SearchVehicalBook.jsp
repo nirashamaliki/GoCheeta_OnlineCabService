@@ -30,7 +30,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action ="/GoCheeta_Client/Admin/controller/SearchVehicalBook.jsp" method="post"> 
+        <form action ="" method="post"> 
             <input type="text" name="VehicalType"/>
             <input type ="submit" value="Search">
         </form>
