@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="area_branch" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="distance" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="drop_loction" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="option" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -56,7 +56,7 @@ public class User
     protected String areaBranch;
     protected String distance;
     @XmlElement(name = "driver_mobile")
-    protected int driverMobile;
+    protected String driverMobile;
     @XmlElement(name = "drop_loction")
     protected String dropLoction;
     protected String option;
@@ -120,16 +120,24 @@ public class User
     /**
      * Gets the value of the driverMobile property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getDriverMobile() {
+    public String getDriverMobile() {
         return driverMobile;
     }
 
     /**
      * Sets the value of the driverMobile property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setDriverMobile(int value) {
+    public void setDriverMobile(String value) {
         this.driverMobile = value;
     }
 

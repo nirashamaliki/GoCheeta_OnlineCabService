@@ -8,6 +8,10 @@
 
 <xs:element name="addCustomerResponse" type="tns:addCustomerResponse"/>
 
+<xs:element name="addFeedback" type="tns:addFeedback"/>
+
+<xs:element name="addFeedbackResponse" type="tns:addFeedbackResponse"/>
+
 <xs:element name="deleteCategory" type="tns:deleteCategory"/>
 
 <xs:element name="deleteCategoryResponse" type="tns:deleteCategoryResponse"/>
@@ -35,6 +39,10 @@
 <xs:element name="getCustomers" type="tns:getCustomers"/>
 
 <xs:element name="getCustomersResponse" type="tns:getCustomersResponse"/>
+
+<xs:element name="getFeedbackbyId" type="tns:getFeedbackbyId"/>
+
+<xs:element name="getFeedbackbyIdResponse" type="tns:getFeedbackbyIdResponse"/>
 
 <xs:element name="getPriceRate" type="tns:getPriceRate"/>
 
@@ -121,6 +129,20 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addFeedback">
+<xs:sequence>
+<xs:element name="subject" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="order_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addFeedbackResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getCategorybyId">
 <xs:sequence>
 <xs:element name="category_id" type="xs:int"/>
@@ -182,6 +204,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addCategory">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="rate_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getAllVehicle">
 <xs:sequence/>
 </xs:complexType>
@@ -212,19 +247,6 @@
 <xs:element name="d_password" type="xs:string" minOccurs="0"/>
 <xs:element name="driver_mobile" type="xs:int"/>
 <xs:element name="time_type" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCategory">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="rate_id" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCategoryResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -259,7 +281,7 @@
 <xs:sequence>
 <xs:element name="area_branch" type="xs:string" minOccurs="0"/>
 <xs:element name="distance" type="xs:string" minOccurs="0"/>
-<xs:element name="driver_mobile" type="xs:int"/>
+<xs:element name="driver_mobile" type="xs:string" minOccurs="0"/>
 <xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
 <xs:element name="option" type="xs:string" minOccurs="0"/>
 <xs:element name="order_Id" type="xs:int"/>
@@ -270,6 +292,27 @@
 </xs:sequence>
 </xs:extension>
 </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="getFeedbackbyId">
+<xs:sequence>
+<xs:element name="order_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFeedbackbyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:feedback" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="feedback">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="feedback_id" type="xs:int"/>
+<xs:element name="order_id" type="xs:int"/>
+<xs:element name="subject" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="updateCustomer">

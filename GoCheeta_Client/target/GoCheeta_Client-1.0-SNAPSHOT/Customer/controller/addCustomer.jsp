@@ -9,10 +9,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<%@page import="gocheeta.NewWebService"%>
-<%@page import="gocheeta.NewWebService_Service"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 
 <%
     

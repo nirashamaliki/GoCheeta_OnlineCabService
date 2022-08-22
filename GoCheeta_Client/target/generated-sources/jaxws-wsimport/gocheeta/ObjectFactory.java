@@ -26,11 +26,13 @@ public class ObjectFactory {
 
     private final static QName _GetPriceRateResponse_QNAME = new QName("http://gocheeta/", "getPriceRateResponse");
     private final static QName _GetPriceView_QNAME = new QName("http://gocheeta/", "getPriceView");
+    private final static QName _AddFeedbackResponse_QNAME = new QName("http://gocheeta/", "addFeedbackResponse");
     private final static QName _GetCustomers_QNAME = new QName("http://gocheeta/", "getCustomers");
     private final static QName _GetCategorybyId_QNAME = new QName("http://gocheeta/", "getCategorybyId");
     private final static QName _DeleteCustomer_QNAME = new QName("http://gocheeta/", "deleteCustomer");
     private final static QName _GetPriceRate_QNAME = new QName("http://gocheeta/", "getPriceRate");
     private final static QName _DeleteCategory_QNAME = new QName("http://gocheeta/", "deleteCategory");
+    private final static QName _GetFeedbackbyIdResponse_QNAME = new QName("http://gocheeta/", "getFeedbackbyIdResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://gocheeta/", "helloResponse");
     private final static QName _UpdateCustomer_QNAME = new QName("http://gocheeta/", "updateCustomer");
     private final static QName _UpdateCustomerResponse_QNAME = new QName("http://gocheeta/", "updateCustomerResponse");
@@ -39,6 +41,7 @@ public class ObjectFactory {
     private final static QName _GetPriceViewResponse_QNAME = new QName("http://gocheeta/", "getPriceViewResponse");
     private final static QName _GetUsersResponse_QNAME = new QName("http://gocheeta/", "getUsersResponse");
     private final static QName _GetAllVehicleResponse_QNAME = new QName("http://gocheeta/", "getAllVehicleResponse");
+    private final static QName _AddFeedback_QNAME = new QName("http://gocheeta/", "addFeedback");
     private final static QName _GetCustomerbyId_QNAME = new QName("http://gocheeta/", "getCustomerbyId");
     private final static QName _AddCustomerResponse_QNAME = new QName("http://gocheeta/", "addCustomerResponse");
     private final static QName _UpdateCategory_QNAME = new QName("http://gocheeta/", "updateCategory");
@@ -49,6 +52,7 @@ public class ObjectFactory {
     private final static QName _GetAllVehicle_QNAME = new QName("http://gocheeta/", "getAllVehicle");
     private final static QName _AddCustomer_QNAME = new QName("http://gocheeta/", "addCustomer");
     private final static QName _GetCustomersResponse_QNAME = new QName("http://gocheeta/", "getCustomersResponse");
+    private final static QName _GetFeedbackbyId_QNAME = new QName("http://gocheeta/", "getFeedbackbyId");
     private final static QName _GetUsers_QNAME = new QName("http://gocheeta/", "getUsers");
     private final static QName _GetCustomerbyIdResponse_QNAME = new QName("http://gocheeta/", "getCustomerbyIdResponse");
     private final static QName _DeleteCategoryResponse_QNAME = new QName("http://gocheeta/", "deleteCategoryResponse");
@@ -68,6 +72,14 @@ public class ObjectFactory {
      */
     public GetAllVehicleResponse createGetAllVehicleResponse() {
         return new GetAllVehicleResponse();
+    }
+
+    /**
+     * Create an instance of {@link AddFeedback }
+     * 
+     */
+    public AddFeedback createAddFeedback() {
+        return new AddFeedback();
     }
 
     /**
@@ -151,6 +163,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetFeedbackbyId }
+     * 
+     */
+    public GetFeedbackbyId createGetFeedbackbyId() {
+        return new GetFeedbackbyId();
+    }
+
+    /**
      * Create an instance of {@link GetUsers }
      * 
      */
@@ -207,6 +227,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddFeedbackResponse }
+     * 
+     */
+    public AddFeedbackResponse createAddFeedbackResponse() {
+        return new AddFeedbackResponse();
+    }
+
+    /**
      * Create an instance of {@link GetCustomers }
      * 
      */
@@ -244,6 +272,14 @@ public class ObjectFactory {
      */
     public DeleteCategory createDeleteCategory() {
         return new DeleteCategory();
+    }
+
+    /**
+     * Create an instance of {@link GetFeedbackbyIdResponse }
+     * 
+     */
+    public GetFeedbackbyIdResponse createGetFeedbackbyIdResponse() {
+        return new GetFeedbackbyIdResponse();
     }
 
     /**
@@ -319,6 +355,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Feedback }
+     * 
+     */
+    public Feedback createFeedback() {
+        return new Feedback();
+    }
+
+    /**
      * Create an instance of {@link Driver }
      * 
      */
@@ -377,6 +421,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddFeedbackResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "addFeedbackResponse")
+    public JAXBElement<AddFeedbackResponse> createAddFeedbackResponse(AddFeedbackResponse value) {
+        return new JAXBElement<AddFeedbackResponse>(_AddFeedbackResponse_QNAME, AddFeedbackResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCustomers }{@code >}}
      * 
      */
@@ -419,6 +472,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta/", name = "deleteCategory")
     public JAXBElement<DeleteCategory> createDeleteCategory(DeleteCategory value) {
         return new JAXBElement<DeleteCategory>(_DeleteCategory_QNAME, DeleteCategory.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFeedbackbyIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getFeedbackbyIdResponse")
+    public JAXBElement<GetFeedbackbyIdResponse> createGetFeedbackbyIdResponse(GetFeedbackbyIdResponse value) {
+        return new JAXBElement<GetFeedbackbyIdResponse>(_GetFeedbackbyIdResponse_QNAME, GetFeedbackbyIdResponse.class, null, value);
     }
 
     /**
@@ -491,6 +553,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta/", name = "getAllVehicleResponse")
     public JAXBElement<GetAllVehicleResponse> createGetAllVehicleResponse(GetAllVehicleResponse value) {
         return new JAXBElement<GetAllVehicleResponse>(_GetAllVehicleResponse_QNAME, GetAllVehicleResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddFeedback }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "addFeedback")
+    public JAXBElement<AddFeedback> createAddFeedback(AddFeedback value) {
+        return new JAXBElement<AddFeedback>(_AddFeedback_QNAME, AddFeedback.class, null, value);
     }
 
     /**
@@ -581,6 +652,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta/", name = "getCustomersResponse")
     public JAXBElement<GetCustomersResponse> createGetCustomersResponse(GetCustomersResponse value) {
         return new JAXBElement<GetCustomersResponse>(_GetCustomersResponse_QNAME, GetCustomersResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFeedbackbyId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getFeedbackbyId")
+    public JAXBElement<GetFeedbackbyId> createGetFeedbackbyId(GetFeedbackbyId value) {
+        return new JAXBElement<GetFeedbackbyId>(_GetFeedbackbyId_QNAME, GetFeedbackbyId.class, null, value);
     }
 
     /**
