@@ -9,6 +9,7 @@ import Class.Category;
 import Class.Customer;
 import Class.DBUtil;
 import Class.Driver;
+import Class.Feedback;
 import Class.User;
 import Class.Vehicle;
 import java.sql.Statement;
@@ -336,4 +337,42 @@ public class MySQLServer implements DBUtil {
         }
     }
   
+        
+    //feedback
+        
+    @Override
+    public boolean addFeedback(Feedback feedback) {
+        try {
+            
+            this.stmt  = this.con.prepareCall("INSERT INTO `feedback` (`subject`,`description`,`order_id`) VALUES ('"+feedback.getSubject()+"','"+feedback.getDescription()+"','"+feedback.getOrder_id()+"');");
+        
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+     
+    
+    public Feedback getFeedbackbyId(int order_id) {
+        try {
+            
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback WHERE feedback.order_id = " + order_id);
+            
+            if(rs.next()) {
+                Feedback feedback = new Feedback(rs.getInt("order_id"));
+                return feedback;
+            } else {
+                return null;
+            }
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+           
+        
 }

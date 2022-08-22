@@ -39,5 +39,9 @@ public interface  DBUtil {
  //Vehicles
     public List<Vehicle>getAllVehicle();
      
-     
+  
+  //Feedback
+  public boolean addFeedback(Feedback feedback);
+//  public List<Feedback>getViewFeedback();
+  public Feedback getFeedbackbyId(int order_id);
 }

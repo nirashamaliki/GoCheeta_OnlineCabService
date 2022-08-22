@@ -8,6 +8,7 @@ import Class.Branch;
 import Class.Category;
 import Class.Customer;
 import Class.DBUtil;
+import Class.Feedback;
 import Class.User;
 import Class.Vehicle;
 import Db.MySQLServer;
@@ -111,5 +112,17 @@ public class NewWebService {
     public List<Vehicle> getAllVehicle() {
         return this.dbUtil.getAllVehicle();
     }
-     
+    
+    //Feedback
+    
+    @WebMethod(operationName = "addFeedback")
+    public boolean addFeedback(@WebParam(name = "subject") String subject,@WebParam(name = "description") String description,@WebParam(name = "order_id") int order_Id) {
+        Feedback feedback = new Feedback(0,subject,description,order_Id);
+        return this.dbUtil.addFeedback(feedback);
+    }
+   
+    @WebMethod(operationName = "getFeedbackbyId")
+    public Feedback getFeedbackbyId(@WebParam(name = "order_id") int order_id) {
+        return this.dbUtil.getFeedbackbyId(order_id);
+    }
 }
