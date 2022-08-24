@@ -27,33 +27,27 @@ public interface NewWebService {
 
     /**
      * 
-     * @param customerId
-     * @return
-     *     returns gocheeta.Customer
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCustomerbyId", targetNamespace = "http://gocheeta/", className = "gocheeta.GetCustomerbyId")
-    @ResponseWrapper(localName = "getCustomerbyIdResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetCustomerbyIdResponse")
-    @Action(input = "http://gocheeta/NewWebService/getCustomerbyIdRequest", output = "http://gocheeta/NewWebService/getCustomerbyIdResponse")
-    public Customer getCustomerbyId(
-        @WebParam(name = "customerId", targetNamespace = "")
-        int customerId);
-
-    /**
-     * 
-     * @param customerId
+     * @param password
+     * @param name
+     * @param mobile
+     * @param email
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCustomer")
-    @ResponseWrapper(localName = "deleteCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCustomerResponse")
-    @Action(input = "http://gocheeta/NewWebService/deleteCustomerRequest", output = "http://gocheeta/NewWebService/deleteCustomerResponse")
-    public boolean deleteCustomer(
-        @WebParam(name = "customerId", targetNamespace = "")
-        int customerId);
+    @RequestWrapper(localName = "addCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomer")
+    @ResponseWrapper(localName = "addCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomerResponse")
+    @Action(input = "http://gocheeta/NewWebService/addCustomerRequest", output = "http://gocheeta/NewWebService/addCustomerResponse")
+    public boolean addCustomer(
+        @WebParam(name = "name", targetNamespace = "")
+        String name,
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "mobile", targetNamespace = "")
+        String mobile,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
 
     /**
      * 
@@ -99,6 +93,36 @@ public interface NewWebService {
 
     /**
      * 
+     * @param customerId
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCustomer")
+    @ResponseWrapper(localName = "deleteCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCustomerResponse")
+    @Action(input = "http://gocheeta/NewWebService/deleteCustomerRequest", output = "http://gocheeta/NewWebService/deleteCustomerResponse")
+    public boolean deleteCustomer(
+        @WebParam(name = "customerId", targetNamespace = "")
+        int customerId);
+
+    /**
+     * 
+     * @param customerId
+     * @return
+     *     returns gocheeta.Customer
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCustomerbyId", targetNamespace = "http://gocheeta/", className = "gocheeta.GetCustomerbyId")
+    @ResponseWrapper(localName = "getCustomerbyIdResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetCustomerbyIdResponse")
+    @Action(input = "http://gocheeta/NewWebService/getCustomerbyIdRequest", output = "http://gocheeta/NewWebService/getCustomerbyIdResponse")
+    public Customer getCustomerbyId(
+        @WebParam(name = "customerId", targetNamespace = "")
+        int customerId);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<gocheeta.Customer>
      */
@@ -111,27 +135,42 @@ public interface NewWebService {
 
     /**
      * 
-     * @param password
-     * @param name
-     * @param mobile
-     * @param email
+     * @return
+     *     returns java.util.List<gocheeta.Branch>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBranch", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranch")
+    @ResponseWrapper(localName = "getBranchResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchResponse")
+    @Action(input = "http://gocheeta/NewWebService/getBranchRequest", output = "http://gocheeta/NewWebService/getBranchResponse")
+    public List<Branch> getBranch();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<gocheeta.Category>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getPriceView", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceView")
+    @ResponseWrapper(localName = "getPriceViewResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceViewResponse")
+    @Action(input = "http://gocheeta/NewWebService/getPriceViewRequest", output = "http://gocheeta/NewWebService/getPriceViewResponse")
+    public List<Category> getPriceView();
+
+    /**
+     * 
+     * @param categoryId
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomer")
-    @ResponseWrapper(localName = "addCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomerResponse")
-    @Action(input = "http://gocheeta/NewWebService/addCustomerRequest", output = "http://gocheeta/NewWebService/addCustomerResponse")
-    public boolean addCustomer(
-        @WebParam(name = "name", targetNamespace = "")
-        String name,
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "mobile", targetNamespace = "")
-        String mobile,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
+    @RequestWrapper(localName = "deleteCategory", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCategory")
+    @ResponseWrapper(localName = "deleteCategoryResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCategoryResponse")
+    @Action(input = "http://gocheeta/NewWebService/deleteCategoryRequest", output = "http://gocheeta/NewWebService/deleteCategoryResponse")
+    public boolean deleteCategory(
+        @WebParam(name = "category_id", targetNamespace = "")
+        int categoryId);
 
     /**
      * 
@@ -165,15 +204,24 @@ public interface NewWebService {
 
     /**
      * 
+     * @param orderId
+     * @param subject
+     * @param description
      * @return
-     *     returns java.util.List<gocheeta.Category>
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getPriceView", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceView")
-    @ResponseWrapper(localName = "getPriceViewResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceViewResponse")
-    @Action(input = "http://gocheeta/NewWebService/getPriceViewRequest", output = "http://gocheeta/NewWebService/getPriceViewResponse")
-    public List<Category> getPriceView();
+    @RequestWrapper(localName = "addFeedback", targetNamespace = "http://gocheeta/", className = "gocheeta.AddFeedback")
+    @ResponseWrapper(localName = "addFeedbackResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddFeedbackResponse")
+    @Action(input = "http://gocheeta/NewWebService/addFeedbackRequest", output = "http://gocheeta/NewWebService/addFeedbackResponse")
+    public boolean addFeedback(
+        @WebParam(name = "subject", targetNamespace = "")
+        String subject,
+        @WebParam(name = "description", targetNamespace = "")
+        String description,
+        @WebParam(name = "order_id", targetNamespace = "")
+        int orderId);
 
     /**
      * 
@@ -189,45 +237,6 @@ public interface NewWebService {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<gocheeta.Vehicle>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllVehicle", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicle")
-    @ResponseWrapper(localName = "getAllVehicleResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicleResponse")
-    @Action(input = "http://gocheeta/NewWebService/getAllVehicleRequest", output = "http://gocheeta/NewWebService/getAllVehicleResponse")
-    public List<Vehicle> getAllVehicle();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<gocheeta.Branch>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBranch", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranch")
-    @ResponseWrapper(localName = "getBranchResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchResponse")
-    @Action(input = "http://gocheeta/NewWebService/getBranchRequest", output = "http://gocheeta/NewWebService/getBranchResponse")
-    public List<Branch> getBranch();
-
-    /**
-     * 
-     * @param categoryId
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteCategory", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCategory")
-    @ResponseWrapper(localName = "deleteCategoryResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.DeleteCategoryResponse")
-    @Action(input = "http://gocheeta/NewWebService/deleteCategoryRequest", output = "http://gocheeta/NewWebService/deleteCategoryResponse")
-    public boolean deleteCategory(
-        @WebParam(name = "category_id", targetNamespace = "")
-        int categoryId);
-
-    /**
-     * 
      * @param categoryId
      * @return
      *     returns gocheeta.Category
@@ -240,6 +249,18 @@ public interface NewWebService {
     public Category getCategorybyId(
         @WebParam(name = "category_id", targetNamespace = "")
         int categoryId);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<gocheeta.Vehicle>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllVehicle", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicle")
+    @ResponseWrapper(localName = "getAllVehicleResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicleResponse")
+    @Action(input = "http://gocheeta/NewWebService/getAllVehicleRequest", output = "http://gocheeta/NewWebService/getAllVehicleResponse")
+    public List<Vehicle> getAllVehicle();
 
     /**
      * 
@@ -264,27 +285,6 @@ public interface NewWebService {
         String distance,
         @WebParam(name = "price", targetNamespace = "")
         String price);
-
-    /**
-     * 
-     * @param orderId
-     * @param subject
-     * @param description
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addFeedback", targetNamespace = "http://gocheeta/", className = "gocheeta.AddFeedback")
-    @ResponseWrapper(localName = "addFeedbackResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddFeedbackResponse")
-    @Action(input = "http://gocheeta/NewWebService/addFeedbackRequest", output = "http://gocheeta/NewWebService/addFeedbackResponse")
-    public boolean addFeedback(
-        @WebParam(name = "subject", targetNamespace = "")
-        String subject,
-        @WebParam(name = "description", targetNamespace = "")
-        String description,
-        @WebParam(name = "order_id", targetNamespace = "")
-        int orderId);
 
     /**
      * 

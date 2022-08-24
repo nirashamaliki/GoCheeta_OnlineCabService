@@ -10,14 +10,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%
-    int order_id = Integer.parseInt(request.getParameter("order_id"));
-    
-    NewWebService_Service service = new NewWebService_Service();
-    NewWebService customerProxy = service.getNewWebServicePort();
-    
-    Feedback feedback = customerProxy.getFeedbackbyId(order_id);   
-%>
+
 
 <!DOCTYPE html>
 <html>
@@ -34,8 +27,7 @@
             <label for="lname">Description</label><br>
             <textarea type="text" id="description" name="description" placeholder="description" ></textarea><br>
 
-            <input type="text" id="order_id" name="order_id" placeholder="order_id" ><br>
-            <input type="hidden" name="id" value="<% out.print(feedback.getOrderId());%>"<br>
+            <input type="hidden" id="order_id" name="order_id" placeholder="order_id" ><br>
 
             <br>
 
