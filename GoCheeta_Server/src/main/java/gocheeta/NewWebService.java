@@ -125,4 +125,10 @@ public class NewWebService {
     public Feedback getFeedbackbyId(@WebParam(name = "order_id") int order_id) {
         return this.dbUtil.getFeedbackbyId(order_id);
     }
+    
+    @WebMethod(operationName = "getFeedback")
+    public List<Feedback> getFeedback() {
+        return this.dbUtil.getFeedback();
+    }
+    
 }

@@ -63,9 +63,9 @@ public class MySQLServer implements DBUtil {
             
             this.stmt  = this.con.prepareCall("INSERT INTO `customer` (`name`, `email`, `mobile`, `password`) VALUES ('"+customer.getName()+"', '"+customer.getEmail()+"', '"+customer.getMobile()+"', '"+customer.getPassword()+"');");
         
-            return ((PreparedStatement) this.stmt).executeUpdate() > 0;
-            
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;            
         } catch(SQLException e) {
+
             System.out.println(e.getMessage());
             return false;
         }
@@ -373,6 +373,28 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }
-           
+    
+    
+    @Override
+    public List<Feedback> getFeedback() {
+     
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback ORDER BY order_id DESC;");
+
+            List<Feedback> feedbacks = new ArrayList<>();
+
+            while (rs.next()) {
+               Feedback feedback= new Feedback(rs.getInt("feedback_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
+               feedbacks.add(feedback);
+            }
+            
+            return feedbacks;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }      
         
 }

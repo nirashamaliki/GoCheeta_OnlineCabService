@@ -44,4 +44,5 @@ public interface  DBUtil {
   public boolean addFeedback(Feedback feedback);
 //  public List<Feedback>getViewFeedback();
   public Feedback getFeedbackbyId(int order_id);
+  public List<Feedback> getFeedback();
 }
