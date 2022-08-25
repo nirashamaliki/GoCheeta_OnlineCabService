@@ -116,7 +116,7 @@ public class NewWebService {
     //Feedback
     
     @WebMethod(operationName = "addFeedback")
-    public boolean addFeedback(@WebParam(name = "subject") String subject,@WebParam(name = "description") String description,@WebParam(name = "order_id") int order_Id) {
+    public boolean addFeedback(@WebParam(name = "subject") String subject,@WebParam(name = "description") String description,@WebParam(name = "order_id") int order_Id,@WebParam(name = "mobile") String mobile) {
         Feedback feedback = new Feedback(0,subject,description,order_Id);
         return this.dbUtil.addFeedback(feedback);
     }

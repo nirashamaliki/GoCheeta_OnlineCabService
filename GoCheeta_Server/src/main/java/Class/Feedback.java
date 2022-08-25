@@ -4,20 +4,27 @@
  */
 package Class;
 
-public class Feedback extends User {
 
-    int feedback_id;
-    String subject;
-    String description;
+public class Feedback {
+    public int order_id;
+    public int feedback_id;
+    public String subject;
+    public String description;
 
-    public Feedback(int feedback_id, String subject, String description, int order_Id, String mobile, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, String option) {
-        super(order_Id, mobile, pick_location, drop_loction, area_branch, distance, price, time, v_type, driver_mobile, option);
+    public Feedback(int feedback_id, String subject, String description,int order_id) {
+        this.order_id = order_id;
         this.feedback_id = feedback_id;
         this.subject = subject;
         this.description = description;
     }
-    
-    
+
+    public Feedback(int order_id) {
+        this.order_id = order_id;
+    }
+
+    public int getOrder_id() {
+        return order_id;
+    }
 
     public int getFeedback_id() {
         return feedback_id;
@@ -31,6 +38,9 @@ public class Feedback extends User {
         return description;
     }
 
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
+    }
 
     public void setFeedback_id(int feedback_id) {
         this.feedback_id = feedback_id;
@@ -43,6 +53,7 @@ public class Feedback extends User {
     public void setDescription(String description) {
         this.description = description;
     }
-    
 
+
+    
 }

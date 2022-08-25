@@ -340,7 +340,7 @@ public class MySQLServer implements DBUtil {
         
     //feedback
         
-    @Override
+  /*  @Override
     public boolean addFeedback(Feedback feedback) {
         try {
             
@@ -353,7 +353,7 @@ public class MySQLServer implements DBUtil {
             return false;
         }
     }
-     
+     */
     
     public Feedback getFeedbackbyId(int order_id) {
         try {
@@ -380,12 +380,12 @@ public class MySQLServer implements DBUtil {
      
         try {
             this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback ORDER BY order_id DESC;");
+            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details INNER JOIN feedback ON feedback.order_id = booking_details.order_id WHERE category_id = \" + category_id); ORDER BY order_id DESC;");
 
             List<Feedback> feedbacks = new ArrayList<>();
 
             while (rs.next()) {
-               Feedback feedback= new Feedback(rs.getInt("feedback_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
+               Feedback feedback= new Feedback(rs.getInt("feedback_id"),rs.getString("subject"),rs.getString("description"),rs.getInt("order_id"));
                feedbacks.add(feedback);
             }
             
@@ -396,5 +396,10 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }      
+
+    @Override
+    public boolean addFeedback(Feedback feedback) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
         
 }
