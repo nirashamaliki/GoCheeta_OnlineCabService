@@ -14,6 +14,17 @@ public class Driver{
     private String time_type;
     private int driver_mobile;
 
+    public Driver(int driver_mobile,String d_name,String d_email,String d_password,String branch,String time_type) {
+        this.d_email = d_email;
+        this.d_password = d_password;
+        this.branch = branch;
+        this.d_name = d_name;
+        this.time_type = time_type;
+        this.driver_mobile = driver_mobile;
+    }
+   
+
+    
     public Driver(String d_email, String d_password, String branch, String time_type, int driver_mobile) {
         this.d_email = d_email;
         this.d_password = d_password;
@@ -21,6 +32,7 @@ public class Driver{
         this.time_type = time_type;
         this.driver_mobile = driver_mobile;
     }
+    
 
     public Driver(int driver_mobile) {
         this.driver_mobile = driver_mobile;

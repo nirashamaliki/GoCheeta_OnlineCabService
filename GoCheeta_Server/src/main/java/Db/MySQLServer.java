@@ -125,10 +125,10 @@ public class MySQLServer implements DBUtil {
     public boolean addDriver(Driver driver) {
         try {
             
-            this.stmt  = this.con.prepareCall("INSERT INTO `driver`('name','email','mobile','d_password','branch','time_type')"
+            this.stmt  = this.con.prepareCall("INSERT INTO `driver`('name','email','driver_mobile','d_password','branch','time_type')"
                     + " VALUES ('"+driver.getD_name()+"','"+driver.getD_email()+"', '"+driver.getDriver_mobile()
                     +"', '"+driver.getD_password()+"','"+driver.getBranch()+"','"+driver.getTime_type()+"');");
-        
+            
             return ((PreparedStatement) this.stmt).executeUpdate() > 0;                                                                                                        
             
         } catch(SQLException e) {
@@ -279,6 +279,7 @@ public class MySQLServer implements DBUtil {
             List<User> users = new ArrayList<>();
 
             while (rs.next()) {
+//                System.err.println(rs.getInt("order_id"));
                User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
                users.add(user);
             }
@@ -340,7 +341,7 @@ public class MySQLServer implements DBUtil {
         
     //feedback
         
-  /*  @Override
+  @Override
     public boolean addFeedback(Feedback feedback) {
         try {
             
@@ -353,26 +354,26 @@ public class MySQLServer implements DBUtil {
             return false;
         }
     }
-     */
     
-    public Feedback getFeedbackbyId(int order_id) {
-        try {
-            
-            this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback WHERE feedback.order_id = " + order_id);
-            
-            if(rs.next()) {
-                Feedback feedback = new Feedback(rs.getInt("order_id"));
-                return feedback;
-            } else {
-                return null;
-            }
-            
-        } catch(SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
+    
+//    public Feedback getFeedbackbyId(int order_id) {
+//        try {
+//            
+//            this.stmt  = this.con.createStatement();
+//            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback WHERE feedback.order_id = " + order_id);
+//            
+//            if(rs.next()) {
+//                Feedback feedback = new Feedback(rs.getInt("order_id"));
+//                return feedback;
+//            } else {
+//                return null;
+//            }
+//            
+//        } catch(SQLException e) {
+//            System.out.println(e.getMessage());
+//            return null;
+//        }
+//    }
     
     
     @Override
@@ -398,8 +399,32 @@ public class MySQLServer implements DBUtil {
     }      
 
     @Override
-    public boolean addFeedback(Feedback feedback) {
+    public List<Feedback> getViewFeedback() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-        
+    
+    
+    //Admin
+
+    @Override
+    public List<User> getViewFeedbacks() {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback INNER JOIN booking_details ON feedback.order_id = booking_details.order_id ORDER BY feedback_id ASC;");
+            
+            List<User> users = new ArrayList<>();
+
+            while (rs.next()) {
+                User user = new User(rs.getInt("feedback_id"),rs.getString("subject"),rs.getString("description"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString("driver_mobile"));
+                users.add(user);
+            }
+            
+            return users;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
 }

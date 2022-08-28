@@ -41,8 +41,12 @@ public interface  DBUtil {
      
   
   //Feedback
-  public boolean addFeedback(Feedback feedback);
-//  public List<Feedback>getViewFeedback();
-  public Feedback getFeedbackbyId(int order_id);
-  public List<Feedback> getFeedback();
+   public boolean addFeedback(Feedback feedback);
+   public List<Feedback>getViewFeedback();
+   public List<Feedback> getFeedback();
+   
+   
+   //Admin
+   public List<User>getViewFeedbacks();
+   
 }
