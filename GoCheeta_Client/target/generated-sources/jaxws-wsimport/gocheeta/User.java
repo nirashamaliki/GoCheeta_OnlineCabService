@@ -17,14 +17,17 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://gocheeta/}person">
  *       &lt;sequence>
+ *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="area_branch" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="distance" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="drop_loction" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="feedback_id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="option" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="pick_location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="subject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="time" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="v_type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -37,14 +40,17 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "user", propOrder = {
+    "orderId",
     "areaBranch",
+    "description",
     "distance",
     "driverMobile",
     "dropLoction",
+    "feedbackId",
     "option",
-    "orderId",
     "pickLocation",
     "price",
+    "subject",
     "time",
     "vType"
 })
@@ -52,22 +58,42 @@ public class User
     extends Person
 {
 
+    @XmlElement(name = "order_Id")
+    protected int orderId;
     @XmlElement(name = "area_branch")
     protected String areaBranch;
+    protected String description;
     protected String distance;
     @XmlElement(name = "driver_mobile")
     protected String driverMobile;
     @XmlElement(name = "drop_loction")
     protected String dropLoction;
+    @XmlElement(name = "feedback_id")
+    protected int feedbackId;
     protected String option;
-    @XmlElement(name = "order_Id")
-    protected int orderId;
     @XmlElement(name = "pick_location")
     protected String pickLocation;
     protected String price;
+    protected String subject;
     protected String time;
     @XmlElement(name = "v_type")
     protected String vType;
+
+    /**
+     * Gets the value of the orderId property.
+     * 
+     */
+    public int getOrderId() {
+        return orderId;
+    }
+
+    /**
+     * Sets the value of the orderId property.
+     * 
+     */
+    public void setOrderId(int value) {
+        this.orderId = value;
+    }
 
     /**
      * Gets the value of the areaBranch property.
@@ -91,6 +117,30 @@ public class User
      */
     public void setAreaBranch(String value) {
         this.areaBranch = value;
+    }
+
+    /**
+     * Gets the value of the description property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Sets the value of the description property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
     }
 
     /**
@@ -166,6 +216,22 @@ public class User
     }
 
     /**
+     * Gets the value of the feedbackId property.
+     * 
+     */
+    public int getFeedbackId() {
+        return feedbackId;
+    }
+
+    /**
+     * Sets the value of the feedbackId property.
+     * 
+     */
+    public void setFeedbackId(int value) {
+        this.feedbackId = value;
+    }
+
+    /**
      * Gets the value of the option property.
      * 
      * @return
@@ -187,22 +253,6 @@ public class User
      */
     public void setOption(String value) {
         this.option = value;
-    }
-
-    /**
-     * Gets the value of the orderId property.
-     * 
-     */
-    public int getOrderId() {
-        return orderId;
-    }
-
-    /**
-     * Sets the value of the orderId property.
-     * 
-     */
-    public void setOrderId(int value) {
-        this.orderId = value;
     }
 
     /**
@@ -251,6 +301,30 @@ public class User
      */
     public void setPrice(String value) {
         this.price = value;
+    }
+
+    /**
+     * Gets the value of the subject property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSubject() {
+        return subject;
+    }
+
+    /**
+     * Sets the value of the subject property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSubject(String value) {
+        this.subject = value;
     }
 
     /**

@@ -21,7 +21,7 @@
     NewWebService customerProxy = service.getNewWebServicePort();
         
   
-    if(customerProxy.addFeedback(subject,description,order_id)) {
+    if(customerProxy.addFeedback(subject, description, order_id)) {
         response.sendRedirect("/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp");
     }else{
         out.print("Added Unsuccessfully");

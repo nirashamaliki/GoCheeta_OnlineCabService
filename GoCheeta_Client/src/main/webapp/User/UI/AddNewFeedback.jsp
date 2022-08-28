@@ -27,7 +27,7 @@
             <label for="lname">Description</label><br>
             <textarea type="text" id="description" name="description" placeholder="description" ></textarea><br>
 
-            <input type="hidden" id="order_id" name="order_id" placeholder="order_id" ><br>
+            <input type="hidden" id="order_id" name="order_id" value="<% out.print(request.getParameter("id")); %>" ><br>
 
             <br>
 

@@ -60,8 +60,9 @@
                 <td><% out.print(user.getOption()); %></td>      
               
                 <td style="width:15%;text-align: center">
-                    <a href="//GoCheeta_Client/User/Function/addUserld.jsp?id=<% out.print(user.getOrderId()); %>" class="btn btn-primary" style="width:80px;height:40px;text-align:center;margin-right:5px;">Update</a>
-   UI/AddNewFeedback.j
+                    
+                    <a href="./AddNewFeedback.jsp?id=<% out.print(user.getOrderId()); %>" class="btn btn-primary" style="width:90px;height:40px;text-align:center;margin-right:5px;">FeedBack</a>
+ 
                 </td>
             </tr>
             <% } %>

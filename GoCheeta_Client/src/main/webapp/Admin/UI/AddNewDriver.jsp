@@ -7,7 +7,7 @@
 
 <%
     NewWebService_Service service = new NewWebService_Service();
-    NewWebService customerProxy = service.getNewWebServicePort();
+    NewWebService driverProxy = service.getNewWebServicePort();
     
 %>
 
@@ -21,16 +21,16 @@
         <form action="/GoCheeta_Client/Admin/controller/addDriver.jsp" method="post">
             
             <label for="fname">Your Name</label><br>
-            <input type="text" id="name" name="name" placeholder="Name"><br>
+            <input type="text" id="d_name" name="d_name" placeholder="Name"><br>
 
             <label for="lname">Email</label><br>
-            <input type="text" id="email" name="email" placeholder="Email"><br>
+            <input type="text" id="d_email" name="d_email" placeholder="Email"><br>
 
             <label for="mobile">Mobile</label><br>
-            <input type="text" id="mobile" name="mobile" placeholder="Mobile"><br>
+            <input type="text" id="d_mobile" name="d_mobile" placeholder="Mobile"><br>
 
             <label for="password">Password</label><br>
-            <input type="text" id="d_Password" name="d_password" placeholder="Password"><br>
+            <input type="text" id="d_password" name="d_password" placeholder="Password"><br>
 
             <label for="password">Branch</label><br>
             <input type="text" id="branch" name="branch" placeholder="branch"><br>
