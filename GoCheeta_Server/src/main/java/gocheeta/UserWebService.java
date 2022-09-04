@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
+ */
+package gocheeta;
+
+import Class.DBUtil;
+import Class.Vehicle;
+import Db.MySQLServer;
+import java.util.List;
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+
+/**
+ *
+ * @author HP
+ */
+@WebService(serviceName = "UserWebService")
+public class UserWebService {
+
+     DBUtil dbUtil = new MySQLServer();
+    
+    @WebMethod(operationName = "hello")
+    public String hello(@WebParam(name = "name") String txt) {
+        return "Hello " + txt + " !";
+    }
+    
+    @WebMethod(operationName = "loginCustomer")
+    public boolean loginCustomer(@WebParam(name = "email") String email,@WebParam(name = "password") String password) {
+        //Customer customer = new Customer(email,password);
+        return this.dbUtil.loginCustomer(email,password);
+    } 
+    
+    @WebMethod(operationName = "loginAdmin")
+    public boolean loginAdmin(@WebParam(name = "email") String email,@WebParam(name = "password") String password) {
+        return this.dbUtil.loginAdmin(email,password);
+    } 
+    
+    //Vehicle
+    @WebMethod(operationName = "getAllVehicle")
+    public List<Vehicle> getAllVehicle() {
+        return this.dbUtil.getAllVehicle();
+    }
+}

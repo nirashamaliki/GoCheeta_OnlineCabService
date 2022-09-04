@@ -28,7 +28,7 @@ public class NewWebService {
         return "Hello " + txt + " !";
     }
 
-    @WebMethod(operationName = "addCustomer")
+   /* @WebMethod(operationName = "addCustomer")
     public boolean addCustomer(@WebParam(name = "name") String name, @WebParam(name = "email") String email, @WebParam(name = "mobile") String mobile, @WebParam(name = "password") String password) {
         Customer customer = new Customer(0, password, name, email, mobile);
         return this.dbUtil.addCustomer(customer);
@@ -53,7 +53,7 @@ public class NewWebService {
     public boolean updateCustomer(@WebParam(name = "customerId") int customerId, @WebParam(name = "name") String name, @WebParam(name = "email") String email, @WebParam(name = "mobile") String mobile, @WebParam(name = "password") String password) {
         Customer customer = new Customer(customerId, password, name, email, mobile);
         return this.dbUtil.updateCustomer(customer);
-    }
+    }*/
 
     //user
     @WebMethod(operationName = "getUsers")

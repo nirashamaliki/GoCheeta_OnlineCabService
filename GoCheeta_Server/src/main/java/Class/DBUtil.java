@@ -9,11 +9,11 @@ import java.util.List;
 public interface  DBUtil {
     
  // customer
-    public boolean addCustomer(Customer customer);
+ /*   public boolean addCustomer(Customer customer);
     public List<Customer> getCustomers();
     public boolean deleteCustomer(int customerId);
     public Customer getCustomerbyId(int customerId);
-    public boolean updateCustomer(Customer customer);
+    public boolean updateCustomer(Customer customer);*/
     
 //user booking
     public List<User> getUsers(); 
@@ -49,4 +49,9 @@ public interface  DBUtil {
    //Admin
    public List<User>getViewFeedbacks();
    
+   //User
+
+    public boolean loginCustomer(String email, String password);
+    public boolean loginAdmin(String email, String password);
+    
 }

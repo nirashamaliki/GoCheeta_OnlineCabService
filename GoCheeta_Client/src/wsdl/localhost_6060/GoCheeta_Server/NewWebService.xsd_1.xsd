@@ -4,10 +4,6 @@
 
 <xs:element name="addCategoryResponse" type="tns:addCategoryResponse"/>
 
-<xs:element name="addCustomer" type="tns:addCustomer"/>
-
-<xs:element name="addCustomerResponse" type="tns:addCustomerResponse"/>
-
 <xs:element name="addDriver" type="tns:addDriver"/>
 
 <xs:element name="addDriverResponse" type="tns:addDriverResponse"/>
@@ -20,10 +16,6 @@
 
 <xs:element name="deleteCategoryResponse" type="tns:deleteCategoryResponse"/>
 
-<xs:element name="deleteCustomer" type="tns:deleteCustomer"/>
-
-<xs:element name="deleteCustomerResponse" type="tns:deleteCustomerResponse"/>
-
 <xs:element name="getAllVehicle" type="tns:getAllVehicle"/>
 
 <xs:element name="getAllVehicleResponse" type="tns:getAllVehicleResponse"/>
@@ -35,14 +27,6 @@
 <xs:element name="getCategorybyId" type="tns:getCategorybyId"/>
 
 <xs:element name="getCategorybyIdResponse" type="tns:getCategorybyIdResponse"/>
-
-<xs:element name="getCustomerbyId" type="tns:getCustomerbyId"/>
-
-<xs:element name="getCustomerbyIdResponse" type="tns:getCustomerbyIdResponse"/>
-
-<xs:element name="getCustomers" type="tns:getCustomers"/>
-
-<xs:element name="getCustomersResponse" type="tns:getCustomersResponse"/>
 
 <xs:element name="getPriceRate" type="tns:getPriceRate"/>
 
@@ -68,10 +52,6 @@
 
 <xs:element name="updateCategoryResponse" type="tns:updateCategoryResponse"/>
 
-<xs:element name="updateCustomer" type="tns:updateCustomer"/>
-
-<xs:element name="updateCustomerResponse" type="tns:updateCustomerResponse"/>
-
 <xs:complexType name="getPriceView">
 <xs:sequence/>
 </xs:complexType>
@@ -89,47 +69,6 @@
 <xs:element name="name" type="xs:string" minOccurs="0"/>
 <xs:element name="price" type="xs:string" minOccurs="0"/>
 <xs:element name="rate_id" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCustomers">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getCustomersResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:customer" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="customer">
-<xs:complexContent>
-<xs:extension base="tns:person">
-<xs:sequence>
-<xs:element name="customerId" type="xs:int"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:extension>
-</xs:complexContent>
-</xs:complexType>
-
-<xs:complexType name="person">
-<xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-<xs:element name="mobile" type="xs:string" minOccurs="0"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCustomerbyId">
-<xs:sequence>
-<xs:element name="customerId" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCustomerbyIdResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:customer" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -174,18 +113,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="deleteCustomer">
-<xs:sequence>
-<xs:element name="customerId" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="deleteCustomerResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getViewFeedbacks">
 <xs:sequence/>
 </xs:complexType>
@@ -216,6 +143,14 @@
 </xs:sequence>
 </xs:extension>
 </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="person">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="getPriceRate">
@@ -286,21 +221,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="addCustomer">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-<xs:element name="mobile" type="xs:string" minOccurs="0"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCustomerResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getUsers">
 <xs:sequence/>
 </xs:complexType>
@@ -308,22 +228,6 @@
 <xs:complexType name="getUsersResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateCustomer">
-<xs:sequence>
-<xs:element name="customerId" type="xs:int"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-<xs:element name="mobile" type="xs:string" minOccurs="0"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateCustomerResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

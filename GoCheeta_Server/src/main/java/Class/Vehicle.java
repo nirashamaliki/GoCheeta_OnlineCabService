@@ -20,8 +20,9 @@ public class Vehicle extends Driver{
     }
 
 
-    public Vehicle(String vehicle_model, String vehical_Type,String Branch,int driver_mobile) {
+    public Vehicle(String vehicle_no,String vehicle_model, String vehical_Type,String Branch,int driver_mobile) {
         super(driver_mobile);
+        this.vehicle_no = vehicle_no;
         this.Branch = Branch;
         this.vehical_Type = vehical_Type;
         this.vehicle_model = vehicle_model;

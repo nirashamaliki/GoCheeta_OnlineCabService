@@ -36,7 +36,7 @@ public class MySQLServer implements DBUtil {
     }   
     //customer
 
-    @Override
+   /* @Override
     public List<Customer> getCustomers() {
         try {
             this.stmt  = this.con.createStatement();
@@ -55,9 +55,9 @@ public class MySQLServer implements DBUtil {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    }*/
         
-    @Override
+/*    @Override
     public boolean addCustomer(Customer customer) {
         try {
             
@@ -71,7 +71,7 @@ public class MySQLServer implements DBUtil {
         }
     }
       
-    @Override
+
     public boolean deleteCustomer(int customerId) {
         try {
             
@@ -83,9 +83,9 @@ public class MySQLServer implements DBUtil {
             System.out.println(e.getMessage());
             return false;
         }
-    }
+    }*/
     
-    @Override
+   /* @Override
     public Customer getCustomerbyId(int customerId) {
         try {
             
@@ -118,7 +118,7 @@ public class MySQLServer implements DBUtil {
             return false;
         }
     }
-   
+ */
      
     //Driver
    @Override
@@ -320,12 +320,12 @@ public class MySQLServer implements DBUtil {
         public List<Vehicle> getAllVehicle() {
         try {
             this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT vehicle.vehicle_model,vehicle.vehical_Type,vehicle.Branch,vehicle.driver_mobile  FROM vehicle INNER JOIN driver ON driver.driver_mobile = vehicle.driver_mobile ORDER BY vehicle_no ASC;");
+            this.rs    = this.stmt.executeQuery("SELECT vehicle.vehicle_no,vehicle.vehicle_model,vehicle.vehical_Type,vehicle.Branch,vehicle.driver_mobile  FROM vehicle INNER JOIN driver ON driver.driver_mobile = vehicle.driver_mobile ORDER BY vehicle_no ASC;");
             
             List<Vehicle> vehicles = new ArrayList<>();
 
             while (rs.next()) {
-                Vehicle vehicle = new Vehicle(rs.getString("vehicle_model"),rs.getString("vehical_Type"), rs.getString("Branch"),rs.getInt("driver_mobile"));
+                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"),rs.getString("vehicle_model"),rs.getString("vehical_Type"), rs.getString("Branch"),rs.getInt("driver_mobile"));
                    
                 vehicles .add(vehicle);
             }
@@ -426,5 +426,47 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }
+    
+    //User Login
+    public boolean loginCustomer(String email, String password) {
 
+      try {
+            PreparedStatement ps;
+            String sql = "SELECT * FROM customer WHERE email = ? and password = ?";
+            ps = con.prepareStatement(sql);
+           
+            ps.setString(1,email);
+            ps.setString(2, password);
+            
+            ResultSet result = ps.executeQuery();
+
+            return result.next();
+
+        } catch (SQLException ex) {
+             System.out.println(ex.getMessage());
+             return false;
+        }
+    }
+
+    //Admin Login
+    public boolean loginAdmin(String email, String password) {
+
+      try {
+            PreparedStatement ps;
+            String sql = "SELECT * FROM customer WHERE email ='admin@456' and password = '456admin@'";
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1,email);
+            ps.setString(2,password);
+            
+            ResultSet result = ps.executeQuery();
+
+            return result.next();
+
+        } catch (SQLException ex) {
+             System.out.println(ex.getMessage());
+             return false;
+        }
+    }
+    
 }

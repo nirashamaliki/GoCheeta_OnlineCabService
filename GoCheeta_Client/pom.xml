@@ -111,6 +111,24 @@
                         <id>wsimport-generate-NewWebService</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_6060/GoCheeta_Server/UserWebService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:6060/GoCheeta_Server/UserWebService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/UserWebService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-UserWebService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>

@@ -34,7 +34,7 @@
             <input type="text" name="VehicalType"/>
             <input type ="submit" value="Search">
         </form>
-        <table  class="table table-bordered" style="width:80%;margin-left:15%;margin-right:2%;margin-left:10%;margin-top:2%">
+        <table id="myTable" class="table table-bordered" style="width:80%;margin-left:15%;margin-right:2%;margin-left:10%;margin-top:2%">
 
         <tbody>
             
@@ -44,6 +44,7 @@
                 <td style="width:15%;"><% out.print(vehicle.getVehicalType()); %></td>
                 <td><% out.print(vehicle.getBranch()); %></td>
                 <td><% out.print(vehicle.getDriverMobile()); %></td>
+                <td><% out.print(vehicle.getVehicleNo()); %></td>
              
                 <td style="width:30%;text-align: center">
                    <a href="/GoCheeta_Client/Category/function/editCategory.jsp?id=<% out.print(vehicle.getVehicleNo()); %>" class="btn btn-primary"style="width:80px;height:40px;text-align:center;margin-right:5px;">Order</a>

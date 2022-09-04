@@ -5,27 +5,21 @@
 package Class;
 
 public class Customer extends Person {
-    private int customerId;
+
     private String password;
 
-    public Customer(int customerId, String password, String name, String email, String mobile) {
+    public Customer(String password, String name, String email, String mobile) {
         super(name, email, mobile);
-        this.customerId = customerId;
         this.password = password;
     }
     
-    public Customer(int customerId, String name, String email, String mobile) {
-        super(name, email, mobile);
-        this.customerId = customerId;
-      
+    public Customer(String name, String email, String mobile) {
+        super(name, email, mobile);   
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public Customer(String email,String password) {
+        super(email);
+        this.password = password;
     }
 
     public String getPassword() {
@@ -35,4 +29,5 @@ public class Customer extends Person {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

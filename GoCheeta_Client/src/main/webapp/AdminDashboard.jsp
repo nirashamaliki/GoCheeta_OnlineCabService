@@ -63,7 +63,7 @@
         </li>
         <li>
         <li class="log_out">
-          <a href="#">
+          <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">
             <i class='bx bx-log-out'></i>
             <span class="links_name">Log out</span>
           </a>
@@ -78,16 +78,18 @@
       </div>
 
       <div class="profile-details">
-        <span class="admin_name">Prem Shahi</span>
-        <i class='bx bx-chevron-down' ></i>
+        <span class="admin_name">
+        <%
+           out.print(session.getAttribute("email"));
+        %>
+        </span>
+        <i><img src="image/icon/user.png" alt="alt" style="width:25px;margin-left:20px;"></i>
       </div>
     </nav>
 
       <div>
         <div>
-        
-            <%@ include file="Admin/UI/ViewAllPrice.jsp" %>
-            
+            <%@ include file="Admin/UI/ViewAllPrice.jsp" %>  
       </div>
     </div>
   </section>
