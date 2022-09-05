@@ -136,10 +136,10 @@ public class NewWebService {
 
     
    //Driver
-       @WebMethod(operationName = "addDriver")
+     /*  @WebMethod(operationName = "addDriver")
      public boolean addDriver(@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "d_name") String d_name, @WebParam(name = "d_email") String d_email, @WebParam(name = "d_password") String d_password, @WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
      Driver driver = new Driver(driver_mobile,d_name, d_email, d_password, branch, time_type);
      return this.dbUtil.addDriver(driver);
     }
-   
+   */
 }

@@ -18,5 +18,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <netbeans.hint.jdkPlatform>JDK_1.8</netbeans.hint.jdkPlatform>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_NewWebService>http://localhost:6060/GoCheeta_Server/NewWebService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_NewWebService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_UserWebService>http://localhost:6060/GoCheeta_Server/UserWebService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_UserWebService>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_DriverWebService>http://localhost:6060/GoCheeta_Server/DriverWebService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_DriverWebService>
     </properties>
 </project-shared-configuration>

@@ -1,6 +1,8 @@
 gocheeta\UserWebService_Service.class
+gocheeta\DriverWebService_Service.class
 gocheeta\LoginCustomerResponse.class
 gocheeta\LoginAdmin.class
+gocheeta\DriverWebService.class
 gocheeta\UserWebService.class
 gocheeta\AddDriverResponse.class
 gocheeta\GetViewFeedbacksResponse.class

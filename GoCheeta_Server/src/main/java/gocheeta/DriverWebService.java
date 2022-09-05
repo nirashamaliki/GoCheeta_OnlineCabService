@@ -4,7 +4,9 @@
  */
 package gocheeta;
 
+import Class.DBUtil;
 import Class.Driver;
+import Db.MySQLServer;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -15,14 +17,21 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "DriverWebService")
 public class DriverWebService {
+  
+    DBUtil dbUtil = new MySQLServer();
 
-    /**
-     * This is a sample web service operation
-     */
+    
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
     
-
+     //Driver
+     @WebMethod(operationName = "addDriver")
+     public boolean addDriver(@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "d_email") String d_email,@WebParam(name = "d_name") String d_name,@WebParam(name = "d_password") String d_password, @WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
+     Driver driver = new Driver(driver_mobile, d_email,d_name, d_password, branch, time_type);
+     return this.dbUtil.addDriver(driver);
+    
+     }
+    
 }

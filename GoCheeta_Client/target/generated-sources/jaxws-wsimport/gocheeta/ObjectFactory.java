@@ -24,12 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _LoginAdmin_QNAME = new QName("http://gocheeta/", "loginAdmin");
-    private final static QName _LoginCustomer_QNAME = new QName("http://gocheeta/", "loginCustomer");
+    private final static QName _AddDriverResponse_QNAME = new QName("http://gocheeta/", "addDriverResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://gocheeta/", "helloResponse");
-    private final static QName _LoginAdminResponse_QNAME = new QName("http://gocheeta/", "loginAdminResponse");
     private final static QName _Hello_QNAME = new QName("http://gocheeta/", "hello");
-    private final static QName _LoginCustomerResponse_QNAME = new QName("http://gocheeta/", "loginCustomerResponse");
+    private final static QName _AddDriver_QNAME = new QName("http://gocheeta/", "addDriver");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: gocheeta
@@ -39,19 +37,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginAdmin }
+     * Create an instance of {@link AddDriverResponse }
      * 
      */
-    public LoginAdmin createLoginAdmin() {
-        return new LoginAdmin();
-    }
-
-    /**
-     * Create an instance of {@link LoginCustomer }
-     * 
-     */
-    public LoginCustomer createLoginCustomer() {
-        return new LoginCustomer();
+    public AddDriverResponse createAddDriverResponse() {
+        return new AddDriverResponse();
     }
 
     /**
@@ -63,14 +53,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginAdminResponse }
-     * 
-     */
-    public LoginAdminResponse createLoginAdminResponse() {
-        return new LoginAdminResponse();
-    }
-
-    /**
      * Create an instance of {@link Hello }
      * 
      */
@@ -79,29 +61,20 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginCustomerResponse }
+     * Create an instance of {@link AddDriver }
      * 
      */
-    public LoginCustomerResponse createLoginCustomerResponse() {
-        return new LoginCustomerResponse();
+    public AddDriver createAddDriver() {
+        return new AddDriver();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginAdmin }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddDriverResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "loginAdmin")
-    public JAXBElement<LoginAdmin> createLoginAdmin(LoginAdmin value) {
-        return new JAXBElement<LoginAdmin>(_LoginAdmin_QNAME, LoginAdmin.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginCustomer }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "loginCustomer")
-    public JAXBElement<LoginCustomer> createLoginCustomer(LoginCustomer value) {
-        return new JAXBElement<LoginCustomer>(_LoginCustomer_QNAME, LoginCustomer.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "addDriverResponse")
+    public JAXBElement<AddDriverResponse> createAddDriverResponse(AddDriverResponse value) {
+        return new JAXBElement<AddDriverResponse>(_AddDriverResponse_QNAME, AddDriverResponse.class, null, value);
     }
 
     /**
@@ -114,15 +87,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginAdminResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "loginAdminResponse")
-    public JAXBElement<LoginAdminResponse> createLoginAdminResponse(LoginAdminResponse value) {
-        return new JAXBElement<LoginAdminResponse>(_LoginAdminResponse_QNAME, LoginAdminResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}}
      * 
      */
@@ -132,12 +96,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginCustomerResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddDriver }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "loginCustomerResponse")
-    public JAXBElement<LoginCustomerResponse> createLoginCustomerResponse(LoginCustomerResponse value) {
-        return new JAXBElement<LoginCustomerResponse>(_LoginCustomerResponse_QNAME, LoginCustomerResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "addDriver")
+    public JAXBElement<AddDriver> createAddDriver(AddDriver value) {
+        return new JAXBElement<AddDriver>(_AddDriver_QNAME, AddDriver.class, null, value);
     }
 
 }

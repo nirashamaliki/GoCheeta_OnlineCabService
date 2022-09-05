@@ -119,23 +119,21 @@ public class MySQLServer implements DBUtil {
         }
     }
  */
-     
-    //Driver
+
+   //Driver
    @Override
     public boolean addDriver(Driver driver) {
-        try {
+               try {
             
-            this.stmt  = this.con.prepareCall("INSERT INTO `driver`('name','email','driver_mobile','d_password','branch','time_type')"
-                    + " VALUES ('"+driver.getD_name()+"','"+driver.getD_email()+"', '"+driver.getDriver_mobile()
-                    +"', '"+driver.getD_password()+"','"+driver.getBranch()+"','"+driver.getTime_type()+"');");
-            
+            this.stmt  = this.con.prepareCall("INSERT INTO `driver` (`driver_mobile`, `driver_email`, `driver_name`, `driver_password`, `branch`, `time_type`) VALUES ('"+driver.getDriver_mobile()+"', '"+driver.getD_email()+"', '"+driver.getD_name()+"', '"+driver.getD_password()+"', '"+driver.getBranch()+"', '"+driver.getTime_type()+"');");
             return ((PreparedStatement) this.stmt).executeUpdate() > 0;                                                                                                        
             
         } catch(SQLException e) {
             System.out.println(e.getMessage());
             return false;
         }
-    }
+   }
+
     
    @Override
     public List <Branch> getBranch() {
@@ -469,4 +467,5 @@ public class MySQLServer implements DBUtil {
         }
     }
     
+
 }
