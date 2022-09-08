@@ -5,6 +5,7 @@
 package gocheeta;
 
 import Class.DBUtil;
+import Class.User;
 import Class.Vehicle;
 import Db.MySQLServer;
 import java.util.List;
@@ -41,5 +42,12 @@ public class UserWebService {
     @WebMethod(operationName = "getAllVehicle")
     public List<Vehicle> getAllVehicle() {
         return this.dbUtil.getAllVehicle();
+    }
+    
+    
+    //userBook View
+    @WebMethod(operationName = "getViewUsersBooks")
+    public List<User> getViewUsersBooks(String email) {
+        return this.dbUtil.getViewUsersBooks(email);
     }
 }

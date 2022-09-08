@@ -54,4 +54,7 @@ public interface  DBUtil {
     public boolean loginCustomer(String email, String password);
     public boolean loginAdmin(String email, String password);
     
+//user booking
+    public List<User> getViewUsersBooks(String email);
+
 }

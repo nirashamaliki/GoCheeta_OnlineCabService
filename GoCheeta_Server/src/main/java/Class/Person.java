@@ -25,8 +25,7 @@ public class Person {
     public Person(String mobile) {
         this.mobile = mobile;
     }
-
-
+ 
     public String getName() {
         return name;
     }

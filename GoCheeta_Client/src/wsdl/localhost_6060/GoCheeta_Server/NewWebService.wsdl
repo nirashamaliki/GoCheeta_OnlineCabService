@@ -4,6 +4,48 @@
 <xsd:import namespace="http://gocheeta/" schemaLocation="http://localhost:6060/GoCheeta_Server/NewWebService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="hello">
+<part name="parameters" element="tns:hello"/>
+</message>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse"/>
+</message>
+<message name="getPriceRate">
+<part name="parameters" element="tns:getPriceRate"/>
+</message>
+<message name="getPriceRateResponse">
+<part name="parameters" element="tns:getPriceRateResponse"/>
+</message>
+<message name="addFeedback">
+<part name="parameters" element="tns:addFeedback"/>
+</message>
+<message name="addFeedbackResponse">
+<part name="parameters" element="tns:addFeedbackResponse"/>
+</message>
+<message name="getViewFeedbacks">
+<part name="parameters" element="tns:getViewFeedbacks"/>
+</message>
+<message name="getViewFeedbacksResponse">
+<part name="parameters" element="tns:getViewFeedbacksResponse"/>
+</message>
+<message name="getBranch">
+<part name="parameters" element="tns:getBranch"/>
+</message>
+<message name="getBranchResponse">
+<part name="parameters" element="tns:getBranchResponse"/>
+</message>
+<message name="getUsers">
+<part name="parameters" element="tns:getUsers"/>
+</message>
+<message name="getUsersResponse">
+<part name="parameters" element="tns:getUsersResponse"/>
+</message>
+<message name="getAllVehicle">
+<part name="parameters" element="tns:getAllVehicle"/>
+</message>
+<message name="getAllVehicleResponse">
+<part name="parameters" element="tns:getAllVehicleResponse"/>
+</message>
 <message name="deleteCategory">
 <part name="parameters" element="tns:deleteCategory"/>
 </message>
@@ -16,23 +58,11 @@
 <message name="updateCategoryResponse">
 <part name="parameters" element="tns:updateCategoryResponse"/>
 </message>
-<message name="getPriceRate">
-<part name="parameters" element="tns:getPriceRate"/>
+<message name="addCategory">
+<part name="parameters" element="tns:addCategory"/>
 </message>
-<message name="getPriceRateResponse">
-<part name="parameters" element="tns:getPriceRateResponse"/>
-</message>
-<message name="getPriceView">
-<part name="parameters" element="tns:getPriceView"/>
-</message>
-<message name="getPriceViewResponse">
-<part name="parameters" element="tns:getPriceViewResponse"/>
-</message>
-<message name="getViewFeedbacks">
-<part name="parameters" element="tns:getViewFeedbacks"/>
-</message>
-<message name="getViewFeedbacksResponse">
-<part name="parameters" element="tns:getViewFeedbacksResponse"/>
+<message name="addCategoryResponse">
+<part name="parameters" element="tns:addCategoryResponse"/>
 </message>
 <message name="getCategorybyId">
 <part name="parameters" element="tns:getCategorybyId"/>
@@ -40,43 +70,41 @@
 <message name="getCategorybyIdResponse">
 <part name="parameters" element="tns:getCategorybyIdResponse"/>
 </message>
-<message name="addCategory">
-<part name="parameters" element="tns:addCategory"/>
+<message name="getPriceView">
+<part name="parameters" element="tns:getPriceView"/>
 </message>
-<message name="addCategoryResponse">
-<part name="parameters" element="tns:addCategoryResponse"/>
-</message>
-<message name="addFeedback">
-<part name="parameters" element="tns:addFeedback"/>
-</message>
-<message name="addFeedbackResponse">
-<part name="parameters" element="tns:addFeedbackResponse"/>
-</message>
-<message name="getUsers">
-<part name="parameters" element="tns:getUsers"/>
-</message>
-<message name="getUsersResponse">
-<part name="parameters" element="tns:getUsersResponse"/>
-</message>
-<message name="getBranch">
-<part name="parameters" element="tns:getBranch"/>
-</message>
-<message name="getBranchResponse">
-<part name="parameters" element="tns:getBranchResponse"/>
-</message>
-<message name="getAllVehicle">
-<part name="parameters" element="tns:getAllVehicle"/>
-</message>
-<message name="getAllVehicleResponse">
-<part name="parameters" element="tns:getAllVehicleResponse"/>
-</message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
-</message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
+<message name="getPriceViewResponse">
+<part name="parameters" element="tns:getPriceViewResponse"/>
 </message>
 <portType name="NewWebService">
+<operation name="hello">
+<input wsam:Action="http://gocheeta/NewWebService/helloRequest" message="tns:hello"/>
+<output wsam:Action="http://gocheeta/NewWebService/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="getPriceRate">
+<input wsam:Action="http://gocheeta/NewWebService/getPriceRateRequest" message="tns:getPriceRate"/>
+<output wsam:Action="http://gocheeta/NewWebService/getPriceRateResponse" message="tns:getPriceRateResponse"/>
+</operation>
+<operation name="addFeedback">
+<input wsam:Action="http://gocheeta/NewWebService/addFeedbackRequest" message="tns:addFeedback"/>
+<output wsam:Action="http://gocheeta/NewWebService/addFeedbackResponse" message="tns:addFeedbackResponse"/>
+</operation>
+<operation name="getViewFeedbacks">
+<input wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksRequest" message="tns:getViewFeedbacks"/>
+<output wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksResponse" message="tns:getViewFeedbacksResponse"/>
+</operation>
+<operation name="getBranch">
+<input wsam:Action="http://gocheeta/NewWebService/getBranchRequest" message="tns:getBranch"/>
+<output wsam:Action="http://gocheeta/NewWebService/getBranchResponse" message="tns:getBranchResponse"/>
+</operation>
+<operation name="getUsers">
+<input wsam:Action="http://gocheeta/NewWebService/getUsersRequest" message="tns:getUsers"/>
+<output wsam:Action="http://gocheeta/NewWebService/getUsersResponse" message="tns:getUsersResponse"/>
+</operation>
+<operation name="getAllVehicle">
+<input wsam:Action="http://gocheeta/NewWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
+<output wsam:Action="http://gocheeta/NewWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
+</operation>
 <operation name="deleteCategory">
 <input wsam:Action="http://gocheeta/NewWebService/deleteCategoryRequest" message="tns:deleteCategory"/>
 <output wsam:Action="http://gocheeta/NewWebService/deleteCategoryResponse" message="tns:deleteCategoryResponse"/>
@@ -85,49 +113,84 @@
 <input wsam:Action="http://gocheeta/NewWebService/updateCategoryRequest" message="tns:updateCategory"/>
 <output wsam:Action="http://gocheeta/NewWebService/updateCategoryResponse" message="tns:updateCategoryResponse"/>
 </operation>
-<operation name="getPriceRate">
-<input wsam:Action="http://gocheeta/NewWebService/getPriceRateRequest" message="tns:getPriceRate"/>
-<output wsam:Action="http://gocheeta/NewWebService/getPriceRateResponse" message="tns:getPriceRateResponse"/>
-</operation>
-<operation name="getPriceView">
-<input wsam:Action="http://gocheeta/NewWebService/getPriceViewRequest" message="tns:getPriceView"/>
-<output wsam:Action="http://gocheeta/NewWebService/getPriceViewResponse" message="tns:getPriceViewResponse"/>
-</operation>
-<operation name="getViewFeedbacks">
-<input wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksRequest" message="tns:getViewFeedbacks"/>
-<output wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksResponse" message="tns:getViewFeedbacksResponse"/>
+<operation name="addCategory">
+<input wsam:Action="http://gocheeta/NewWebService/addCategoryRequest" message="tns:addCategory"/>
+<output wsam:Action="http://gocheeta/NewWebService/addCategoryResponse" message="tns:addCategoryResponse"/>
 </operation>
 <operation name="getCategorybyId">
 <input wsam:Action="http://gocheeta/NewWebService/getCategorybyIdRequest" message="tns:getCategorybyId"/>
 <output wsam:Action="http://gocheeta/NewWebService/getCategorybyIdResponse" message="tns:getCategorybyIdResponse"/>
 </operation>
-<operation name="addCategory">
-<input wsam:Action="http://gocheeta/NewWebService/addCategoryRequest" message="tns:addCategory"/>
-<output wsam:Action="http://gocheeta/NewWebService/addCategoryResponse" message="tns:addCategoryResponse"/>
-</operation>
-<operation name="addFeedback">
-<input wsam:Action="http://gocheeta/NewWebService/addFeedbackRequest" message="tns:addFeedback"/>
-<output wsam:Action="http://gocheeta/NewWebService/addFeedbackResponse" message="tns:addFeedbackResponse"/>
-</operation>
-<operation name="getUsers">
-<input wsam:Action="http://gocheeta/NewWebService/getUsersRequest" message="tns:getUsers"/>
-<output wsam:Action="http://gocheeta/NewWebService/getUsersResponse" message="tns:getUsersResponse"/>
-</operation>
-<operation name="getBranch">
-<input wsam:Action="http://gocheeta/NewWebService/getBranchRequest" message="tns:getBranch"/>
-<output wsam:Action="http://gocheeta/NewWebService/getBranchResponse" message="tns:getBranchResponse"/>
-</operation>
-<operation name="getAllVehicle">
-<input wsam:Action="http://gocheeta/NewWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
-<output wsam:Action="http://gocheeta/NewWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
-</operation>
-<operation name="hello">
-<input wsam:Action="http://gocheeta/NewWebService/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://gocheeta/NewWebService/helloResponse" message="tns:helloResponse"/>
+<operation name="getPriceView">
+<input wsam:Action="http://gocheeta/NewWebService/getPriceViewRequest" message="tns:getPriceView"/>
+<output wsam:Action="http://gocheeta/NewWebService/getPriceViewResponse" message="tns:getPriceViewResponse"/>
 </operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getPriceRate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addFeedback">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getViewFeedbacks">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBranch">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getUsers">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getAllVehicle">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="deleteCategory">
 <soap:operation soapAction=""/>
 <input>
@@ -146,25 +209,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getPriceRate">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getPriceView">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getViewFeedbacks">
+<operation name="addCategory">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -182,52 +227,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addCategory">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addFeedback">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getUsers">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getBranch">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAllVehicle">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
+<operation name="getPriceView">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

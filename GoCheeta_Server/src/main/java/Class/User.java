@@ -21,7 +21,26 @@ package Class;
     private int feedback_id;
     private String subject;
     private String description;
+    private String email;
 
+    public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile,String email) {
+        super(mobile);
+        this.order_Id = order_Id;
+        this.pick_location = pick_location;
+        this.drop_loction = drop_loction;
+        this.area_branch = area_branch;
+        this.distance = distance;
+        this.price = price;
+        this.time = time;
+        this.v_type = v_type;
+        this.driver_mobile = driver_mobile;
+        this.feedback_id = feedback_id;
+        this.subject = subject;
+        this.description = description;
+        this.email=email;
+    }
+    
+    
     public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile) {
         super(mobile);
         this.order_Id = order_Id;
@@ -38,11 +57,8 @@ package Class;
         this.description = description;
     }
     
- 
     public User(int order_Id,String mobile,String pick_location, String drop_loction, String area_branch, String distance,String price,String time,String v_type,String driver_mobile,String option) {
-         
         super(mobile);
-        
         this.order_Id = order_Id;
         this.pick_location = pick_location;
         this.drop_loction = drop_loction;
@@ -52,8 +68,7 @@ package Class;
         this.time = time;
         this.option = option;
         this.v_type = v_type;
-        this.driver_mobile = driver_mobile;
-       
+        this.driver_mobile = driver_mobile; 
     }
 
     public User(String pick_location, String drop_loction, String mobile) {

@@ -468,4 +468,29 @@ public class MySQLServer implements DBUtil {
     }
     
 
+    
+        //Users Booking
+        public List<User> getViewUsersBooks(String email) {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details ORDER BY order_id WHERE customer.c_id = " + email);
+
+            List<User> users = new ArrayList<>();
+
+            while (rs.next()) {
+//                System.err.println(rs.getInt("order_id"));
+               User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
+               users.add(user);
+            }
+            
+            return users;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }  
+
+
+    
 }
