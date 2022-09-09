@@ -82,6 +82,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getCategorybyId">
+<xs:sequence>
+<xs:element name="category_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategorybyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getUsers">
 <xs:sequence/>
 </xs:complexType>
@@ -122,18 +134,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getCategorybyId">
-<xs:sequence>
-<xs:element name="category_id" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCategorybyIdResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:category" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="updateCategory">
 <xs:sequence>
 <xs:element name="category_id" type="xs:int"/>
@@ -159,6 +159,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getPriceRate">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPriceRateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="hello">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -168,16 +178,6 @@
 <xs:complexType name="helloResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getPriceRate">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getPriceRateResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:category" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

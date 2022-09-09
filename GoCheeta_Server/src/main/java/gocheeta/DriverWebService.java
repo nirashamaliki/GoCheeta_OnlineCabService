@@ -4,9 +4,11 @@
  */
 package gocheeta;
 
+import Class.Branch;
 import Class.DBUtil;
 import Class.Driver;
 import Db.MySQLServer;
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -33,5 +35,14 @@ public class DriverWebService {
      return this.dbUtil.addDriver(driver);
     
      }
+     
+     
+        //Branch
+     
+     @WebMethod(operationName = "getBranch")
+     public List<Branch> getBranch() {
+      
+         return this.dbUtil.getBranch();
+    }
     
 }

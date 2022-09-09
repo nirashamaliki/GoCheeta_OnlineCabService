@@ -135,6 +135,7 @@ public class MySQLServer implements DBUtil {
    }
 
     
+  /* 
    @Override
     public List <Branch> getBranch() {
         try {
@@ -154,7 +155,9 @@ public class MySQLServer implements DBUtil {
             System.out.println(e.getMessage());
             return null;
         }
-    }  
+    }*/  
+    
+    
    
     //Cayegory with price
 
@@ -491,6 +494,53 @@ public class MySQLServer implements DBUtil {
         }
     }  
 
+    //Branch dowdown    
+    @Override
+    public List<Branch> getBranch() {
+ 
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM  branch  ORDER BY branch_id ASC;");
+            
+            List<Branch> branches = new ArrayList<>();
 
-    
+            while (rs.next()) {
+                Branch branch = new Branch(rs.getString("b_name"));
+                   
+                branches.add(branch);
+            }
+            
+            return branches;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+     
+        
+      /*  try {
+   
+            this.stmt= con.createStatement();
+            String query= " SELECT * FROM branch ";
+ 
+            ResultSet rs = stmt.executeQuery(query);
+            //get name one by one
+            
+            List<Branch> branches = new ArrayList<>();
+            
+            while(rs.next()){
+               Branch branch = new Branch(rs.getString("b_name"));
+ 
+            }  return branches;
+        
+ 
+        } catch(Exception e) {
+            System.out.println(e.getMessage());       
+            return null;
+        }
+        
+        } */   
+   
+        
 }

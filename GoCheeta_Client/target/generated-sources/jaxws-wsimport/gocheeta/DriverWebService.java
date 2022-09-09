@@ -1,6 +1,7 @@
 
 package gocheeta;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -26,18 +27,15 @@ public interface DriverWebService {
 
     /**
      * 
-     * @param name
      * @return
-     *     returns java.lang.String
+     *     returns java.util.List<gocheeta.Branch>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://gocheeta/", className = "gocheeta.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.HelloResponse")
-    @Action(input = "http://gocheeta/DriverWebService/helloRequest", output = "http://gocheeta/DriverWebService/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "getBranch", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranch")
+    @ResponseWrapper(localName = "getBranchResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchResponse")
+    @Action(input = "http://gocheeta/DriverWebService/getBranchRequest", output = "http://gocheeta/DriverWebService/getBranchResponse")
+    public List<Branch> getBranch();
 
     /**
      * 
@@ -68,5 +66,20 @@ public interface DriverWebService {
         String branch,
         @WebParam(name = "time_type", targetNamespace = "")
         String timeType);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "hello", targetNamespace = "http://gocheeta/", className = "gocheeta.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.HelloResponse")
+    @Action(input = "http://gocheeta/DriverWebService/helloRequest", output = "http://gocheeta/DriverWebService/helloResponse")
+    public String hello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
 }

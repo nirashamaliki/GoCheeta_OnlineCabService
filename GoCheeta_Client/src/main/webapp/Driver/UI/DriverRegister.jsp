@@ -4,7 +4,22 @@
     Author     : HP
 --%>
 
+<%@page import="gocheeta.DriverWebService"%>
+<%@page import="gocheeta.DriverWebService_Service"%>
+<%@page import="gocheeta.Branch"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    DriverWebService_Service service = new DriverWebService_Service();
+    DriverWebService branchProxy = service.getDriverWebServicePort();
+    
+  //  List<User> users= customerProxy.getUsers();
+  
+    List<Branch>branches = branchProxy.getBranch();
+        
+%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,7 +42,21 @@
             <input type="text" id="d_password" name="d_password" placeholder="Password" required><br>
 
             <label for="password">Branch</label><br>
-            <input type="text" id="branch" name="branch" placeholder="Branch" required><br>
+            
+                <select><option id="branch" name="branch">Select</option>
+                   <% for(Branch branch: branches){ %>
+                
+        
+                 %>
+                   <option>
+                   <% out.print(branch.getBName());%>     
+                   </option> 
+
+                  <% } %>
+                </select>   
+               
+               <br>  <br>
+       
             
             <label for="password">Option</label><br>
             <input type="text" id="time_type" name="time_type" placeholder="Option" required><br>

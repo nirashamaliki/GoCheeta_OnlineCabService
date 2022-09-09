@@ -21,9 +21,11 @@ public interface  DBUtil {
 //Driver    
     public boolean addDriver(Driver driver);
     
-//Branch
-    public List<Branch> getBranch();
+/*//Branch
+    public List<Branch> getBranch();*/
     
+
+
 //Category with prices    
     public List<Category>getPriceRate();
     public boolean deleteCategory(int category_id);
@@ -56,5 +58,12 @@ public interface  DBUtil {
     
 //user booking
     public List<User> getViewUsersBooks(String email);
+    
+    
+  //Branch Dropdown
+    //Branch
+    public List<Branch>getBranch();
+       
+   
 
 }
