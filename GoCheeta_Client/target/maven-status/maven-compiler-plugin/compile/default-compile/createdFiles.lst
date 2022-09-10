@@ -2,7 +2,9 @@ gocheeta\UserWebService_Service.class
 gocheeta\DriverWebService_Service.class
 gocheeta\GetViewUsersBooksResponse.class
 gocheeta\LoginCustomerResponse.class
+gocheeta\GetBranchDrop.class
 gocheeta\GetBranchDropDownResponse.class
+gocheeta\GetBranchDropResponse.class
 gocheeta\LoginAdmin.class
 gocheeta\DriverWebService.class
 gocheeta\UserWebService.class

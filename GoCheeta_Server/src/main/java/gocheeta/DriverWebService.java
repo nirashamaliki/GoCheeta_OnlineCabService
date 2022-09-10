@@ -39,10 +39,10 @@ public class DriverWebService {
      
         //Branch
      
-     @WebMethod(operationName = "getBranch")
-     public List<Branch> getBranch() {
+     @WebMethod(operationName = "getBranchDrop")
+     public List<Branch> getBranchDrop() {
       
-         return this.dbUtil.getBranch();
+         return this.dbUtil.getBranchDrop();
     }
     
 }

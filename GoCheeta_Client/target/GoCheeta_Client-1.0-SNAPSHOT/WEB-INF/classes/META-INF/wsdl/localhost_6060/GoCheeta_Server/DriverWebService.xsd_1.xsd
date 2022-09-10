@@ -4,9 +4,9 @@
 
 <xs:element name="addDriverResponse" type="tns:addDriverResponse"/>
 
-<xs:element name="getBranch" type="tns:getBranch"/>
+<xs:element name="getBranchDrop" type="tns:getBranchDrop"/>
 
-<xs:element name="getBranchResponse" type="tns:getBranchResponse"/>
+<xs:element name="getBranchDropResponse" type="tns:getBranchDropResponse"/>
 
 <xs:element name="hello" type="tns:hello"/>
 
@@ -41,11 +41,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getBranch">
+<xs:complexType name="getBranchDrop">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="getBranchResponse">
+<xs:complexType name="getBranchDropResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:branch" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>

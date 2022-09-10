@@ -21,8 +21,8 @@ public interface  DBUtil {
 //Driver    
     public boolean addDriver(Driver driver);
     
-/*//Branch
-    public List<Branch> getBranch();*/
+//Branch
+    public List<Branch> getBranch();
     
 
 
@@ -62,7 +62,7 @@ public interface  DBUtil {
     
   //Branch Dropdown
     //Branch
-    public List<Branch>getBranch();
+    public List<Branch>getBranchDrop();
        
    
 

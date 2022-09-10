@@ -1,4 +1,5 @@
 gocheeta\NewWebService.class
+gocheeta\UserWebService.class
 Db\MySQLServer.class
 Class\Customer.class
 Class\Feedback.class
@@ -8,4 +9,5 @@ Class\Driver.class
 Class\Branch.class
 Class\User.class
 Class\Category.class
+gocheeta\DriverWebService.class
 Class\DBUtil.class

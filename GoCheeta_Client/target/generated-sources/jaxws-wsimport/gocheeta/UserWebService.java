@@ -46,10 +46,10 @@ public interface UserWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "loginAdmin", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdmin")
-    @ResponseWrapper(localName = "loginAdminResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdminResponse")
-    @Action(input = "http://gocheeta/UserWebService/loginAdminRequest", output = "http://gocheeta/UserWebService/loginAdminResponse")
-    public boolean loginAdmin(
+    @RequestWrapper(localName = "loginCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginCustomer")
+    @ResponseWrapper(localName = "loginCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginCustomerResponse")
+    @Action(input = "http://gocheeta/UserWebService/loginCustomerRequest", output = "http://gocheeta/UserWebService/loginCustomerResponse")
+    public boolean loginCustomer(
         @WebParam(name = "email", targetNamespace = "")
         String email,
         @WebParam(name = "password", targetNamespace = "")
@@ -64,10 +64,10 @@ public interface UserWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "loginCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginCustomer")
-    @ResponseWrapper(localName = "loginCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginCustomerResponse")
-    @Action(input = "http://gocheeta/UserWebService/loginCustomerRequest", output = "http://gocheeta/UserWebService/loginCustomerResponse")
-    public boolean loginCustomer(
+    @RequestWrapper(localName = "loginAdmin", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdmin")
+    @ResponseWrapper(localName = "loginAdminResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdminResponse")
+    @Action(input = "http://gocheeta/UserWebService/loginAdminRequest", output = "http://gocheeta/UserWebService/loginAdminResponse")
+    public boolean loginAdmin(
         @WebParam(name = "email", targetNamespace = "")
         String email,
         @WebParam(name = "password", targetNamespace = "")

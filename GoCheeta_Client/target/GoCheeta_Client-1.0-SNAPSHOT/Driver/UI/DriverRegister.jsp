@@ -13,37 +13,49 @@
 <%
     DriverWebService_Service service = new DriverWebService_Service();
     DriverWebService branchProxy = service.getDriverWebServicePort();
-    
-  //  List<User> users= customerProxy.getUsers();
-  
-    List<Branch>branches = branchProxy.getBranch();
+
+    List<Branch>branches = branchProxy.getBranchDrop();
         
 %>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/GoCheeta_Client/Css/signup.css">
+
+	<title style="text-align: center;">User Register</title>
+	<link rel="icon" href="image/homepage/icon/logo.png">
+        
         <title>JSP Page</title>
     </head>
     <body>
 
-        <form action="/GoCheeta_Client/Driver/Function/addDriverHelp.jsp" method="post">
-
-            <label for="fname">Driver Name</label><br>
-            <input type="text" id="d_name" name="d_name" placeholder="Driver Name" required><br>
-
-            <label for="lname">Driver Email</label><br>
-            <input type="text" id="d_email" name="d_email" placeholder="Driver Email" required><br>
-
-            <label for="mobile">Driver Mobile</label><br>
-            <input type="text" id="driver_mobile" name="driver_mobile" placeholder="Driver Mobile" required><br>
-
-            <label for="password">Password</label><br>
-            <input type="text" id="d_password" name="d_password" placeholder="Password" required><br>
-
-            <label for="password">Branch</label><br>
+     <div class="container" style="width: 450px; height:650px;">
             
-                <select><option id="branch" name="branch">Select</option>
+      <form action="/GoCheeta_Client/Driver/Function/addDriverHelp.jsp" method="post" class="login-email">
+        <p class="login-text" style="font-size: 1.8rem; font-weight:800;">Register</p>
+    
+	<div class="input-group">
+            <input type="text" id="d_name" name="d_name" placeholder="Driver Name" required><br>
+        </div>
+        
+	<div class="input-group">
+             <input type="email" id="d_email" name="d_email" placeholder="Driver Email" required><br>
+        </div>
+
+        <div class="input-group">
+             <input type="mobile" id="driver_mobile" name="driver_mobile" placeholder="Driver Mobile" required><br>
+        </div>
+        
+        <div class="input-group">
+             <input type="password" id="d_password" name="d_password" placeholder="Password" required><br>
+        </div>
+            
+	<div class="input-group">          
+             <select id="branch" name="branch" style="font-size:12.8px;">
+                <option>Select</option>
                    <% for(Branch branch: branches){ %>
                 
         
@@ -54,16 +66,21 @@
 
                   <% } %>
                 </select>   
-               
-               <br>  <br>
-       
-            
-            <label for="password">Option</label><br>
-            <input type="text" id="time_type" name="time_type" placeholder="Option" required><br>
-            <br>
-
-            <input type="submit" value="Sign Up">
-        </form>
-        
+        </div>
+                
+ 	<div class="input-group">               
+                <select id="time_type" name="time_type" style="font-size:12.8px;"><option>Select Option</option> 
+                   <option>Full Time</option> 
+                   <option>Part Time</option> 
+                </select>   
+        </div>
+ 
+        <div class="input-group"><br>                
+             <input type="submit" value="Sign Up" class="btn">
+        </div>
+                
+         </form>
+     </div>  
+                
     </body>
 </html>

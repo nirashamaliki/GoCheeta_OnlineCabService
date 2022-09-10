@@ -135,7 +135,6 @@ public class MySQLServer implements DBUtil {
    }
 
     
-  /* 
    @Override
     public List <Branch> getBranch() {
         try {
@@ -155,13 +154,13 @@ public class MySQLServer implements DBUtil {
             System.out.println(e.getMessage());
             return null;
         }
-    }*/  
-    
-    
+    }
+
    
     //Cayegory with price
 
 
+    @Override
     public List<Category> getPriceRate() {
         try {
             this.stmt  = this.con.createStatement();
@@ -184,6 +183,7 @@ public class MySQLServer implements DBUtil {
     }
         
   
+    @Override
     public boolean deleteCategory(int category_id) {
         try {
             
@@ -231,6 +231,7 @@ public class MySQLServer implements DBUtil {
         }
     }
     
+    @Override
     public boolean addCategory(Category category) {
         try {
             
@@ -247,6 +248,7 @@ public class MySQLServer implements DBUtil {
   
     //Price rate
     
+    @Override
     public List<Category> getPriceView() {
         try {
             this.stmt  = this.con.createStatement();
@@ -280,7 +282,7 @@ public class MySQLServer implements DBUtil {
             List<User> users = new ArrayList<>();
 
             while (rs.next()) {
-//                System.err.println(rs.getInt("order_id"));
+                
                User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
                users.add(user);
             }
@@ -315,31 +317,7 @@ public class MySQLServer implements DBUtil {
         }
     } */
     
-    
-    //Vehicle
-
-        public List<Vehicle> getAllVehicle() {
-        try {
-            this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT vehicle.vehicle_no,vehicle.vehicle_model,vehicle.vehical_Type,vehicle.Branch,vehicle.driver_mobile  FROM vehicle INNER JOIN driver ON driver.driver_mobile = vehicle.driver_mobile ORDER BY vehicle_no ASC;");
-            
-            List<Vehicle> vehicles = new ArrayList<>();
-
-            while (rs.next()) {
-                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"),rs.getString("vehicle_model"),rs.getString("vehical_Type"), rs.getString("Branch"),rs.getInt("driver_mobile"));
-                   
-                vehicles .add(vehicle);
-            }
-            
-            return vehicles;
-            
-        }catch(SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-  
-        
+     
     //feedback
         
   @Override
@@ -355,27 +333,6 @@ public class MySQLServer implements DBUtil {
             return false;
         }
     }
-    
-    
-//    public Feedback getFeedbackbyId(int order_id) {
-//        try {
-//            
-//            this.stmt  = this.con.createStatement();
-//            this.rs    = this.stmt.executeQuery("SELECT * FROM feedback WHERE feedback.order_id = " + order_id);
-//            
-//            if(rs.next()) {
-//                Feedback feedback = new Feedback(rs.getInt("order_id"));
-//                return feedback;
-//            } else {
-//                return null;
-//            }
-//            
-//        } catch(SQLException e) {
-//            System.out.println(e.getMessage());
-//            return null;
-//        }
-//    }
-    
     
     @Override
     public List<Feedback> getFeedback() {
@@ -429,6 +386,7 @@ public class MySQLServer implements DBUtil {
     }
     
     //User Login
+    @Override
     public boolean loginCustomer(String email, String password) {
 
       try {
@@ -450,6 +408,7 @@ public class MySQLServer implements DBUtil {
     }
 
     //Admin Login
+    @Override
     public boolean loginAdmin(String email, String password) {
 
       try {
@@ -473,6 +432,7 @@ public class MySQLServer implements DBUtil {
 
     
         //Users Booking
+    @Override
         public List<User> getViewUsersBooks(String email) {
         try {
             this.stmt  = this.con.createStatement();
@@ -496,7 +456,7 @@ public class MySQLServer implements DBUtil {
 
     //Branch dowdown    
     @Override
-    public List<Branch> getBranch() {
+    public List<Branch> getBranchDrop() {
  
         try {
             this.stmt  = this.con.createStatement();
@@ -519,28 +479,29 @@ public class MySQLServer implements DBUtil {
     }
      
         
-      /*  try {
-   
-            this.stmt= con.createStatement();
-            String query= " SELECT * FROM branch ";
- 
-            ResultSet rs = stmt.executeQuery(query);
-            //get name one by one
+    //Vehicle
+
+    @Override
+        public List<Vehicle> getAllVehicle() {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT vehicle.vehicle_no,vehicle.vehicle_model,vehicle.vehical_Type,vehicle.Branch,vehicle.driver_mobile  FROM vehicle INNER JOIN driver ON driver.driver_mobile = vehicle.driver_mobile ORDER BY vehicle_no ASC;");
             
-            List<Branch> branches = new ArrayList<>();
+            List<Vehicle> vehicles = new ArrayList<>();
+
+            while (rs.next()) {
+                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"),rs.getString("vehicle_model"),rs.getString("vehical_Type"), rs.getString("Branch"),rs.getInt("driver_mobile"));
+                   
+                vehicles .add(vehicle);
+            }
             
-            while(rs.next()){
-               Branch branch = new Branch(rs.getString("b_name"));
- 
-            }  return branches;
-        
- 
-        } catch(Exception e) {
-            System.out.println(e.getMessage());       
+            return vehicles;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
             return null;
         }
-        
-        } */   
-   
+    }
+  
         
 }
