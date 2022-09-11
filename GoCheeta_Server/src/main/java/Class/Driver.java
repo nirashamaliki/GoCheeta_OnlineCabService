@@ -31,9 +31,21 @@ public class Driver{
         this.driver_mobile = driver_mobile;
     }
     
+    public Driver(int driver_mobile,String d_name,String d_email,String branch, String time_type) {
+        this.d_email = d_email;
+        this.d_name = d_name;
+        this.branch = branch;
+        this.time_type = time_type;
+        this.driver_mobile = driver_mobile;
+    }
 
     public Driver(int driver_mobile) {
         this.driver_mobile = driver_mobile;
+    } 
+    
+    public Driver(int driver_mobile,String branch) {
+        this.driver_mobile = driver_mobile;
+        this.branch = branch;
     }    
     
     public String getD_email() {

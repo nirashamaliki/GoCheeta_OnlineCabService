@@ -1,6 +1,4 @@
 
-
-
 <%@page import="gocheeta.Category"%>
 <%@page import="gocheeta.NewWebService_Service"%>
 <%@page import="gocheeta.NewWebService"%>

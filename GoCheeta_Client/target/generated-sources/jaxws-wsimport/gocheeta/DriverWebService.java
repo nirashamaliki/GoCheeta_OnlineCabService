@@ -57,6 +57,18 @@ public interface DriverWebService {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<gocheeta.Branch>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBranchDrop", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDrop")
+    @ResponseWrapper(localName = "getBranchDropResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDropResponse")
+    @Action(input = "http://gocheeta/DriverWebService/getBranchDropRequest", output = "http://gocheeta/DriverWebService/getBranchDropResponse")
+    public List<Branch> getBranchDrop();
+
+    /**
+     * 
      * @param name
      * @return
      *     returns java.lang.String
@@ -69,17 +81,5 @@ public interface DriverWebService {
     public String hello(
         @WebParam(name = "name", targetNamespace = "")
         String name);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<gocheeta.Branch>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBranchDrop", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDrop")
-    @ResponseWrapper(localName = "getBranchDropResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDropResponse")
-    @Action(input = "http://gocheeta/DriverWebService/getBranchDropRequest", output = "http://gocheeta/DriverWebService/getBranchDropResponse")
-    public List<Branch> getBranchDrop();
 
 }

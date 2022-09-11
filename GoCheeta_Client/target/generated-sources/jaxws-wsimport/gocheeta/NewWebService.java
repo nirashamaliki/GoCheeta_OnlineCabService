@@ -42,6 +42,30 @@ public interface NewWebService {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<gocheeta.User>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUsers", targetNamespace = "http://gocheeta/", className = "gocheeta.GetUsers")
+    @ResponseWrapper(localName = "getUsersResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetUsersResponse")
+    @Action(input = "http://gocheeta/NewWebService/getUsersRequest", output = "http://gocheeta/NewWebService/getUsersResponse")
+    public List<User> getUsers();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<gocheeta.Category>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getPriceRate", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceRate")
+    @ResponseWrapper(localName = "getPriceRateResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceRateResponse")
+    @Action(input = "http://gocheeta/NewWebService/getPriceRateRequest", output = "http://gocheeta/NewWebService/getPriceRateResponse")
+    public List<Category> getPriceRate();
+
+    /**
+     * 
      * @param categoryId
      * @return
      *     returns gocheeta.Category
@@ -62,22 +86,34 @@ public interface NewWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getPriceRate", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceRate")
-    @ResponseWrapper(localName = "getPriceRateResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceRateResponse")
-    @Action(input = "http://gocheeta/NewWebService/getPriceRateRequest", output = "http://gocheeta/NewWebService/getPriceRateResponse")
-    public List<Category> getPriceRate();
+    @RequestWrapper(localName = "getPriceView", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceView")
+    @ResponseWrapper(localName = "getPriceViewResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceViewResponse")
+    @Action(input = "http://gocheeta/NewWebService/getPriceViewRequest", output = "http://gocheeta/NewWebService/getPriceViewResponse")
+    public List<Category> getPriceView();
 
     /**
      * 
      * @return
-     *     returns java.util.List<gocheeta.Vehicle>
+     *     returns java.util.List<gocheeta.User>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllVehicle", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicle")
-    @ResponseWrapper(localName = "getAllVehicleResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicleResponse")
-    @Action(input = "http://gocheeta/NewWebService/getAllVehicleRequest", output = "http://gocheeta/NewWebService/getAllVehicleResponse")
-    public List<Vehicle> getAllVehicle();
+    @RequestWrapper(localName = "getViewFeedbacks", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewFeedbacks")
+    @ResponseWrapper(localName = "getViewFeedbacksResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewFeedbacksResponse")
+    @Action(input = "http://gocheeta/NewWebService/getViewFeedbacksRequest", output = "http://gocheeta/NewWebService/getViewFeedbacksResponse")
+    public List<User> getViewFeedbacks();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<gocheeta.Branch>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBranch", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranch")
+    @ResponseWrapper(localName = "getBranchResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchResponse")
+    @Action(input = "http://gocheeta/NewWebService/getBranchRequest", output = "http://gocheeta/NewWebService/getBranchResponse")
+    public List<Branch> getBranch();
 
     /**
      * 
@@ -124,38 +160,14 @@ public interface NewWebService {
     /**
      * 
      * @return
-     *     returns java.util.List<gocheeta.User>
+     *     returns java.util.List<gocheeta.Vehicle>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUsers", targetNamespace = "http://gocheeta/", className = "gocheeta.GetUsers")
-    @ResponseWrapper(localName = "getUsersResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetUsersResponse")
-    @Action(input = "http://gocheeta/NewWebService/getUsersRequest", output = "http://gocheeta/NewWebService/getUsersResponse")
-    public List<User> getUsers();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<gocheeta.User>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getViewFeedbacks", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewFeedbacks")
-    @ResponseWrapper(localName = "getViewFeedbacksResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewFeedbacksResponse")
-    @Action(input = "http://gocheeta/NewWebService/getViewFeedbacksRequest", output = "http://gocheeta/NewWebService/getViewFeedbacksResponse")
-    public List<User> getViewFeedbacks();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<gocheeta.Category>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getPriceView", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceView")
-    @ResponseWrapper(localName = "getPriceViewResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetPriceViewResponse")
-    @Action(input = "http://gocheeta/NewWebService/getPriceViewRequest", output = "http://gocheeta/NewWebService/getPriceViewResponse")
-    public List<Category> getPriceView();
+    @RequestWrapper(localName = "getAllVehicle", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicle")
+    @ResponseWrapper(localName = "getAllVehicleResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAllVehicleResponse")
+    @Action(input = "http://gocheeta/NewWebService/getAllVehicleRequest", output = "http://gocheeta/NewWebService/getAllVehicleResponse")
+    public List<Vehicle> getAllVehicle();
 
     /**
      * 
@@ -196,13 +208,13 @@ public interface NewWebService {
     /**
      * 
      * @return
-     *     returns java.util.List<gocheeta.Branch>
+     *     returns java.util.List<gocheeta.Vehicle>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBranch", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranch")
-    @ResponseWrapper(localName = "getBranchResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchResponse")
-    @Action(input = "http://gocheeta/NewWebService/getBranchRequest", output = "http://gocheeta/NewWebService/getBranchResponse")
-    public List<Branch> getBranch();
+    @RequestWrapper(localName = "getViewAllVehicleDriver", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewAllVehicleDriver")
+    @ResponseWrapper(localName = "getViewAllVehicleDriverResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewAllVehicleDriverResponse")
+    @Action(input = "http://gocheeta/NewWebService/getViewAllVehicleDriverRequest", output = "http://gocheeta/NewWebService/getViewAllVehicleDriverResponse")
+    public List<Vehicle> getViewAllVehicleDriver();
 
 }

@@ -502,6 +502,32 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }
-  
+        
+        
+   @Override
+    public List<Vehicle> getViewAllVehicleDriver() {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM driver INNER JOIN vehicle ON vehicle.driver_mobile = driver.driver_mobile;");
+            
+            List<Vehicle> vehicles = new ArrayList<>();
+
+            while (rs.next()) {
+                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"), rs.getString("vehical_Type"),
+                        rs.getString("vehicle_model"), rs.getInt("driver_mobile"),
+                        rs.getString("driver_name"), rs.getString("driver_email"), 
+                        rs.getString("branch"), rs.getString("time_type"));
+    
+                vehicles.add(vehicle);
+            }
+            
+            return vehicles;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+        
         
 }

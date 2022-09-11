@@ -7,34 +7,33 @@ package Class;
 public class Vehicle extends Driver{
     
      private String vehicle_no;
-     private String Branch;
      private String vehical_Type;
      private String vehicle_model;
 
-    public Vehicle(String vehicle_no, String Branch, String vehical_Type, String vehicle_model, String d_email, String d_password, String branch, String time_type, int driver_mobile) {
+    public Vehicle(String vehicle_no,String vehical_Type, String vehicle_model, String d_email, String d_password, String branch, String time_type, int driver_mobile) {
         super(d_email, d_password, branch, time_type, driver_mobile);
         this.vehicle_no = vehicle_no;
-        this.Branch = Branch;
         this.vehical_Type = vehical_Type;
         this.vehicle_model = vehicle_model;
     }
 
-
-    public Vehicle(String vehicle_no,String vehicle_model, String vehical_Type,String Branch,int driver_mobile) {
-        super(driver_mobile);
+    public Vehicle(String vehicle_no, String vehical_Type, String vehicle_model, int driver_mobile, String d_name, String d_email, String branch, String time_type) {
+        super(driver_mobile, d_name, d_email, branch, time_type);
         this.vehicle_no = vehicle_no;
-        this.Branch = Branch;
         this.vehical_Type = vehical_Type;
         this.vehicle_model = vehicle_model;
     }
 
+    
+    public Vehicle(String vehicle_no,String vehicle_model, String vehical_Type,String branch,int driver_mobile) {
+        super(driver_mobile,branch);
+        this.vehicle_no = vehicle_no;
+        this.vehical_Type = vehical_Type;
+        this.vehicle_model = vehicle_model;
+    }
 
     public String getVehicle_no() {
         return vehicle_no;
-    }
-
-    public String getBranch() {
-        return Branch;
     }
 
     public String getVehical_Type() {
@@ -43,10 +42,6 @@ public class Vehicle extends Driver{
 
     public void setVehicle_no(String vehicle_no) {
         this.vehicle_no = vehicle_no;
-    }
-
-    public void setBranch(String Branch) {
-        this.Branch = Branch;
     }
 
     public void setVehical_Type(String vehical_Type) {

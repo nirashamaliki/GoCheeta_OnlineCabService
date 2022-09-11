@@ -6,9 +6,7 @@ package gocheeta;
 
 import Class.Branch;
 import Class.Category;
-import Class.Customer;
 import Class.DBUtil;
-import Class.Driver;
 import Class.Feedback;
 import Class.User;
 import Class.Vehicle;
@@ -113,35 +111,16 @@ public class NewWebService {
         Feedback feedback = new Feedback(0, subject, description, order_Id);
         return this.dbUtil.addFeedback(feedback);
     }
-
-//    public Feedback getFeedbackbyId(int order_id) {
-//        DBUtil dbUtil = new MySQLServer();
-//        return dbUtil.getFeedbackbyId(order_id);
-////        return null;
-//    }
-    
-//    public List<Feedback> getFeedback() {
-//        DBUtil util = new MySQLServer();
-//        return util.getFeedback();
-//    }
-//    @WebMethod(operationName = "getFeedback")
-//    public List<Feedback> getFeedback() {
-//        return this.dbUtil.getFeedback();
-//    }
     
     @WebMethod(operationName = "getViewFeedbacks")
     public List<User> getViewFeedbacks() {
         return this.dbUtil.getViewFeedbacks();
     }
 
-    
-   //Driver
-     /*  @WebMethod(operationName = "addDriver")
-     public boolean addDriver(@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "d_name") String d_name, @WebParam(name = "d_email") String d_email, @WebParam(name = "d_password") String d_password, @WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
-     Driver driver = new Driver(driver_mobile,d_name, d_email, d_password, branch, time_type);
-     return this.dbUtil.addDriver(driver);
+    @WebMethod(operationName = "getViewAllVehicleDriver")
+    public List<Vehicle> getViewAllVehicleDriver() {
+        return this.dbUtil.getViewAllVehicleDriver();
     }
-   */
-    
+
 
 }

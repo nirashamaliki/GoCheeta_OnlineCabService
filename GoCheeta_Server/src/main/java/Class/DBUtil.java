@@ -64,6 +64,6 @@ public interface  DBUtil {
     //Branch
     public List<Branch>getBranchDrop();
        
-   
-
+ //ViewAll Vehicle and driver
+   public List<Vehicle> getViewAllVehicleDriver();
 }
