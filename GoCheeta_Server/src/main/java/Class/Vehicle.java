@@ -23,7 +23,6 @@ public class Vehicle extends Driver{
         this.vehical_Type = vehical_Type;
         this.vehicle_model = vehicle_model;
     }
-
     
     public Vehicle(String vehicle_no,String vehicle_model, String vehical_Type,String branch,int driver_mobile) {
         super(driver_mobile,branch);
@@ -32,6 +31,14 @@ public class Vehicle extends Driver{
         this.vehicle_model = vehicle_model;
     }
 
+    public Vehicle(int driver_mobile,String vehicle_no, String vehical_Type, String vehicle_model) {
+        super(driver_mobile);
+        this.vehicle_no = vehicle_no;
+        this.vehical_Type = vehical_Type;
+        this.vehicle_model = vehicle_model;
+    }
+
+ 
     public String getVehicle_no() {
         return vehicle_no;
     }

@@ -23,8 +23,9 @@
         
     
     if(driverProxy.addDriver(driver_mobile,d_email,d_name, d_password, branch, time_type)) {
-    
-        response.sendRedirect("/GoCheeta_Client/Driver/UI/LoginDriver.jsp");
+        
+        session.setAttribute("driver_mobile", driver_mobile);
+        response.sendRedirect("/GoCheeta_Client/Admin/UI/VehicleRegister.jsp");
         
     }else{
        

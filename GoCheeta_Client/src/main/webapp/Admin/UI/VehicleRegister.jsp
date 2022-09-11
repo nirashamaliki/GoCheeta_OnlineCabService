@@ -1,49 +1,80 @@
-<%@page import="java.sql.Driver"%>
-<%@page import="gocheeta.NewWebService_Service"%>
 <%@page import="gocheeta.NewWebService"%>
+<%@page import="gocheeta.NewWebService_Service"%>
+<%@page import="gocheeta.Dropdown"%>
+<%@page import="gocheeta.Branch"%>
 <%@page import="java.util.List"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
     NewWebService_Service service = new NewWebService_Service();
-    NewWebService driverProxy = service.getNewWebServicePort();
-    
+    NewWebService TypeProxy = service.getNewWebServicePort();
+
+    List<Dropdown>types = TypeProxy.getVehicleTypeDrop();
+        
 %>
 
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/GoCheeta_Client/Css/signup.css">
+
+	<title style="text-align: center;">Vehicle Register</title>
+	<link rel="icon" href="image/homepage/icon/logo.png">
+        
+        <title>Vehicle Register</title>
     </head>
     <body>
-        <form action="/GoCheeta_Client/Admin/controller/addDriver.jsp" method="post">
+
+     <div class="container" style="width: 500px; height:580px;">
             
-            <label for="fname">Your Name</label><br>
-            <input type="text" id="d_name" name="d_name" placeholder="Name"><br>
-
-            <label for="lname">Email</label><br>
-            <input type="text" id="d_email" name="d_email" placeholder="Email"><br>
-
-            <label for="mobile">Mobile</label><br>
-            <input type="text" id="d_mobile" name="d_mobile" placeholder="Mobile"><br>
-
-            <label for="password">Password</label><br>
-            <input type="text" id="d_password" name="d_password" placeholder="Password"><br>
-
-            <label for="password">Branch</label><br>
-            <input type="text" id="branch" name="branch" placeholder="branch"><br>
-            
-            <label for="password">Option</label><br>
-            <input type="text" id="time_type" name="time_type" placeholder="time_type"><br>
-            <br>
-            
-            <input type="submit" value="Sign Up">
-        </form>
-
+      <form action="/GoCheeta_Client/Admin/Function/addVehicleHelp.jsp" method="post" class="login-email">
+       
+          <br> <br>
+          <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Register</p>
+          <br>
+                
+        <div>
+             <input type="hidden" id="driver_mobile" name="driver_mobile" value="<%out.print(session.getAttribute("driver_mobile"));%>" placeholder="Vehicle Number" required>
+            </labal>
+              
+        </div>
+       
+        
+	<div class="input-group">
+            <input type="text" id="vehicle_no" name="vehicle_no" placeholder="Vehicle Number" required><br>
+        </div>
         
         
+        <div class="input-group">          
+             <select id="vehical_Type" name="vehical_Type" style="font-size:0.9rem;padding-right:15px;padding-left:15px;">
+                <option>Select Type</option>
+                   <% for(Dropdown type: types){ %>
+                
         
+                 %>
+                   <option>
+                   <% out.print(type.getVehicalType());%>     
+                   </option> 
+
+                  <% } %>
+                </select>   
+        </div>
+        
+        
+        <div class="input-group">
+             <input type="text" id="vehicle_model" name="vehicle_model" placeholder="Vehicle Model" required><br>
+        </div>
+        
+        <br> 
+        
+        <div class="input-group">             
+             <input type="submit" value="Sign Up" class="btn">
+        </div>
+              <p class="login-register-text" style="margin-top:-12px;text-align:center;">Don't have an account? <a href="/GoCheeta_Client/Driver/UI/DriverRegister.jsp">Register</a>.</p>  
+         </form>
+     </div> 
+                
     </body>
 </html>

@@ -17,6 +17,7 @@ C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generat
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetUsersResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\AddCategoryResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\DeleteCategory.java
+C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\AddVehicle.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\NewWebService.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetBranchResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetCategorybyId.java
@@ -24,10 +25,12 @@ C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generat
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\Customer.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetBranchDropDown.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\Person.java
+C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\Dropdown.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\LoginCustomerResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\DeletetegoryCategory.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\AddCustomerResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetAllVehicle.java
+C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\AddVehicleResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetViewFeedbacks.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\UserWebService.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\DeletetegoryCategoryResponse.java
@@ -43,6 +46,8 @@ C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generat
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetCategorybyIdResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetCustomerbyIdResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\HelloResponse.java
+C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetVehicleTypeDrop.java
+C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetVehicleTypeDropResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetViewUsersBooksResponse.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\AddCategory.java
 C:\Users\HP\OneDrive\Documents\OnlineCab_Projects\GoCheeta_Client\target\generated-sources\jaxws-wsimport\gocheeta\GetFeedbackbyIdResponse.java

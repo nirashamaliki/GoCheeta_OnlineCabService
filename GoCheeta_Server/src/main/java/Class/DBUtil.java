@@ -56,14 +56,20 @@ public interface  DBUtil {
     public boolean loginCustomer(String email, String password);
     public boolean loginAdmin(String email, String password);
     
-//user booking
+    //user booking
     public List<User> getViewUsersBooks(String email);
     
     
-  //Branch Dropdown
-    //Branch
+    //Branch Dropdown
     public List<Branch>getBranchDrop();
        
- //ViewAll Vehicle and driver
-   public List<Vehicle> getViewAllVehicleDriver();
+    //ViewAll Vehicle and driver
+    public List<Vehicle> getViewAllVehicleDriver();
+   
+    //Vehicle type Dropdown
+    public List<Dropdown>getVehicleTypeDrop();
+   
+    //Vehicle add   
+    public boolean addVehicle(Vehicle vehicle);
+    
 }

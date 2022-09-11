@@ -8,6 +8,10 @@
 
 <xs:element name="addFeedbackResponse" type="tns:addFeedbackResponse"/>
 
+<xs:element name="addVehicle" type="tns:addVehicle"/>
+
+<xs:element name="addVehicleResponse" type="tns:addVehicleResponse"/>
+
 <xs:element name="deleteCategory" type="tns:deleteCategory"/>
 
 <xs:element name="deleteCategoryResponse" type="tns:deleteCategoryResponse"/>
@@ -35,6 +39,10 @@
 <xs:element name="getUsers" type="tns:getUsers"/>
 
 <xs:element name="getUsersResponse" type="tns:getUsersResponse"/>
+
+<xs:element name="getVehicleTypeDrop" type="tns:getVehicleTypeDrop"/>
+
+<xs:element name="getVehicleTypeDropResponse" type="tns:getVehicleTypeDropResponse"/>
 
 <xs:element name="getViewAllVehicleDriver" type="tns:getViewAllVehicleDriver"/>
 
@@ -196,6 +204,21 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addVehicle">
+<xs:sequence>
+<xs:element name="driver_mobile" type="xs:int"/>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
+<xs:element name="vehical_Type" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_model" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addVehicleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="deleteCategory">
 <xs:sequence>
 <xs:element name="category_id" type="xs:int"/>
@@ -228,6 +251,25 @@
 <xs:complexType name="getAllVehicleResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleTypeDrop">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getVehicleTypeDropResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:dropdown" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dropdown">
+<xs:sequence>
+<xs:element name="driver_mobile" type="xs:int"/>
+<xs:element name="vehical_Type" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_model" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

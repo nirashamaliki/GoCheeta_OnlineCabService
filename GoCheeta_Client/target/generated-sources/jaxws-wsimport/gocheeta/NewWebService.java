@@ -217,4 +217,40 @@ public interface NewWebService {
     @Action(input = "http://gocheeta/NewWebService/getViewAllVehicleDriverRequest", output = "http://gocheeta/NewWebService/getViewAllVehicleDriverResponse")
     public List<Vehicle> getViewAllVehicleDriver();
 
+    /**
+     * 
+     * @return
+     *     returns java.util.List<gocheeta.Dropdown>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVehicleTypeDrop", targetNamespace = "http://gocheeta/", className = "gocheeta.GetVehicleTypeDrop")
+    @ResponseWrapper(localName = "getVehicleTypeDropResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetVehicleTypeDropResponse")
+    @Action(input = "http://gocheeta/NewWebService/getVehicleTypeDropRequest", output = "http://gocheeta/NewWebService/getVehicleTypeDropResponse")
+    public List<Dropdown> getVehicleTypeDrop();
+
+    /**
+     * 
+     * @param vehicleNo
+     * @param driverMobile
+     * @param vehicleModel
+     * @param vehicalType
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addVehicle", targetNamespace = "http://gocheeta/", className = "gocheeta.AddVehicle")
+    @ResponseWrapper(localName = "addVehicleResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddVehicleResponse")
+    @Action(input = "http://gocheeta/NewWebService/addVehicleRequest", output = "http://gocheeta/NewWebService/addVehicleResponse")
+    public boolean addVehicle(
+        @WebParam(name = "driver_mobile", targetNamespace = "")
+        int driverMobile,
+        @WebParam(name = "vehicle_no", targetNamespace = "")
+        String vehicleNo,
+        @WebParam(name = "vehical_Type", targetNamespace = "")
+        String vehicalType,
+        @WebParam(name = "vehicle_model", targetNamespace = "")
+        String vehicleModel);
+
 }

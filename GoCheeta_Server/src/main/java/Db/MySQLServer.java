@@ -6,9 +6,9 @@ package Db;
 
 import Class.Branch;
 import Class.Category;
-import Class.Customer;
 import Class.DBUtil;
 import Class.Driver;
+import Class.Dropdown;
 import Class.Feedback;
 import Class.User;
 import Class.Vehicle;
@@ -429,7 +429,6 @@ public class MySQLServer implements DBUtil {
         }
     }
     
-
     
         //Users Booking
     @Override
@@ -529,5 +528,44 @@ public class MySQLServer implements DBUtil {
         }
     }
         
+    
+      //Vehicle Type dowdown    
+    @Override
+    public List<Dropdown> getVehicleTypeDrop() {
+ 
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT name FROM  category;");
+            
+            List<Dropdown> types = new ArrayList<>();
+
+            while (rs.next()) {
+                Dropdown type = new Dropdown(rs.getString("name"));
+                  
+                types.add(type);
+            }
+            
+            return types;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
         
+    
+    //Add Vehicle
+    @Override
+    public boolean addVehicle(Vehicle vehicle) {
+       try {
+            
+            this.stmt  = this.con.prepareCall("INSERT INTO `vehicle` (`driver_mobile`,`vehicle_no`, `vehical_Type`, `vehicle_model`) VALUES ('"+vehicle.getDriver_mobile()+"', '"+vehicle.getVehicle_no()+"', '"+vehicle.getVehical_Type()+"', '"+vehicle.getVehicle_model()+"');");
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;                                                                                                        
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+   }
+
 }

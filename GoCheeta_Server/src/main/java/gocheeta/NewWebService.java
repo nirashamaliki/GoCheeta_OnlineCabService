@@ -7,6 +7,7 @@ package gocheeta;
 import Class.Branch;
 import Class.Category;
 import Class.DBUtil;
+import Class.Dropdown;
 import Class.Feedback;
 import Class.User;
 import Class.Vehicle;
@@ -122,5 +123,21 @@ public class NewWebService {
         return this.dbUtil.getViewAllVehicleDriver();
     }
 
-
+    //Vehicle type dropdown
+     
+     @WebMethod(operationName = "getVehicleTypeDrop")
+     public List<Dropdown> getVehicleTypeDrop() {
+      
+         return this.dbUtil.getVehicleTypeDrop();
+    }
+    
+    //Vehicle Add
+     
+     @WebMethod(operationName = "addVehicle")
+     public boolean addVehicle(@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "vehical_Type") String vehical_Type,@WebParam(name = "vehicle_model") String vehicle_model) {
+     Vehicle vehicle = new Vehicle(driver_mobile,vehicle_no, vehical_Type,vehicle_model);
+     return this.dbUtil.addVehicle(vehicle);
+     
+     }
+      
 }

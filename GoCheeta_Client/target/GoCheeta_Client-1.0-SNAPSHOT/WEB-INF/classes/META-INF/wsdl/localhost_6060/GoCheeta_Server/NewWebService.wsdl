@@ -82,6 +82,18 @@
 <message name="getViewAllVehicleDriverResponse">
 <part name="parameters" element="tns:getViewAllVehicleDriverResponse"/>
 </message>
+<message name="getVehicleTypeDrop">
+<part name="parameters" element="tns:getVehicleTypeDrop"/>
+</message>
+<message name="getVehicleTypeDropResponse">
+<part name="parameters" element="tns:getVehicleTypeDropResponse"/>
+</message>
+<message name="addVehicle">
+<part name="parameters" element="tns:addVehicle"/>
+</message>
+<message name="addVehicleResponse">
+<part name="parameters" element="tns:addVehicleResponse"/>
+</message>
 <portType name="NewWebService">
 <operation name="deleteCategory">
 <input wsam:Action="http://gocheeta/NewWebService/deleteCategoryRequest" message="tns:deleteCategory"/>
@@ -134,6 +146,14 @@
 <operation name="getViewAllVehicleDriver">
 <input wsam:Action="http://gocheeta/NewWebService/getViewAllVehicleDriverRequest" message="tns:getViewAllVehicleDriver"/>
 <output wsam:Action="http://gocheeta/NewWebService/getViewAllVehicleDriverResponse" message="tns:getViewAllVehicleDriverResponse"/>
+</operation>
+<operation name="getVehicleTypeDrop">
+<input wsam:Action="http://gocheeta/NewWebService/getVehicleTypeDropRequest" message="tns:getVehicleTypeDrop"/>
+<output wsam:Action="http://gocheeta/NewWebService/getVehicleTypeDropResponse" message="tns:getVehicleTypeDropResponse"/>
+</operation>
+<operation name="addVehicle">
+<input wsam:Action="http://gocheeta/NewWebService/addVehicleRequest" message="tns:addVehicle"/>
+<output wsam:Action="http://gocheeta/NewWebService/addVehicleResponse" message="tns:addVehicleResponse"/>
 </operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
@@ -247,6 +267,24 @@
 </output>
 </operation>
 <operation name="getViewAllVehicleDriver">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getVehicleTypeDrop">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addVehicle">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

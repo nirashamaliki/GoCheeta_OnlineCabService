@@ -35,8 +35,9 @@
      <div class="container" style="width: 500px; height:640px;">
             
       <form action="/GoCheeta_Client/Driver/Function/addDriverHelp.jsp" method="post" class="login-email">
-        <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Register</p>
-    
+   
+          <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Register</p>
+        <br>
 	<div class="input-group">
             <input type="text" id="d_name" name="d_name" placeholder="Driver Name" required><br>
         </div>
@@ -55,7 +56,7 @@
             
 	<div class="input-group">          
              <select id="branch" name="branch" style="font-size:0.9rem;">
-                <option>Select</option>
+                <option>Select Branch</option>
                    <% for(Branch branch: branches){ %>
                 
         
@@ -73,12 +74,12 @@
                    <option>Full Time</option> 
                    <option>Part Time</option> 
                 </select>   
-        </div>
- 
+        </div>       
+
         <div class="input-group">             
              <input type="submit" value="Sign Up" class="btn">
         </div>
-              <p class="login-register-text" style="margin-top:-12px;text-align:center;">Don't have an account? <a href="/GoCheeta_Client/Admin/UI/VehicleRegister.jsp">Register</a>.</p>  
+             
          </form>
      </div>  
                 
