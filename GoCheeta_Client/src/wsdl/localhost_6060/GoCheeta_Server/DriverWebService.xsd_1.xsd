@@ -12,6 +12,10 @@
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
 
+<xs:element name="loginDriver" type="tns:loginDriver"/>
+
+<xs:element name="loginDriverResponse" type="tns:loginDriverResponse"/>
+
 <xs:complexType name="hello">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -55,6 +59,19 @@
 <xs:sequence>
 <xs:element name="b_name" type="xs:string" minOccurs="0"/>
 <xs:element name="branch_id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginDriver">
+<xs:sequence>
+<xs:element name="driver_mobile" type="xs:int"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginDriverResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -36,7 +36,6 @@ public class DriverWebService {
     
      }
      
-     
     //Branch
      
      @WebMethod(operationName = "getBranchDrop")
@@ -44,6 +43,12 @@ public class DriverWebService {
       
          return this.dbUtil.getBranchDrop();
     }
+     
+    //Login 
+    @WebMethod(operationName = "loginDriver")
+    public boolean loginDriver(@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "password") String password) {
+        return this.dbUtil.loginDriver(driver_mobile,password);
+    } 
     
      
 }

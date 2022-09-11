@@ -139,5 +139,25 @@ public class NewWebService {
      return this.dbUtil.addVehicle(vehicle);
      
      }
+     
+     //Update Vehicle details with driver details
+     
+     
+    @WebMethod(operationName = "getDriverbyMobile")
+    public Vehicle getDriverbyMobile(@WebParam(name = "driver_mobile") int driver_mobile) {
+        return this.dbUtil.getDriverbyMobile(driver_mobile);
+    }
+
+    @WebMethod(operationName = "updateVehicleDriver")
+    public boolean updateVehicleDriver(@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "vehical_Type") String vehical_Type,@WebParam(name = "vehicle_model") String vehicle_model,@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "d_name") String d_name,@WebParam(name = "d_email") String d_email, @WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
+        Vehicle vehicle = new Vehicle(vehicle_no, vehical_Type,vehicle_model,driver_mobile,d_name,d_email, branch, time_type);
+        return this.dbUtil.updateVehicleDriver(vehicle);
+    }
+    
+    @WebMethod(operationName = "deleteVehicleDriver")
+    public boolean deleteVehicleDriver(@WebParam(name = "driver_mobile") int driver_mobile) {
+        return this.dbUtil.deleteVehicleDriver(driver_mobile);
+    }
+
       
 }

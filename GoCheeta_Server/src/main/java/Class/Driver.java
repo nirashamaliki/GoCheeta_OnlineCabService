@@ -39,14 +39,16 @@ public class Driver{
         this.driver_mobile = driver_mobile;
     }
 
+    public Driver( int driver_mobile,String d_password) {
+        this.d_password = d_password;
+        this.driver_mobile = driver_mobile;
+    }
+    
+
     public Driver(int driver_mobile) {
         this.driver_mobile = driver_mobile;
     } 
-    
-    public Driver(int driver_mobile,String branch) {
-        this.driver_mobile = driver_mobile;
-        this.branch = branch;
-    }    
+
     
     public String getD_email() {
         return d_email;

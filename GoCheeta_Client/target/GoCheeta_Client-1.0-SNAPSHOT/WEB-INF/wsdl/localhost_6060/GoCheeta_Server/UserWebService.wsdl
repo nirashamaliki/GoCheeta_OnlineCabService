@@ -4,24 +4,6 @@
 <xsd:import namespace="http://gocheeta/" schemaLocation="http://localhost:6060/GoCheeta_Server/UserWebService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getAllVehicle">
-<part name="parameters" element="tns:getAllVehicle"/>
-</message>
-<message name="getAllVehicleResponse">
-<part name="parameters" element="tns:getAllVehicleResponse"/>
-</message>
-<message name="loginCustomer">
-<part name="parameters" element="tns:loginCustomer"/>
-</message>
-<message name="loginCustomerResponse">
-<part name="parameters" element="tns:loginCustomerResponse"/>
-</message>
-<message name="loginAdmin">
-<part name="parameters" element="tns:loginAdmin"/>
-</message>
-<message name="loginAdminResponse">
-<part name="parameters" element="tns:loginAdminResponse"/>
-</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
@@ -34,19 +16,31 @@
 <message name="getViewUsersBooksResponse">
 <part name="parameters" element="tns:getViewUsersBooksResponse"/>
 </message>
+<message name="loginAdmin">
+<part name="parameters" element="tns:loginAdmin"/>
+</message>
+<message name="loginAdminResponse">
+<part name="parameters" element="tns:loginAdminResponse"/>
+</message>
+<message name="getAllVehicle">
+<part name="parameters" element="tns:getAllVehicle"/>
+</message>
+<message name="getAllVehicleResponse">
+<part name="parameters" element="tns:getAllVehicleResponse"/>
+</message>
+<message name="loginCustomer">
+<part name="parameters" element="tns:loginCustomer"/>
+</message>
+<message name="loginCustomerResponse">
+<part name="parameters" element="tns:loginCustomerResponse"/>
+</message>
+<message name="addCustomer">
+<part name="parameters" element="tns:addCustomer"/>
+</message>
+<message name="addCustomerResponse">
+<part name="parameters" element="tns:addCustomerResponse"/>
+</message>
 <portType name="UserWebService">
-<operation name="getAllVehicle">
-<input wsam:Action="http://gocheeta/UserWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
-<output wsam:Action="http://gocheeta/UserWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
-</operation>
-<operation name="loginCustomer">
-<input wsam:Action="http://gocheeta/UserWebService/loginCustomerRequest" message="tns:loginCustomer"/>
-<output wsam:Action="http://gocheeta/UserWebService/loginCustomerResponse" message="tns:loginCustomerResponse"/>
-</operation>
-<operation name="loginAdmin">
-<input wsam:Action="http://gocheeta/UserWebService/loginAdminRequest" message="tns:loginAdmin"/>
-<output wsam:Action="http://gocheeta/UserWebService/loginAdminResponse" message="tns:loginAdminResponse"/>
-</operation>
 <operation name="hello">
 <input wsam:Action="http://gocheeta/UserWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://gocheeta/UserWebService/helloResponse" message="tns:helloResponse"/>
@@ -55,9 +49,52 @@
 <input wsam:Action="http://gocheeta/UserWebService/getViewUsersBooksRequest" message="tns:getViewUsersBooks"/>
 <output wsam:Action="http://gocheeta/UserWebService/getViewUsersBooksResponse" message="tns:getViewUsersBooksResponse"/>
 </operation>
+<operation name="loginAdmin">
+<input wsam:Action="http://gocheeta/UserWebService/loginAdminRequest" message="tns:loginAdmin"/>
+<output wsam:Action="http://gocheeta/UserWebService/loginAdminResponse" message="tns:loginAdminResponse"/>
+</operation>
+<operation name="getAllVehicle">
+<input wsam:Action="http://gocheeta/UserWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
+<output wsam:Action="http://gocheeta/UserWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
+</operation>
+<operation name="loginCustomer">
+<input wsam:Action="http://gocheeta/UserWebService/loginCustomerRequest" message="tns:loginCustomer"/>
+<output wsam:Action="http://gocheeta/UserWebService/loginCustomerResponse" message="tns:loginCustomerResponse"/>
+</operation>
+<operation name="addCustomer">
+<input wsam:Action="http://gocheeta/UserWebService/addCustomerRequest" message="tns:addCustomer"/>
+<output wsam:Action="http://gocheeta/UserWebService/addCustomerResponse" message="tns:addCustomerResponse"/>
+</operation>
 </portType>
 <binding name="UserWebServicePortBinding" type="tns:UserWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getViewUsersBooks">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="loginAdmin">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getAllVehicle">
 <soap:operation soapAction=""/>
 <input>
@@ -76,25 +113,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="loginAdmin">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getViewUsersBooks">
+<operation name="addCustomer">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -36,24 +36,18 @@
           <br>
                 
         <div>
-             <input type="hidden" id="driver_mobile" name="driver_mobile" value="<%out.print(session.getAttribute("driver_mobile"));%>" placeholder="Vehicle Number" required>
-            </labal>
-              
+             <input type="hidden" id="driver_mobile" name="driver_mobile" value="<%out.print(session.getAttribute("driver_mobile"));%>" placeholder="Vehicle Number" required>     
         </div>
-       
-        
+ 
 	<div class="input-group">
             <input type="text" id="vehicle_no" name="vehicle_no" placeholder="Vehicle Number" required><br>
         </div>
-        
-        
+
         <div class="input-group">          
              <select id="vehical_Type" name="vehical_Type" style="font-size:0.9rem;padding-right:15px;padding-left:15px;">
                 <option>Select Type</option>
-                   <% for(Dropdown type: types){ %>
-                
-        
-                 %>
+                   <% for(Dropdown type: types){ %>     
+                   %>
                    <option>
                    <% out.print(type.getVehicalType());%>     
                    </option> 
@@ -61,8 +55,7 @@
                   <% } %>
                 </select>   
         </div>
-        
-        
+ 
         <div class="input-group">
              <input type="text" id="vehicle_model" name="vehicle_model" placeholder="Vehicle Model" required><br>
         </div>

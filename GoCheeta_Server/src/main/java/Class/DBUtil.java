@@ -24,24 +24,19 @@ public interface  DBUtil {
 //Branch
     public List<Branch> getBranch();
     
-
-
 //Category with prices    
     public List<Category>getPriceRate();
     public boolean deleteCategory(int category_id);
     public boolean updateCategory(Category category);
     public Category getCategorybyId(int category_id);
-    public boolean addCategory(Category category);
-   
+    public boolean addCategory(Category category);  
     
  //Price Rate
      public List<Category>getPriceView();
     
- 
  //Vehicles
     public List<Vehicle>getAllVehicle();
      
-  
   //Feedback
    public boolean addFeedback(Feedback feedback);
    public List<Feedback>getViewFeedback();
@@ -72,4 +67,16 @@ public interface  DBUtil {
     //Vehicle add   
     public boolean addVehicle(Vehicle vehicle);
     
+    //Vehicle and driver details update
+    public Vehicle getDriverbyMobile(int driver_mobile);
+    public boolean updateVehicleDriver(Vehicle vehicle);
+    public boolean deleteVehicleDriver(int driver_mobile);
+    
+    //Customer    
+    public boolean addCustomer(Customer customer);
+
+    public boolean loginDriver(int driver_mobile, String password);
+
+
 }
+

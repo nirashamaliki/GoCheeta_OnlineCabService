@@ -6,6 +6,7 @@ package Db;
 
 import Class.Branch;
 import Class.Category;
+import Class.Customer;
 import Class.DBUtil;
 import Class.Driver;
 import Class.Dropdown;
@@ -105,7 +106,6 @@ public class MySQLServer implements DBUtil {
         }
     }
     
-   
     public boolean updateCustomer(Customer customer) {
         try {
             
@@ -133,8 +133,7 @@ public class MySQLServer implements DBUtil {
             return false;
         }
    }
-
-    
+ 
    @Override
     public List <Branch> getBranch() {
         try {
@@ -156,9 +155,7 @@ public class MySQLServer implements DBUtil {
         }
     }
 
-   
     //Cayegory with price
-
 
     @Override
     public List<Category> getPriceRate() {
@@ -180,8 +177,7 @@ public class MySQLServer implements DBUtil {
             System.out.println(e.getMessage());
             return null;
         }
-    }
-        
+    } 
   
     @Override
     public boolean deleteCategory(int category_id) {
@@ -245,7 +241,6 @@ public class MySQLServer implements DBUtil {
         }
     }
        
-  
     //Price rate
     
     @Override
@@ -361,7 +356,6 @@ public class MySQLServer implements DBUtil {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    
     //Admin
 
     @Override
@@ -429,7 +423,6 @@ public class MySQLServer implements DBUtil {
         }
     }
     
-    
         //Users Booking
     @Override
         public List<User> getViewUsersBooks(String email) {
@@ -476,7 +469,6 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }
-     
         
     //Vehicle
 
@@ -501,7 +493,6 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }
-        
         
    @Override
     public List<Vehicle> getViewAllVehicleDriver() {
@@ -528,7 +519,6 @@ public class MySQLServer implements DBUtil {
         }
     }
         
-    
       //Vehicle Type dowdown    
     @Override
     public List<Dropdown> getVehicleTypeDrop() {
@@ -553,7 +543,6 @@ public class MySQLServer implements DBUtil {
         }
     }
         
-    
     //Add Vehicle
     @Override
     public boolean addVehicle(Vehicle vehicle) {
@@ -567,5 +556,91 @@ public class MySQLServer implements DBUtil {
             return false;
         }
    }
+    
+    @Override
+    public Vehicle getDriverbyMobile(int driver_mobile) {
+        try {
+            
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM driver INNER JOIN vehicle ON vehicle.driver_mobile = driver.driver_mobile WHERE driver.driver_mobile = " + driver_mobile);
+            
+            if(rs.next()) {
+                Vehicle vehicle = new Vehicle (rs.getString("vehicle_no"), rs.getString("vehical_Type"),
+                        rs.getString("vehicle_model"), rs.getInt("driver_mobile"),
+                        rs.getString("driver_name"), rs.getString("driver_email"), 
+                        rs.getString("branch"), rs.getString("time_type"));
+             
+                 return vehicle;
+            } else {
+                return null;
+            }
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public boolean updateVehicleDriver(Vehicle vehicle) {
+       
+        try {
+            this.stmt  = this.con.prepareCall("UPDATE `driver` INNER JOIN `vehicle` ON driver.driver_mobile = vehicle.driver_mobile SET `vehicle_no` = '"+vehicle.getVehicle_no()+ "',`vehical_Type` = '"+vehicle.getVehical_Type()+"',`vehicle_model` = '"+vehicle.getVehicle_model()+"',`driver_mobile` = '"+vehicle.getDriver_mobile()+"',`driver_name` = '"+vehicle.getD_name()+"',`driver_email` = '"+vehicle.getD_email()+"',`branch` = '"+vehicle.getBranch()+"',`time_type` = '"+vehicle.getTime_type()+"' WHERE (`driver_mobile` = '"+vehicle.getDriver_mobile()+"');");
+        
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    
+    
+    @Override
+    public boolean deleteVehicleDriver(int driver_mobile) {
+        try {
+            
+            this.stmt  = this.con.prepareCall("DELETE FROM vehicle WHERE vehicle.driver_mobile = " + driver_mobile);
+        
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean addCustomer(Customer cstmr) {
+      try {
+
+            this.stmt  = this.con.prepareCall("INSERT INTO `customer` (`email`, `name`, `mobile`, `password`) VALUES ('"+cstmr.getEmail()+"', '"+cstmr.getName()+"', '"+cstmr.getMobile()+"', '"+cstmr.getPassword()+"');");
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;                                                                                                        
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean loginDriver(int driver_mobile, String password) {
+       try {
+            PreparedStatement ps;
+            String sql = "SELECT * FROM driver WHERE driver_mobile = ? and password = ?";
+            ps = con.prepareStatement(sql);
+           
+            ps.setInt(1,driver_mobile);
+            ps.setString(2, password);
+            
+            ResultSet result = ps.executeQuery();
+
+            return result.next();
+
+        } catch (SQLException ex) {
+             System.out.println(ex.getMessage());
+             return false;
+        }
+    }
 
 }

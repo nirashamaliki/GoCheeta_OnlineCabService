@@ -8,11 +8,11 @@ public class Customer extends Person {
 
     private String password;
 
-    public Customer(String password, String name, String email, String mobile) {
+    public Customer(String email, String name,String mobile,String password) {
         super(name, email, mobile);
         this.password = password;
     }
-    
+
     public Customer(String name, String email, String mobile) {
         super(name, email, mobile);   
     }

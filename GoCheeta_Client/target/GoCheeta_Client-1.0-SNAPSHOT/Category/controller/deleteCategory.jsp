@@ -6,7 +6,7 @@
 
 <%
 
-    String category_id = (request.getParameter("id"));
+    int category_id = Integer.parseInt(request.getParameter("id"));
     
     NewWebService_Service service = new NewWebService_Service();
     NewWebService customerProxy = service.getNewWebServicePort();

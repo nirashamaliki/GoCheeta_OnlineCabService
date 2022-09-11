@@ -4,6 +4,7 @@
  */
 package gocheeta;
 
+import Class.Customer;
 import Class.DBUtil;
 import Class.User;
 import Class.Vehicle;
@@ -50,4 +51,12 @@ public class UserWebService {
     public List<User> getViewUsersBooks(String email) {
         return this.dbUtil.getViewUsersBooks(email);
     }
+    
+    //customer register
+     @WebMethod(operationName = "addCustomer")
+     public boolean addCustomer(@WebParam(name = "email") String email,@WebParam(name = "name") String name,@WebParam(name = "mobile") String mobile,@WebParam(name = "password") String password) {
+     Customer customer = new Customer(email,name,mobile,password);
+     return this.dbUtil.addCustomer(customer);
+    
+     }
 }

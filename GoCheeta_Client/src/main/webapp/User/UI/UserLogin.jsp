@@ -10,7 +10,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/GoCheeta_Client/Css/signup.css">
+
+	<title style="text-align: center;">User Login</title>
+	<link rel="icon" href="image/homepage/icon/logo.png">
+        
+        <title>User Login</title>
     </head>
     <body>
         
@@ -47,36 +54,34 @@
           out.print("<script>alert('Login Unsuccessful.Try Again')</script>");
           //out.print("Login Unsuccessful");
     }
-   
- /* if(customerProxy.loginAdmin(email,password))
-       {
-        session.setAttribute("email", email);
-        response.sendRedirect("/GoCheeta_Client/AdminDashboard.jsp");
-       } 
-    
-    else if(customerProxy.loginCustomer(email,password))
-    {
-        session.setAttribute("email",email);
-        response.sendRedirect("/GoCheeta_Client/UserDashboard.jsp");    
-    }   
-       */
-
 
 %>
-       
-        <form action="/GoCheeta_Client/User/UI/UserLogin.jsp" method="post">
+        <div class="container" style="width: 450px; height:500px;">
+        <form action="/GoCheeta_Client/User/UI/UserLogin.jsp" method="post" class="login-email">
 
-            <label for="lname">Email</label><br>
-            <input type="text" id="email" name="email" placeholder="Email" required><br>
-
-            <label for="password">Password</label><br>
-            <input type="text" id="password" name="password" placeholder="Password" required><br>
-
+          <br><br>
+          <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Sign In</p>
+          <br>
+          
+          
+            <div class="input-group">
+            <input type="text" id="email" name="email" placeholder="Email Address" required><br>
+            </div>
+          
+            <div class="input-group">
+            <input type="password" id="password" name="password" placeholder="Your Password" required><br>
+            </div>
+          
             <br>
-
-            <input type="submit" value="Login">
+        <div class="input-group">             
+             <input type="submit" value="Sign In" class="btn">
+          
+        </div>   <br>
+              <p class="login-register-text" style="margin-top:-12px;text-align:center;">Don't have an account? <a href="/GoCheeta_Client/Customer/UI/CustomerRegister.jsp">Register</a>.</p>  
+             
         </form>
-        
+        </form>
+        </div>
 
         
     </body>

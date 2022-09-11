@@ -28,7 +28,7 @@
 	<title style="text-align: center;">User Register</title>
 	<link rel="icon" href="image/homepage/icon/logo.png">
         
-        <title>JSP Page</title>
+        <title>Driver Register</title>
     </head>
     <body>
 
