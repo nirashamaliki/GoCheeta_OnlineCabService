@@ -16,14 +16,15 @@
     String vehicle_model     = request.getParameter("vehicle_model");
     String d_name            = request.getParameter("d_name");
     String d_email           = request.getParameter("d_email");
-    String branch           = request.getParameter("branch");
-    String time_type           = request.getParameter("time_type");
+    String branch            = request.getParameter("branch");
+    String time_type         = request.getParameter("time_type");
+    String d_password          = request.getParameter("d_password");
 
     
     NewWebService_Service service = new NewWebService_Service();
     NewWebService vehicleProxy = service.getNewWebServicePort();
 
-    if(vehicleProxy.updateVehicleDriver(vehicle_no, vehical_Type,vehicle_model,driver_mobile,d_name,d_email,branch,time_type)) {
+    if(vehicleProxy.updateVehicleDriver(vehicle_no, vehical_Type,vehicle_model,driver_mobile,d_name,d_email,d_password,branch,time_type)) {
     
         response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
     } else {

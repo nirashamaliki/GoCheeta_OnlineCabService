@@ -1,11 +1,11 @@
 <%-- 
     Document   : DriverLogin
-    Created on : Sep 12, 2022, 12:14:25 AM
+    Created on : Sep 12, 2022, 10:14:05 PM
     Author     : HP
 --%>
 
-<%@page import="gocheeta.DriverWebService"%>
-<%@page import="gocheeta.DriverWebService_Service"%>
+<%@page import="gocheeta.UserWebService"%>
+<%@page import="gocheeta.UserWebService_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
@@ -22,29 +22,28 @@
     <body>
         
     <%
-    int driver_mobile    = Integer.parseInt(request.getParameter("driver_mobile"));
-    String password      = request.getParameter("password");
+    String email    = request.getParameter("email");
+    String password = request.getParameter("password");
     
-    DriverWebService_Service service = new DriverWebService_Service();
-    DriverWebService customerProxy = service.getDriverWebServicePort();
+    UserWebService_Service service = new UserWebService_Service();
+    UserWebService customerProxy = service.getUserWebServicePort();
     
+    Boolean loginAdmin = customerProxy.loginAdmin(email,password);
+    Boolean loginDriver = customerProxy.loginDriver(email,password);
     
-    Boolean loginCustomer = customerProxy.loginDriver(driver_mobile,password);
-    
-     if (loginCustomer == true) {
+     if (loginDriver == true) {
 
-         if (String.valueOf(driver_mobile).equals("456123") && password.equals("456admin@")) 
+         if (email.equals ("admin@456")&& password.equals("456admin@")) 
          {
-            session.setAttribute("email", driver_mobile);
+            session.setAttribute("email", email);
             response.sendRedirect("/GoCheeta_Client/AdminDashboard.jsp");               
           }
-           
       
         else
         {
-          if (loginCustomer == true)
+          if (loginDriver == true)
            {
-            session.setAttribute("email",driver_mobile);
+            session.setAttribute("email",email);
             response.sendRedirect("/GoCheeta_Client/DriverDashboard.jsp");    
             }
         }     
@@ -57,7 +56,7 @@
     }
 
 %>
-        <div class="container" style="width: 450px; height:500px;">
+        <div class="container" style="width: 450px; height:480px;">
         <form action="/GoCheeta_Client/Driver/UI/DriverLogin.jsp" method="post" class="login-email">
 
           <br><br>
@@ -73,13 +72,12 @@
             <input type="password" id="password" name="password" placeholder="Your Password" required><br>
             </div>
           
-            <br>
+            <br> <br>
         <div class="input-group">             
              <input type="submit" value="Sign In" class="btn">
           
         </div>   <br>
-              <p class="login-register-text" style="margin-top:-12px;text-align:center;">Don't have an account? <a href="/GoCheeta_Client/Driver/UI/DriverRegister.jsp">Register</a>.</p>  
-             
+
         </form>
         </form>
         </div>

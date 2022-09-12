@@ -17,7 +17,14 @@ public class Vehicle extends Driver{
         this.vehicle_model = vehicle_model;
     }
 
-    public Vehicle(String vehicle_no, String vehical_Type, String vehicle_model, int driver_mobile, String d_name, String d_email, String branch, String time_type) {
+    public Vehicle(String vehicle_no, String vehical_Type, String vehicle_model, int driver_mobile, String d_name, String d_email,String d_password,String branch, String time_type) {
+        super(driver_mobile, d_name, d_email, branch, time_type);
+        this.vehicle_no = vehicle_no;
+        this.vehical_Type = vehical_Type;
+        this.vehicle_model = vehicle_model;
+    }
+    
+    public Vehicle(String vehicle_no, String vehical_Type, String vehicle_model, int driver_mobile, String d_name, String d_email,String branch, String time_type) {
         super(driver_mobile, d_name, d_email, branch, time_type);
         this.vehicle_no = vehicle_no;
         this.vehical_Type = vehical_Type;

@@ -116,6 +116,7 @@
 <xs:element name="d_email" type="xs:string" minOccurs="0"/>
 <xs:element name="branch" type="xs:string" minOccurs="0"/>
 <xs:element name="time_type" type="xs:string" minOccurs="0"/>
+<xs:element name="d_password" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -274,6 +275,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getAllVehicle">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllVehicleResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addCategory">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -284,16 +295,6 @@
 <xs:complexType name="addCategoryResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getAllVehicle">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getAllVehicleResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

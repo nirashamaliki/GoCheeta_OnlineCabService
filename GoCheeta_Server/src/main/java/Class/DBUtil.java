@@ -75,8 +75,9 @@ public interface  DBUtil {
     //Customer    
     public boolean addCustomer(Customer customer);
 
-    public boolean loginDriver(int driver_mobile, String password);
-
+    
+    public boolean loginDriver(String email, String password);
+    public boolean loginAdminDriver(String email,String d_password);
 
 }
 

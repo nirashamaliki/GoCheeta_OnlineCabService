@@ -15,7 +15,7 @@
         <h1>Hello World!</h1>
         
          <%
-           out.print(session.getAttribute("driver_mobile"));
+           out.print(session.getAttribute("email"));
         %>
         
     </body>

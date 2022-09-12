@@ -505,7 +505,7 @@ public class MySQLServer implements DBUtil {
             while (rs.next()) {
                 Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"), rs.getString("vehical_Type"),
                         rs.getString("vehicle_model"), rs.getInt("driver_mobile"),
-                        rs.getString("driver_name"), rs.getString("driver_email"), 
+                        rs.getString("driver_name"), rs.getString("driver_email"),rs.getString("driver_password") ,
                         rs.getString("branch"), rs.getString("time_type"));
     
                 vehicles.add(vehicle);
@@ -567,7 +567,7 @@ public class MySQLServer implements DBUtil {
             if(rs.next()) {
                 Vehicle vehicle = new Vehicle (rs.getString("vehicle_no"), rs.getString("vehical_Type"),
                         rs.getString("vehicle_model"), rs.getInt("driver_mobile"),
-                        rs.getString("driver_name"), rs.getString("driver_email"), 
+                        rs.getString("driver_name"), rs.getString("driver_email"), rs.getString("driver_password"), 
                         rs.getString("branch"), rs.getString("time_type"));
              
                  return vehicle;
@@ -585,7 +585,7 @@ public class MySQLServer implements DBUtil {
     public boolean updateVehicleDriver(Vehicle vehicle) {
        
         try {
-            this.stmt  = this.con.prepareCall("UPDATE `driver` INNER JOIN `vehicle` ON driver.driver_mobile = vehicle.driver_mobile SET `vehicle_no` = '"+vehicle.getVehicle_no()+ "',`vehical_Type` = '"+vehicle.getVehical_Type()+"',`vehicle_model` = '"+vehicle.getVehicle_model()+"',`driver_mobile` = '"+vehicle.getDriver_mobile()+"',`driver_name` = '"+vehicle.getD_name()+"',`driver_email` = '"+vehicle.getD_email()+"',`branch` = '"+vehicle.getBranch()+"',`time_type` = '"+vehicle.getTime_type()+"' WHERE (`driver_mobile` = '"+vehicle.getDriver_mobile()+"');");
+            this.stmt  = this.con.prepareCall("UPDATE `driver` INNER JOIN `vehicle` ON driver.driver_mobile = vehicle.driver_mobile SET `vehicle_no` = '"+vehicle.getVehicle_no()+ "',`vehical_Type` = '"+vehicle.getVehical_Type()+"',`vehicle_model` = '"+vehicle.getVehicle_model()+"',`driver_mobile` = '"+vehicle.getDriver_mobile()+"',`driver_name` = '"+vehicle.getD_name()+"',`driver_email` = '"+vehicle.getD_email()+"',`driver_password` = '"+vehicle.getD_password()+"',`branch` = '"+vehicle.getBranch()+"',`time_type` = '"+vehicle.getTime_type()+"' WHERE (`vehicle_no` = '"+vehicle.getVehicle_no()+"');");
         
             return ((PreparedStatement) this.stmt).executeUpdate() > 0;
             
@@ -594,7 +594,7 @@ public class MySQLServer implements DBUtil {
             return false;
         }
     }
-    
+
     
     @Override
     public boolean deleteVehicleDriver(int driver_mobile) {
@@ -624,13 +624,14 @@ public class MySQLServer implements DBUtil {
     }
 
     @Override
-    public boolean loginDriver(int driver_mobile, String password) {
-       try {
+    public boolean loginDriver(String email,String password) {
+
+      try {
             PreparedStatement ps;
-            String sql = "SELECT * FROM driver WHERE driver_mobile = ? and password = ?";
+            String sql = "SELECT * FROM driver WHERE driver_email = ? and driver_password = ?";
             ps = con.prepareStatement(sql);
            
-            ps.setInt(1,driver_mobile);
+            ps.setString(1,email);
             ps.setString(2, password);
             
             ResultSet result = ps.executeQuery();
@@ -642,5 +643,30 @@ public class MySQLServer implements DBUtil {
              return false;
         }
     }
+
+    //Admin Login
+    @Override
+    public boolean loginAdminDriver(String email, String password) {
+
+      try {
+            PreparedStatement ps;
+            String sql = "SELECT * FROM driver WHERE driver_email ='admin@456' and driver_password  = '456admin@'";
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1,email);
+            ps.setString(2,password);
+            
+            ResultSet result = ps.executeQuery();
+
+            return result.next();
+
+        } catch (SQLException ex) {
+             System.out.println(ex.getMessage());
+             return false;
+        }
+    }
+    
+    
+    
 
 }

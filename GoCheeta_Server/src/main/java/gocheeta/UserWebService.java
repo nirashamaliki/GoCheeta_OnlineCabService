@@ -59,4 +59,10 @@ public class UserWebService {
      return this.dbUtil.addCustomer(customer);
     
      }
+     
+    @WebMethod(operationName = "loginDriver")
+    public boolean loginDriver(@WebParam(name = "email") String email,@WebParam(name = "password") String password) {
+        return this.dbUtil.loginDriver(email,password);
+    } 
+     
 }

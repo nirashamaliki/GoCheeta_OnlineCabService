@@ -3,7 +3,6 @@ package gocheeta;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -29,29 +28,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "loginDriver", propOrder = {
-    "driverMobile",
+    "email",
     "password"
 })
 public class LoginDriver {
 
-    @XmlElement(name = "driver_mobile")
-    protected int driverMobile;
+    protected String email;
     protected String password;
 
     /**
-     * Gets the value of the driverMobile property.
+     * Gets the value of the email property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getDriverMobile() {
-        return driverMobile;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Sets the value of the driverMobile property.
+     * Sets the value of the email property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setDriverMobile(int value) {
-        this.driverMobile = value;
+    public void setEmail(String value) {
+        this.email = value;
     }
 
     /**

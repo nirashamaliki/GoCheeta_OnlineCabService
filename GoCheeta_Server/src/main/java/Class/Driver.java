@@ -43,8 +43,13 @@ public class Driver{
         this.d_password = d_password;
         this.driver_mobile = driver_mobile;
     }
-    
 
+    public Driver(String d_email,String d_password) {
+        this.d_password = d_password;
+        this.d_email = d_email;
+    }
+
+        
     public Driver(int driver_mobile) {
         this.driver_mobile = driver_mobile;
     } 

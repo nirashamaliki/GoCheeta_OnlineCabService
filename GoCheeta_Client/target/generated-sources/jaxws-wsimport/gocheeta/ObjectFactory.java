@@ -26,9 +26,7 @@ public class ObjectFactory {
 
     private final static QName _AddDriverResponse_QNAME = new QName("http://gocheeta/", "addDriverResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://gocheeta/", "helloResponse");
-    private final static QName _LoginDriverResponse_QNAME = new QName("http://gocheeta/", "loginDriverResponse");
     private final static QName _GetBranchDrop_QNAME = new QName("http://gocheeta/", "getBranchDrop");
-    private final static QName _LoginDriver_QNAME = new QName("http://gocheeta/", "loginDriver");
     private final static QName _Hello_QNAME = new QName("http://gocheeta/", "hello");
     private final static QName _AddDriver_QNAME = new QName("http://gocheeta/", "addDriver");
     private final static QName _GetBranchDropResponse_QNAME = new QName("http://gocheeta/", "getBranchDropResponse");
@@ -57,27 +55,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginDriverResponse }
-     * 
-     */
-    public LoginDriverResponse createLoginDriverResponse() {
-        return new LoginDriverResponse();
-    }
-
-    /**
      * Create an instance of {@link GetBranchDrop }
      * 
      */
     public GetBranchDrop createGetBranchDrop() {
         return new GetBranchDrop();
-    }
-
-    /**
-     * Create an instance of {@link LoginDriver }
-     * 
-     */
-    public LoginDriver createLoginDriver() {
-        return new LoginDriver();
     }
 
     /**
@@ -131,30 +113,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginDriverResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "loginDriverResponse")
-    public JAXBElement<LoginDriverResponse> createLoginDriverResponse(LoginDriverResponse value) {
-        return new JAXBElement<LoginDriverResponse>(_LoginDriverResponse_QNAME, LoginDriverResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetBranchDrop }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://gocheeta/", name = "getBranchDrop")
     public JAXBElement<GetBranchDrop> createGetBranchDrop(GetBranchDrop value) {
         return new JAXBElement<GetBranchDrop>(_GetBranchDrop_QNAME, GetBranchDrop.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginDriver }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "loginDriver")
-    public JAXBElement<LoginDriver> createLoginDriver(LoginDriver value) {
-        return new JAXBElement<LoginDriver>(_LoginDriver_QNAME, LoginDriver.class, null, value);
     }
 
     /**

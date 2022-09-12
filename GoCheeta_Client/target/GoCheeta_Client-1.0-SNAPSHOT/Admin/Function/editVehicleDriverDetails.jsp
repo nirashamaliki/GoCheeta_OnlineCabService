@@ -52,9 +52,8 @@
       <form action="/GoCheeta_Client/Admin/controller/updateVehicleDriver.jsp" method="post" class="login-email">
            <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Vehicle Details</p>     
         <div>
-            <input type="hidden" id="driver_mobile" name="driver_mobile" value="<% out.print(vehicle.getDriverMobile()); %>" placeholder="Driver Mobile" required>  
-            <input type="hidden" id="driver_password" name="driver_password" value="<% out.print(vehicle.getDPassword()); %>" placeholder="Driver Mobile" required>  
-        
+            <input type="text" id="driver_mobile" name="driver_mobile" value="<% out.print(vehicle.getDriverMobile()); %>" placeholder="Driver Mobile" required>  
+            <input type="password" id="d_password" name="d_password" value="<% out.print(vehicle.getDPassword()); %>" placeholder="Password" required><br>
         </div>
 
         <div class="input-group">
@@ -63,7 +62,7 @@
         <div class="input-group">      
                 <input type="text" id="d_email" name="d_email" value="<% out.print(vehicle.getDEmail()); %>" placeholder="Vehicle Model" required><br>
         </div>
-
+       
 	<div class="input-group">
             <input type="text" id="vehicle_no" name="vehicle_no" placeholder="Vehicle Number" required value="<% out.print(vehicle.getVehicleNo()); %>"<br>
         </div>
