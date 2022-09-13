@@ -15,7 +15,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
-    int driver_mobile = Integer.parseInt(request.getParameter("id"));
+    int driver_mobile= Integer.parseInt(request.getParameter("id"));
     
     NewWebService_Service service = new NewWebService_Service();
     
@@ -53,14 +53,9 @@
            <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Vehicle Details</p>     
         <div>
             <input type="text" id="driver_mobile" name="driver_mobile" value="<% out.print(vehicle.getDriverMobile()); %>" placeholder="Driver Mobile" required>  
-            <input type="password" id="d_password" name="d_password" value="<% out.print(vehicle.getDPassword()); %>" placeholder="Password" required><br>
-        </div>
-
-        <div class="input-group">
-                <input type="text" id="d_name" name="d_name" value="<% out.print(vehicle.getDName()); %>" placeholder="Vehicle Model" required><br>
-        </div>
-        <div class="input-group">      
-                <input type="text" id="d_email" name="d_email" value="<% out.print(vehicle.getDEmail()); %>" placeholder="Vehicle Model" required><br>
+            <input type="text" id="d_password" name="d_password" value="<% out.print(vehicle.getDPassword()); %>" placeholder="Password" required><br>
+            <input type="text" id="d_name" name="d_name" value="<% out.print(vehicle.getDName()); %>" placeholder="Vehicle Model" required><br>
+            <input type="text" id="d_email" name="d_email" value="<% out.print(vehicle.getDEmail()); %>" placeholder="Vehicle Model" required><br>
         </div>
        
 	<div class="input-group">

@@ -580,12 +580,53 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     }
+    
+    
+      @Override
+    public Driver getDriverbyEmail(String driver_email) {
+        try {
+            
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM driver INNER JOIN vehicle ON vehicle.driver_mobile = driver.driver_mobile WHERE driver.driver_email = " + driver_email);
+            
+            if(rs.next()) {
+                Driver driver = new Driver ( rs.getInt("driver_mobile"),
+                        rs.getString("driver_name"), rs.getString("driver_email"), rs.getString("driver_password"), 
+                        rs.getString("branch"), rs.getString("time_type"));
+             
+                 return driver;
+            } else {
+                return null;
+            }
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
 
     @Override
     public boolean updateVehicleDriver(Vehicle vehicle) {
-       
+
         try {
-            this.stmt  = this.con.prepareCall("UPDATE `driver` INNER JOIN `vehicle` ON driver.driver_mobile = vehicle.driver_mobile SET `vehicle_no` = '"+vehicle.getVehicle_no()+ "',`vehical_Type` = '"+vehicle.getVehical_Type()+"',`vehicle_model` = '"+vehicle.getVehicle_model()+"',`driver_mobile` = '"+vehicle.getDriver_mobile()+"',`driver_name` = '"+vehicle.getD_name()+"',`driver_email` = '"+vehicle.getD_email()+"',`driver_password` = '"+vehicle.getD_password()+"',`branch` = '"+vehicle.getBranch()+"',`time_type` = '"+vehicle.getTime_type()+"' WHERE (`vehicle_no` = '"+vehicle.getVehicle_no()+"');");
+            
+            this.stmt  = this.con.prepareCall("UPDATE `vehicle` INNER JOIN `driver` ON driver.driver_mobile = driver.driver_mobile SET `vehical_Type` = '"+vehicle.getVehical_Type()+"',`vehicle_model` = '"+vehicle.getVehicle_model()+"' WHERE (`vehicle_no` = '"+vehicle.getVehicle_no()+"');");
+        
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    
+    @Override
+    public boolean updateDriver(Driver driver) {
+
+        try {
+            
+            this.stmt  = this.con.prepareCall("UPDATE `driver`  SET `driver_name` = '"+driver.getD_name()+"',`driver_password` = '"+driver.getD_password()+"',`branch` = '"+driver.getBranch()+"',`time_type` = '"+driver.getTime_type()+"' WHERE (`driver_email` = '"+driver.getD_email()+"');");
         
             return ((PreparedStatement) this.stmt).executeUpdate() > 0;
             

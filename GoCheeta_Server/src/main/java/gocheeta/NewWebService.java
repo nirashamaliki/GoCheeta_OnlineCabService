@@ -7,6 +7,7 @@ package gocheeta;
 import Class.Branch;
 import Class.Category;
 import Class.DBUtil;
+import Class.Driver;
 import Class.Dropdown;
 import Class.Feedback;
 import Class.User;
@@ -148,10 +149,25 @@ public class NewWebService {
     }
 
     @WebMethod(operationName = "updateVehicleDriver")
-    public boolean updateVehicleDriver(@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "vehical_Type") String vehical_Type,@WebParam(name = "vehicle_model") String vehicle_model,@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "d_name") String d_name,@WebParam(name = "d_email") String d_email, @WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type, @WebParam(name = "d_password") String d_password) {
-        Vehicle vehicle = new Vehicle(vehicle_no, vehical_Type,vehicle_model,driver_mobile,d_name,d_email,d_password,branch, time_type);
+    public boolean updateVehicleDriver(@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "vehical_Type") String vehical_Type,
+        @WebParam(name = "vehicle_model") String vehicle_model,@WebParam(name = "d_name") String d_name,
+        @WebParam(name = "d_email") String d_email,@WebParam(name = "d_password") String d_password,@WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
+        Vehicle vehicle = new Vehicle(vehicle_no, vehical_Type,vehicle_model,d_name,d_email,d_password,branch, time_type);
         return this.dbUtil.updateVehicleDriver(vehicle);
     }
+    
+    @WebMethod(operationName = "updateDriver")
+    public boolean updateDriver(@WebParam(name = "d_name") String d_name,
+        @WebParam(name = "d_email") String d_email,@WebParam(name = "d_password") String d_password,@WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
+        Driver driver = new Driver(d_email,d_name,d_password,branch, time_type);
+        return this.dbUtil.updateDriver(driver);
+    }
+    
+    @WebMethod(operationName = "getDriverbyEmail")
+    public Driver getDriverbyEmail(@WebParam(name = "driver_email") String driver_email) {
+        return this.dbUtil.getDriverbyEmail(driver_email);
+    }
+    
     
     @WebMethod(operationName = "deleteVehicleDriver")
     public boolean deleteVehicleDriver(@WebParam(name = "driver_mobile") int driver_mobile) {

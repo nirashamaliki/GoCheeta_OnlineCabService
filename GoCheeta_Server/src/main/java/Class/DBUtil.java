@@ -71,6 +71,8 @@ public interface  DBUtil {
     public Vehicle getDriverbyMobile(int driver_mobile);
     public boolean updateVehicleDriver(Vehicle vehicle);
     public boolean deleteVehicleDriver(int driver_mobile);
+    public boolean updateDriver(Driver driver);
+    public Driver getDriverbyEmail(String driver_email);
     
     //Customer    
     public boolean addCustomer(Customer customer);

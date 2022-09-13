@@ -32,6 +32,10 @@
 
 <xs:element name="getCategorybyIdResponse" type="tns:getCategorybyIdResponse"/>
 
+<xs:element name="getDriverbyEmail" type="tns:getDriverbyEmail"/>
+
+<xs:element name="getDriverbyEmailResponse" type="tns:getDriverbyEmailResponse"/>
+
 <xs:element name="getDriverbyMobile" type="tns:getDriverbyMobile"/>
 
 <xs:element name="getDriverbyMobileResponse" type="tns:getDriverbyMobileResponse"/>
@@ -67,6 +71,10 @@
 <xs:element name="updateCategory" type="tns:updateCategory"/>
 
 <xs:element name="updateCategoryResponse" type="tns:updateCategoryResponse"/>
+
+<xs:element name="updateDriver" type="tns:updateDriver"/>
+
+<xs:element name="updateDriverResponse" type="tns:updateDriverResponse"/>
 
 <xs:element name="updateVehicleDriver" type="tns:updateVehicleDriver"/>
 
@@ -111,12 +119,11 @@
 <xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
 <xs:element name="vehical_Type" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_model" type="xs:string" minOccurs="0"/>
-<xs:element name="driver_mobile" type="xs:int"/>
 <xs:element name="d_name" type="xs:string" minOccurs="0"/>
 <xs:element name="d_email" type="xs:string" minOccurs="0"/>
+<xs:element name="d_password" type="xs:string" minOccurs="0"/>
 <xs:element name="branch" type="xs:string" minOccurs="0"/>
 <xs:element name="time_type" type="xs:string" minOccurs="0"/>
-<xs:element name="d_password" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -275,6 +282,22 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="updateDriver">
+<xs:sequence>
+<xs:element name="d_name" type="xs:string" minOccurs="0"/>
+<xs:element name="d_email" type="xs:string" minOccurs="0"/>
+<xs:element name="d_password" type="xs:string" minOccurs="0"/>
+<xs:element name="branch" type="xs:string" minOccurs="0"/>
+<xs:element name="time_type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateDriverResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getAllVehicle">
 <xs:sequence/>
 </xs:complexType>
@@ -314,6 +337,18 @@
 <xs:element name="vehical_Type" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_model" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDriverbyEmail">
+<xs:sequence>
+<xs:element name="driver_email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDriverbyEmailResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:driver" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

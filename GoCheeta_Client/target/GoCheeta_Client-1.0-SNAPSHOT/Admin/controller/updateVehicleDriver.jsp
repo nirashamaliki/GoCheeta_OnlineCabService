@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 
 <%
-    int driver_mobile        = Integer.parseInt(request.getParameter("id"));
+     //int driver_mobile     = Integer.parseInt(request.getParameter("id"));
     String vehicle_no        = request.getParameter("vehicle_no");
     String vehical_Type      = request.getParameter("vehical_Type");
     String vehicle_model     = request.getParameter("vehicle_model");
@@ -24,9 +24,11 @@
     NewWebService_Service service = new NewWebService_Service();
     NewWebService vehicleProxy = service.getNewWebServicePort();
 
-    if(vehicleProxy.updateVehicleDriver(vehicle_no, vehical_Type,vehicle_model,driver_mobile,d_name,d_email,d_password,branch,time_type)) {
+    if(vehicleProxy.updateVehicleDriver(vehicle_no, vehical_Type,vehicle_model,d_name,d_email,d_password,branch, time_type)) {
     
         response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
+  
+        
     } else {
         out.print("false");
     }
