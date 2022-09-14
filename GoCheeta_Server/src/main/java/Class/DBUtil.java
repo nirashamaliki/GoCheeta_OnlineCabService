@@ -80,6 +80,10 @@ public interface  DBUtil {
     
     public boolean loginDriver(String email, String password);
     public boolean loginAdminDriver(String email,String d_password);
+    
+    
+    //Add Order
+    public boolean addUserOrder(User user);
 
 }
 

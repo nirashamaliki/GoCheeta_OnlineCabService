@@ -64,5 +64,17 @@ public class UserWebService {
     public boolean loginDriver(@WebParam(name = "email") String email,@WebParam(name = "password") String password) {
         return this.dbUtil.loginDriver(email,password);
     } 
+    
+   @WebMethod(operationName = "addUserOrder")
+     public boolean addUserOrder(@WebParam(name = "mobile") String mobile,@WebParam(name = "order_email") String order_email,@WebParam(name = "pick_location") String pick_location,
+             @WebParam(name = "drop_loction") String drop_loction,@WebParam(name = "city") String city,@WebParam(name = "area_branch") String area_branch 
+             ,@WebParam(name = "distance") String distance,@WebParam(name = "price") String price,@WebParam(name = "time") String time
+             ,@WebParam(name = "v_type") String v_type,@WebParam(name = "driver_mobile") String driver_mobile,@WebParam(name = "option") String option) 
+     {  
+    
+     User user = new User(0,mobile,order_email,pick_location,drop_loction,city,area_branch,distance,price,time,v_type,driver_mobile,option);
+     return this.dbUtil.addUserOrder(user);
+    
+     }
      
 }

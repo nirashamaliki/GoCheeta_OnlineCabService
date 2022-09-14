@@ -10,48 +10,6 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
-<message name="deleteVehicleDriver">
-<part name="parameters" element="tns:deleteVehicleDriver"/>
-</message>
-<message name="deleteVehicleDriverResponse">
-<part name="parameters" element="tns:deleteVehicleDriverResponse"/>
-</message>
-<message name="updateVehicleDriver">
-<part name="parameters" element="tns:updateVehicleDriver"/>
-</message>
-<message name="updateVehicleDriverResponse">
-<part name="parameters" element="tns:updateVehicleDriverResponse"/>
-</message>
-<message name="getVehicleTypeDrop">
-<part name="parameters" element="tns:getVehicleTypeDrop"/>
-</message>
-<message name="getVehicleTypeDropResponse">
-<part name="parameters" element="tns:getVehicleTypeDropResponse"/>
-</message>
-<message name="getDriverbyMobile">
-<part name="parameters" element="tns:getDriverbyMobile"/>
-</message>
-<message name="getDriverbyMobileResponse">
-<part name="parameters" element="tns:getDriverbyMobileResponse"/>
-</message>
-<message name="getViewAllVehicleDriver">
-<part name="parameters" element="tns:getViewAllVehicleDriver"/>
-</message>
-<message name="getViewAllVehicleDriverResponse">
-<part name="parameters" element="tns:getViewAllVehicleDriverResponse"/>
-</message>
-<message name="getUsers">
-<part name="parameters" element="tns:getUsers"/>
-</message>
-<message name="getUsersResponse">
-<part name="parameters" element="tns:getUsersResponse"/>
-</message>
-<message name="getAllVehicle">
-<part name="parameters" element="tns:getAllVehicle"/>
-</message>
-<message name="getAllVehicleResponse">
-<part name="parameters" element="tns:getAllVehicleResponse"/>
-</message>
 <message name="getBranch">
 <part name="parameters" element="tns:getBranch"/>
 </message>
@@ -63,18 +21,6 @@
 </message>
 <message name="getPriceRateResponse">
 <part name="parameters" element="tns:getPriceRateResponse"/>
-</message>
-<message name="updateCategory">
-<part name="parameters" element="tns:updateCategory"/>
-</message>
-<message name="updateCategoryResponse">
-<part name="parameters" element="tns:updateCategoryResponse"/>
-</message>
-<message name="getCategorybyId">
-<part name="parameters" element="tns:getCategorybyId"/>
-</message>
-<message name="getCategorybyIdResponse">
-<part name="parameters" element="tns:getCategorybyIdResponse"/>
 </message>
 <message name="deleteCategory">
 <part name="parameters" element="tns:deleteCategory"/>
@@ -88,6 +34,18 @@
 <message name="addCategoryResponse">
 <part name="parameters" element="tns:addCategoryResponse"/>
 </message>
+<message name="updateCategory">
+<part name="parameters" element="tns:updateCategory"/>
+</message>
+<message name="updateCategoryResponse">
+<part name="parameters" element="tns:updateCategoryResponse"/>
+</message>
+<message name="getCategorybyId">
+<part name="parameters" element="tns:getCategorybyId"/>
+</message>
+<message name="getCategorybyIdResponse">
+<part name="parameters" element="tns:getCategorybyIdResponse"/>
+</message>
 <message name="getPriceView">
 <part name="parameters" element="tns:getPriceView"/>
 </message>
@@ -100,23 +58,17 @@
 <message name="addFeedbackResponse">
 <part name="parameters" element="tns:addFeedbackResponse"/>
 </message>
-<message name="getViewFeedbacks">
-<part name="parameters" element="tns:getViewFeedbacks"/>
+<message name="getUsers">
+<part name="parameters" element="tns:getUsers"/>
 </message>
-<message name="getViewFeedbacksResponse">
-<part name="parameters" element="tns:getViewFeedbacksResponse"/>
+<message name="getUsersResponse">
+<part name="parameters" element="tns:getUsersResponse"/>
 </message>
-<message name="addVehicle">
-<part name="parameters" element="tns:addVehicle"/>
+<message name="getAllVehicle">
+<part name="parameters" element="tns:getAllVehicle"/>
 </message>
-<message name="addVehicleResponse">
-<part name="parameters" element="tns:addVehicleResponse"/>
-</message>
-<message name="updateDriver">
-<part name="parameters" element="tns:updateDriver"/>
-</message>
-<message name="updateDriverResponse">
-<part name="parameters" element="tns:updateDriverResponse"/>
+<message name="getAllVehicleResponse">
+<part name="parameters" element="tns:getAllVehicleResponse"/>
 </message>
 <message name="getDriverbyEmail">
 <part name="parameters" element="tns:getDriverbyEmail"/>
@@ -124,38 +76,58 @@
 <message name="getDriverbyEmailResponse">
 <part name="parameters" element="tns:getDriverbyEmailResponse"/>
 </message>
+<message name="updateDriver">
+<part name="parameters" element="tns:updateDriver"/>
+</message>
+<message name="updateDriverResponse">
+<part name="parameters" element="tns:updateDriverResponse"/>
+</message>
+<message name="addVehicle">
+<part name="parameters" element="tns:addVehicle"/>
+</message>
+<message name="addVehicleResponse">
+<part name="parameters" element="tns:addVehicleResponse"/>
+</message>
+<message name="getViewFeedbacks">
+<part name="parameters" element="tns:getViewFeedbacks"/>
+</message>
+<message name="getViewFeedbacksResponse">
+<part name="parameters" element="tns:getViewFeedbacksResponse"/>
+</message>
+<message name="deleteVehicleDriver">
+<part name="parameters" element="tns:deleteVehicleDriver"/>
+</message>
+<message name="deleteVehicleDriverResponse">
+<part name="parameters" element="tns:deleteVehicleDriverResponse"/>
+</message>
+<message name="getDriverbyMobile">
+<part name="parameters" element="tns:getDriverbyMobile"/>
+</message>
+<message name="getDriverbyMobileResponse">
+<part name="parameters" element="tns:getDriverbyMobileResponse"/>
+</message>
+<message name="getViewAllVehicleDriver">
+<part name="parameters" element="tns:getViewAllVehicleDriver"/>
+</message>
+<message name="getViewAllVehicleDriverResponse">
+<part name="parameters" element="tns:getViewAllVehicleDriverResponse"/>
+</message>
+<message name="getVehicleTypeDrop">
+<part name="parameters" element="tns:getVehicleTypeDrop"/>
+</message>
+<message name="getVehicleTypeDropResponse">
+<part name="parameters" element="tns:getVehicleTypeDropResponse"/>
+</message>
+<message name="updateVehicleDriver">
+<part name="parameters" element="tns:updateVehicleDriver"/>
+</message>
+<message name="updateVehicleDriverResponse">
+<part name="parameters" element="tns:updateVehicleDriverResponse"/>
+</message>
 <portType name="NewWebService">
 <operation name="hello">
 <input wsam:Action="http://gocheeta/NewWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://gocheeta/NewWebService/helloResponse" message="tns:helloResponse"/>
-</operation>
-<operation name="deleteVehicleDriver">
-<input wsam:Action="http://gocheeta/NewWebService/deleteVehicleDriverRequest" message="tns:deleteVehicleDriver"/>
-<output wsam:Action="http://gocheeta/NewWebService/deleteVehicleDriverResponse" message="tns:deleteVehicleDriverResponse"/>
-</operation>
-<operation name="updateVehicleDriver">
-<input wsam:Action="http://gocheeta/NewWebService/updateVehicleDriverRequest" message="tns:updateVehicleDriver"/>
-<output wsam:Action="http://gocheeta/NewWebService/updateVehicleDriverResponse" message="tns:updateVehicleDriverResponse"/>
-</operation>
-<operation name="getVehicleTypeDrop">
-<input wsam:Action="http://gocheeta/NewWebService/getVehicleTypeDropRequest" message="tns:getVehicleTypeDrop"/>
-<output wsam:Action="http://gocheeta/NewWebService/getVehicleTypeDropResponse" message="tns:getVehicleTypeDropResponse"/>
-</operation>
-<operation name="getDriverbyMobile">
-<input wsam:Action="http://gocheeta/NewWebService/getDriverbyMobileRequest" message="tns:getDriverbyMobile"/>
-<output wsam:Action="http://gocheeta/NewWebService/getDriverbyMobileResponse" message="tns:getDriverbyMobileResponse"/>
-</operation>
-<operation name="getViewAllVehicleDriver">
-<input wsam:Action="http://gocheeta/NewWebService/getViewAllVehicleDriverRequest" message="tns:getViewAllVehicleDriver"/>
-<output wsam:Action="http://gocheeta/NewWebService/getViewAllVehicleDriverResponse" message="tns:getViewAllVehicleDriverResponse"/>
-</operation>
-<operation name="getUsers">
-<input wsam:Action="http://gocheeta/NewWebService/getUsersRequest" message="tns:getUsers"/>
-<output wsam:Action="http://gocheeta/NewWebService/getUsersResponse" message="tns:getUsersResponse"/>
-</operation>
-<operation name="getAllVehicle">
-<input wsam:Action="http://gocheeta/NewWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
-<output wsam:Action="http://gocheeta/NewWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
 </operation>
 <operation name="getBranch">
 <input wsam:Action="http://gocheeta/NewWebService/getBranchRequest" message="tns:getBranch"/>
@@ -165,14 +137,6 @@
 <input wsam:Action="http://gocheeta/NewWebService/getPriceRateRequest" message="tns:getPriceRate"/>
 <output wsam:Action="http://gocheeta/NewWebService/getPriceRateResponse" message="tns:getPriceRateResponse"/>
 </operation>
-<operation name="updateCategory">
-<input wsam:Action="http://gocheeta/NewWebService/updateCategoryRequest" message="tns:updateCategory"/>
-<output wsam:Action="http://gocheeta/NewWebService/updateCategoryResponse" message="tns:updateCategoryResponse"/>
-</operation>
-<operation name="getCategorybyId">
-<input wsam:Action="http://gocheeta/NewWebService/getCategorybyIdRequest" message="tns:getCategorybyId"/>
-<output wsam:Action="http://gocheeta/NewWebService/getCategorybyIdResponse" message="tns:getCategorybyIdResponse"/>
-</operation>
 <operation name="deleteCategory">
 <input wsam:Action="http://gocheeta/NewWebService/deleteCategoryRequest" message="tns:deleteCategory"/>
 <output wsam:Action="http://gocheeta/NewWebService/deleteCategoryResponse" message="tns:deleteCategoryResponse"/>
@@ -180,6 +144,14 @@
 <operation name="addCategory">
 <input wsam:Action="http://gocheeta/NewWebService/addCategoryRequest" message="tns:addCategory"/>
 <output wsam:Action="http://gocheeta/NewWebService/addCategoryResponse" message="tns:addCategoryResponse"/>
+</operation>
+<operation name="updateCategory">
+<input wsam:Action="http://gocheeta/NewWebService/updateCategoryRequest" message="tns:updateCategory"/>
+<output wsam:Action="http://gocheeta/NewWebService/updateCategoryResponse" message="tns:updateCategoryResponse"/>
+</operation>
+<operation name="getCategorybyId">
+<input wsam:Action="http://gocheeta/NewWebService/getCategorybyIdRequest" message="tns:getCategorybyId"/>
+<output wsam:Action="http://gocheeta/NewWebService/getCategorybyIdResponse" message="tns:getCategorybyIdResponse"/>
 </operation>
 <operation name="getPriceView">
 <input wsam:Action="http://gocheeta/NewWebService/getPriceViewRequest" message="tns:getPriceView"/>
@@ -189,21 +161,49 @@
 <input wsam:Action="http://gocheeta/NewWebService/addFeedbackRequest" message="tns:addFeedback"/>
 <output wsam:Action="http://gocheeta/NewWebService/addFeedbackResponse" message="tns:addFeedbackResponse"/>
 </operation>
-<operation name="getViewFeedbacks">
-<input wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksRequest" message="tns:getViewFeedbacks"/>
-<output wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksResponse" message="tns:getViewFeedbacksResponse"/>
+<operation name="getUsers">
+<input wsam:Action="http://gocheeta/NewWebService/getUsersRequest" message="tns:getUsers"/>
+<output wsam:Action="http://gocheeta/NewWebService/getUsersResponse" message="tns:getUsersResponse"/>
 </operation>
-<operation name="addVehicle">
-<input wsam:Action="http://gocheeta/NewWebService/addVehicleRequest" message="tns:addVehicle"/>
-<output wsam:Action="http://gocheeta/NewWebService/addVehicleResponse" message="tns:addVehicleResponse"/>
+<operation name="getAllVehicle">
+<input wsam:Action="http://gocheeta/NewWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
+<output wsam:Action="http://gocheeta/NewWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
+</operation>
+<operation name="getDriverbyEmail">
+<input wsam:Action="http://gocheeta/NewWebService/getDriverbyEmailRequest" message="tns:getDriverbyEmail"/>
+<output wsam:Action="http://gocheeta/NewWebService/getDriverbyEmailResponse" message="tns:getDriverbyEmailResponse"/>
 </operation>
 <operation name="updateDriver">
 <input wsam:Action="http://gocheeta/NewWebService/updateDriverRequest" message="tns:updateDriver"/>
 <output wsam:Action="http://gocheeta/NewWebService/updateDriverResponse" message="tns:updateDriverResponse"/>
 </operation>
-<operation name="getDriverbyEmail">
-<input wsam:Action="http://gocheeta/NewWebService/getDriverbyEmailRequest" message="tns:getDriverbyEmail"/>
-<output wsam:Action="http://gocheeta/NewWebService/getDriverbyEmailResponse" message="tns:getDriverbyEmailResponse"/>
+<operation name="addVehicle">
+<input wsam:Action="http://gocheeta/NewWebService/addVehicleRequest" message="tns:addVehicle"/>
+<output wsam:Action="http://gocheeta/NewWebService/addVehicleResponse" message="tns:addVehicleResponse"/>
+</operation>
+<operation name="getViewFeedbacks">
+<input wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksRequest" message="tns:getViewFeedbacks"/>
+<output wsam:Action="http://gocheeta/NewWebService/getViewFeedbacksResponse" message="tns:getViewFeedbacksResponse"/>
+</operation>
+<operation name="deleteVehicleDriver">
+<input wsam:Action="http://gocheeta/NewWebService/deleteVehicleDriverRequest" message="tns:deleteVehicleDriver"/>
+<output wsam:Action="http://gocheeta/NewWebService/deleteVehicleDriverResponse" message="tns:deleteVehicleDriverResponse"/>
+</operation>
+<operation name="getDriverbyMobile">
+<input wsam:Action="http://gocheeta/NewWebService/getDriverbyMobileRequest" message="tns:getDriverbyMobile"/>
+<output wsam:Action="http://gocheeta/NewWebService/getDriverbyMobileResponse" message="tns:getDriverbyMobileResponse"/>
+</operation>
+<operation name="getViewAllVehicleDriver">
+<input wsam:Action="http://gocheeta/NewWebService/getViewAllVehicleDriverRequest" message="tns:getViewAllVehicleDriver"/>
+<output wsam:Action="http://gocheeta/NewWebService/getViewAllVehicleDriverResponse" message="tns:getViewAllVehicleDriverResponse"/>
+</operation>
+<operation name="getVehicleTypeDrop">
+<input wsam:Action="http://gocheeta/NewWebService/getVehicleTypeDropRequest" message="tns:getVehicleTypeDrop"/>
+<output wsam:Action="http://gocheeta/NewWebService/getVehicleTypeDropResponse" message="tns:getVehicleTypeDropResponse"/>
+</operation>
+<operation name="updateVehicleDriver">
+<input wsam:Action="http://gocheeta/NewWebService/updateVehicleDriverRequest" message="tns:updateVehicleDriver"/>
+<output wsam:Action="http://gocheeta/NewWebService/updateVehicleDriverResponse" message="tns:updateVehicleDriverResponse"/>
 </operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
@@ -217,69 +217,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="deleteVehicleDriver">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateVehicleDriver">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getVehicleTypeDrop">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getDriverbyMobile">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getViewAllVehicleDriver">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getUsers">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAllVehicle">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="getBranch">
 <soap:operation soapAction=""/>
 <input>
@@ -290,24 +227,6 @@
 </output>
 </operation>
 <operation name="getPriceRate">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateCategory">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getCategorybyId">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -334,6 +253,24 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="updateCategory">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getCategorybyId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getPriceView">
 <soap:operation soapAction=""/>
 <input>
@@ -352,7 +289,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getViewFeedbacks">
+<operation name="getUsers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -361,7 +298,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addVehicle">
+<operation name="getAllVehicle">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getDriverbyEmail">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -379,7 +325,61 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getDriverbyEmail">
+<operation name="addVehicle">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getViewFeedbacks">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteVehicleDriver">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getDriverbyMobile">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getViewAllVehicleDriver">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getVehicleTypeDrop">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateVehicleDriver">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

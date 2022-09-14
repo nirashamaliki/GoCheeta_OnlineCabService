@@ -4,6 +4,10 @@
 
 <xs:element name="addCustomerResponse" type="tns:addCustomerResponse"/>
 
+<xs:element name="addUserOrder" type="tns:addUserOrder"/>
+
+<xs:element name="addUserOrderResponse" type="tns:addUserOrderResponse"/>
+
 <xs:element name="getAllVehicle" type="tns:getAllVehicle"/>
 
 <xs:element name="getAllVehicleResponse" type="tns:getAllVehicleResponse"/>
@@ -58,12 +62,14 @@
 <xs:sequence>
 <xs:element name="order_Id" type="xs:int"/>
 <xs:element name="area_branch" type="xs:string" minOccurs="0"/>
+<xs:element name="city" type="xs:string" minOccurs="0"/>
 <xs:element name="description" type="xs:string" minOccurs="0"/>
 <xs:element name="distance" type="xs:string" minOccurs="0"/>
 <xs:element name="driver_mobile" type="xs:string" minOccurs="0"/>
 <xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
 <xs:element name="feedback_id" type="xs:int"/>
 <xs:element name="option" type="xs:string" minOccurs="0"/>
+<xs:element name="order_email" type="xs:string" minOccurs="0"/>
 <xs:element name="pick_location" type="xs:string" minOccurs="0"/>
 <xs:element name="price" type="xs:string" minOccurs="0"/>
 <xs:element name="subject" type="xs:string" minOccurs="0"/>
@@ -138,6 +144,29 @@
 </xs:complexType>
 
 <xs:complexType name="addCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserOrder">
+<xs:sequence>
+<xs:element name="mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="order_email" type="xs:string" minOccurs="0"/>
+<xs:element name="pick_location" type="xs:string" minOccurs="0"/>
+<xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
+<xs:element name="city" type="xs:string" minOccurs="0"/>
+<xs:element name="area_branch" type="xs:string" minOccurs="0"/>
+<xs:element name="distance" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:string" minOccurs="0"/>
+<xs:element name="time" type="xs:string" minOccurs="0"/>
+<xs:element name="v_type" type="xs:string" minOccurs="0"/>
+<xs:element name="driver_mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="option" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserOrderResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

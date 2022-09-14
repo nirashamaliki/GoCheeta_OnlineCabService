@@ -706,8 +706,27 @@ public class MySQLServer implements DBUtil {
              return false;
         }
     }
+
     
-    
-    
+    //Order
+     @Override
+      public boolean addUserOrder(User user) {
+        try {
+            
+        this.stmt  = this.con.prepareCall("INSERT INTO `booking_details`(`order_mobile`, `email`, `pick_location`, `drop_location`, `area_branch`, "
+                + "`city`, `distance`, `price`, `time`, `v_type`, `driver_mobile`,`option`) VALUES ('"+user.getMobile()+"', '"+user.getEmail()+"', "
+                        + "'"+user.getPick_location()+"', '"+user.getDrop_loction()+"','"+user.getArea_branch()+"','"+user.getCity()+"', '"+user.getDistance()+"',"
+                                + " '"+user.getPrice()+"', '"+user.getTime()+"', '"+user.getV_type()+"', '"+user.getDriver_mobile()+"','No Active');");
+      
+            //this.stmt  = this.con.prepareCall("INSERT INTO `booking_details`(`order_mobile`,`email`,`pick_location`,`drop_location`,`area_branch`,`city`,`distance`,`price`,`time`,`v_type`,`driver_mobile`,`option`) VALUES ('"+user.getMobile()+"','"+user.getOrder_email()+"','"+user.getPick_location()+"','"+user.getDrop_loction()+"','"+user.getArea_branch()+"','"+user.getDistance()+"','"+user.getPrice()+"','"+user.getTime()+"','"+user.getV_type()+"','"+user.getDriver_mobile()+"','No Active');");
+            
+            return ((PreparedStatement) this.stmt).executeUpdate() > 0;            
+        } catch(SQLException e) {
+
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+      
 
 }

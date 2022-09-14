@@ -15,13 +15,14 @@ package Class;
     private String price;
     private String time;
     private String v_type;
+    private String city;
     private String driver_mobile;
     private String option="No Active";
     
     private int feedback_id;
     private String subject;
     private String description;
-    private String email;
+    private String order_email;
 
     public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile,String email) {
         super(mobile);
@@ -37,9 +38,8 @@ package Class;
         this.feedback_id = feedback_id;
         this.subject = subject;
         this.description = description;
-        this.email=email;
+        this.order_email=email;
     }
-    
     
     public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile) {
         super(mobile);
@@ -77,7 +77,6 @@ package Class;
         this.drop_loction = drop_loction;
     }
 
-  
     public User(int feedback_id, String subject, String description, String mobile,String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile) {
         super(mobile);
         this.pick_location = pick_location;
@@ -92,87 +91,24 @@ package Class;
         this.subject = subject;
         this.description = description;
     }
+ 
+       public User(int order_Id, String mobile,String order_email, String pick_location, String drop_loction,String city ,String area_branch, String distance, String price, String time, String v_type, String driver_mobile,String option) {
+        super(mobile);
+        this.order_Id = order_Id;
+        this.pick_location = pick_location;
+        this.drop_loction = drop_loction;
+        this.area_branch = area_branch;
+        this.distance = distance;
+        this.price = price;
+        this.time = time;
+        this.v_type = v_type;
+        this.driver_mobile = order_email;
+        this.city = city;
+        this.driver_mobile = driver_mobile;
+        this.option = option;
+       }
 
-//    public int getOrder_Id() {
-//        return order_Id;
-//    }
-
-//    public String getPick_location() {
-//        return pick_location;
-//    }
-
-//    public String getDrop_loction() {
-//        return drop_loction;
-//    }
-//
-//    public String getArea_branch() {
-//        return area_branch;
-//    }
-//
-//    public String getDistance() {
-//        return distance;
-//    }
-//
-//    public String getPrice() {
-//        return price;
-//    }
-//
-//    public String getTime() {
-//        return time;
-//    }
-//
-//    public String getV_type() {
-//        return v_type;
-//    }
-//
-//    public String getOption() {
-//        return option;
-//    }
-
-//    public void setOrder_Id(int order_Id) {
-//        this.order_Id = order_Id;
-//    }
-//
-//    public void setPick_location(String pick_location) {
-//        this.pick_location = pick_location;
-//    }
-//
-//    public void setDrop_loction(String drop_loction) {
-//        this.drop_loction = drop_loction;
-//    }
-//
-//    public void setArea_branch(String area_branch) {
-//        this.area_branch = area_branch;
-//    }
-//
-//    public void setDistance(String distance) {
-//        this.distance = distance;
-//    }
-//
-//    public void setPrice(String price) {
-//        this.price = price;
-//    }
-//
-//    public void setTime(String time) {
-//        this.time = time;
-//    }
-//
-//    public void setV_type(String v_type) {
-//        this.v_type = v_type;
-//    }
-//
-//    public void setOption(String option) {
-//        this.option = option;
-//    }
-//
-//    public String  getDriver_mobile() {
-//        return driver_mobile;
-//    }
-//
-//    public void setDriver_mobile(String  driver_mobile) {
-//        this.driver_mobile = driver_mobile;
-//    }
-
+    
     public String getPick_location() {
         return pick_location;
     }
@@ -268,7 +204,22 @@ package Class;
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getOrder_email() {
+        return order_email;
+    }
+
+    public void setOrder_email(String order_email) {
+        this.order_email = order_email;
+    }
+
    
 }

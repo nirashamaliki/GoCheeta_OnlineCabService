@@ -19,12 +19,14 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="area_branch" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="distance" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="drop_loction" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="feedback_id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="option" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="order_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="pick_location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="subject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -42,12 +44,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "user", propOrder = {
     "orderId",
     "areaBranch",
+    "city",
     "description",
     "distance",
     "driverMobile",
     "dropLoction",
     "feedbackId",
     "option",
+    "orderEmail",
     "pickLocation",
     "price",
     "subject",
@@ -62,6 +66,7 @@ public class User
     protected int orderId;
     @XmlElement(name = "area_branch")
     protected String areaBranch;
+    protected String city;
     protected String description;
     protected String distance;
     @XmlElement(name = "driver_mobile")
@@ -71,6 +76,8 @@ public class User
     @XmlElement(name = "feedback_id")
     protected int feedbackId;
     protected String option;
+    @XmlElement(name = "order_email")
+    protected String orderEmail;
     @XmlElement(name = "pick_location")
     protected String pickLocation;
     protected String price;
@@ -117,6 +124,30 @@ public class User
      */
     public void setAreaBranch(String value) {
         this.areaBranch = value;
+    }
+
+    /**
+     * Gets the value of the city property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * Sets the value of the city property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCity(String value) {
+        this.city = value;
     }
 
     /**
@@ -253,6 +284,30 @@ public class User
      */
     public void setOption(String value) {
         this.option = value;
+    }
+
+    /**
+     * Gets the value of the orderEmail property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOrderEmail() {
+        return orderEmail;
+    }
+
+    /**
+     * Sets the value of the orderEmail property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOrderEmail(String value) {
+        this.orderEmail = value;
     }
 
     /**

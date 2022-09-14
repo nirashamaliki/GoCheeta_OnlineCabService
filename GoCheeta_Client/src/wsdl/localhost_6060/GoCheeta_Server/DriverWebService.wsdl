@@ -10,30 +10,30 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
-<message name="getBranchDrop">
-<part name="parameters" element="tns:getBranchDrop"/>
-</message>
-<message name="getBranchDropResponse">
-<part name="parameters" element="tns:getBranchDropResponse"/>
-</message>
 <message name="addDriver">
 <part name="parameters" element="tns:addDriver"/>
 </message>
 <message name="addDriverResponse">
 <part name="parameters" element="tns:addDriverResponse"/>
 </message>
+<message name="getBranchDrop">
+<part name="parameters" element="tns:getBranchDrop"/>
+</message>
+<message name="getBranchDropResponse">
+<part name="parameters" element="tns:getBranchDropResponse"/>
+</message>
 <portType name="DriverWebService">
 <operation name="hello">
 <input wsam:Action="http://gocheeta/DriverWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://gocheeta/DriverWebService/helloResponse" message="tns:helloResponse"/>
 </operation>
-<operation name="getBranchDrop">
-<input wsam:Action="http://gocheeta/DriverWebService/getBranchDropRequest" message="tns:getBranchDrop"/>
-<output wsam:Action="http://gocheeta/DriverWebService/getBranchDropResponse" message="tns:getBranchDropResponse"/>
-</operation>
 <operation name="addDriver">
 <input wsam:Action="http://gocheeta/DriverWebService/addDriverRequest" message="tns:addDriver"/>
 <output wsam:Action="http://gocheeta/DriverWebService/addDriverResponse" message="tns:addDriverResponse"/>
+</operation>
+<operation name="getBranchDrop">
+<input wsam:Action="http://gocheeta/DriverWebService/getBranchDropRequest" message="tns:getBranchDrop"/>
+<output wsam:Action="http://gocheeta/DriverWebService/getBranchDropResponse" message="tns:getBranchDropResponse"/>
 </operation>
 </portType>
 <binding name="DriverWebServicePortBinding" type="tns:DriverWebService">
@@ -47,7 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getBranchDrop">
+<operation name="addDriver">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -56,7 +56,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addDriver">
+<operation name="getBranchDrop">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

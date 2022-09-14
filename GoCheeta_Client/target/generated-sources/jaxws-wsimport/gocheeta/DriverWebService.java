@@ -42,18 +42,6 @@ public interface DriverWebService {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<gocheeta.Branch>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBranchDrop", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDrop")
-    @ResponseWrapper(localName = "getBranchDropResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDropResponse")
-    @Action(input = "http://gocheeta/DriverWebService/getBranchDropRequest", output = "http://gocheeta/DriverWebService/getBranchDropResponse")
-    public List<Branch> getBranchDrop();
-
-    /**
-     * 
      * @param dPassword
      * @param driverMobile
      * @param dName
@@ -81,5 +69,17 @@ public interface DriverWebService {
         String branch,
         @WebParam(name = "time_type", targetNamespace = "")
         String timeType);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<gocheeta.Branch>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBranchDrop", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDrop")
+    @ResponseWrapper(localName = "getBranchDropResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDropResponse")
+    @Action(input = "http://gocheeta/DriverWebService/getBranchDropRequest", output = "http://gocheeta/DriverWebService/getBranchDropResponse")
+    public List<Branch> getBranchDrop();
 
 }
