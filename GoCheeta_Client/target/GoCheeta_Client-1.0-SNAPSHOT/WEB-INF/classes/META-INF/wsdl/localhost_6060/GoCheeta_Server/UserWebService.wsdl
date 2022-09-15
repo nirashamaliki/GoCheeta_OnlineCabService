@@ -10,17 +10,11 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
-<message name="getAllVehicle">
-<part name="parameters" element="tns:getAllVehicle"/>
+<message name="loginCustomer">
+<part name="parameters" element="tns:loginCustomer"/>
 </message>
-<message name="getAllVehicleResponse">
-<part name="parameters" element="tns:getAllVehicleResponse"/>
-</message>
-<message name="addCustomer">
-<part name="parameters" element="tns:addCustomer"/>
-</message>
-<message name="addCustomerResponse">
-<part name="parameters" element="tns:addCustomerResponse"/>
+<message name="loginCustomerResponse">
+<part name="parameters" element="tns:loginCustomerResponse"/>
 </message>
 <message name="loginDriver">
 <part name="parameters" element="tns:loginDriver"/>
@@ -28,23 +22,11 @@
 <message name="loginDriverResponse">
 <part name="parameters" element="tns:loginDriverResponse"/>
 </message>
-<message name="loginCustomer">
-<part name="parameters" element="tns:loginCustomer"/>
-</message>
-<message name="loginCustomerResponse">
-<part name="parameters" element="tns:loginCustomerResponse"/>
-</message>
 <message name="loginAdmin">
 <part name="parameters" element="tns:loginAdmin"/>
 </message>
 <message name="loginAdminResponse">
 <part name="parameters" element="tns:loginAdminResponse"/>
-</message>
-<message name="getViewUsersBooks">
-<part name="parameters" element="tns:getViewUsersBooks"/>
-</message>
-<message name="getViewUsersBooksResponse">
-<part name="parameters" element="tns:getViewUsersBooksResponse"/>
 </message>
 <message name="addUserOrder">
 <part name="parameters" element="tns:addUserOrder"/>
@@ -52,38 +34,56 @@
 <message name="addUserOrderResponse">
 <part name="parameters" element="tns:addUserOrderResponse"/>
 </message>
+<message name="addCustomer">
+<part name="parameters" element="tns:addCustomer"/>
+</message>
+<message name="addCustomerResponse">
+<part name="parameters" element="tns:addCustomerResponse"/>
+</message>
+<message name="getViewUsersBooks">
+<part name="parameters" element="tns:getViewUsersBooks"/>
+</message>
+<message name="getViewUsersBooksResponse">
+<part name="parameters" element="tns:getViewUsersBooksResponse"/>
+</message>
+<message name="getAllVehicle">
+<part name="parameters" element="tns:getAllVehicle"/>
+</message>
+<message name="getAllVehicleResponse">
+<part name="parameters" element="tns:getAllVehicleResponse"/>
+</message>
 <portType name="UserWebService">
 <operation name="hello">
 <input wsam:Action="http://gocheeta/UserWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://gocheeta/UserWebService/helloResponse" message="tns:helloResponse"/>
 </operation>
-<operation name="getAllVehicle">
-<input wsam:Action="http://gocheeta/UserWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
-<output wsam:Action="http://gocheeta/UserWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
-</operation>
-<operation name="addCustomer">
-<input wsam:Action="http://gocheeta/UserWebService/addCustomerRequest" message="tns:addCustomer"/>
-<output wsam:Action="http://gocheeta/UserWebService/addCustomerResponse" message="tns:addCustomerResponse"/>
+<operation name="loginCustomer">
+<input wsam:Action="http://gocheeta/UserWebService/loginCustomerRequest" message="tns:loginCustomer"/>
+<output wsam:Action="http://gocheeta/UserWebService/loginCustomerResponse" message="tns:loginCustomerResponse"/>
 </operation>
 <operation name="loginDriver">
 <input wsam:Action="http://gocheeta/UserWebService/loginDriverRequest" message="tns:loginDriver"/>
 <output wsam:Action="http://gocheeta/UserWebService/loginDriverResponse" message="tns:loginDriverResponse"/>
 </operation>
-<operation name="loginCustomer">
-<input wsam:Action="http://gocheeta/UserWebService/loginCustomerRequest" message="tns:loginCustomer"/>
-<output wsam:Action="http://gocheeta/UserWebService/loginCustomerResponse" message="tns:loginCustomerResponse"/>
-</operation>
 <operation name="loginAdmin">
 <input wsam:Action="http://gocheeta/UserWebService/loginAdminRequest" message="tns:loginAdmin"/>
 <output wsam:Action="http://gocheeta/UserWebService/loginAdminResponse" message="tns:loginAdminResponse"/>
+</operation>
+<operation name="addUserOrder">
+<input wsam:Action="http://gocheeta/UserWebService/addUserOrderRequest" message="tns:addUserOrder"/>
+<output wsam:Action="http://gocheeta/UserWebService/addUserOrderResponse" message="tns:addUserOrderResponse"/>
+</operation>
+<operation name="addCustomer">
+<input wsam:Action="http://gocheeta/UserWebService/addCustomerRequest" message="tns:addCustomer"/>
+<output wsam:Action="http://gocheeta/UserWebService/addCustomerResponse" message="tns:addCustomerResponse"/>
 </operation>
 <operation name="getViewUsersBooks">
 <input wsam:Action="http://gocheeta/UserWebService/getViewUsersBooksRequest" message="tns:getViewUsersBooks"/>
 <output wsam:Action="http://gocheeta/UserWebService/getViewUsersBooksResponse" message="tns:getViewUsersBooksResponse"/>
 </operation>
-<operation name="addUserOrder">
-<input wsam:Action="http://gocheeta/UserWebService/addUserOrderRequest" message="tns:addUserOrder"/>
-<output wsam:Action="http://gocheeta/UserWebService/addUserOrderResponse" message="tns:addUserOrderResponse"/>
+<operation name="getAllVehicle">
+<input wsam:Action="http://gocheeta/UserWebService/getAllVehicleRequest" message="tns:getAllVehicle"/>
+<output wsam:Action="http://gocheeta/UserWebService/getAllVehicleResponse" message="tns:getAllVehicleResponse"/>
 </operation>
 </portType>
 <binding name="UserWebServicePortBinding" type="tns:UserWebService">
@@ -97,16 +97,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getAllVehicle">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addCustomer">
+<operation name="loginCustomer">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -124,7 +115,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="loginCustomer">
+<operation name="loginAdmin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -133,7 +124,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="loginAdmin">
+<operation name="addUserOrder">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addCustomer">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -151,7 +151,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addUserOrder">
+<operation name="getAllVehicle">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -38,6 +38,7 @@
           
           <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Booking Order</p>
         <br>
+       
 	<div class="input-group">
             <input type="text" id="mobile" name="mobile" placeholder="Customer Mobile" required><br>
         </div>
@@ -86,6 +87,10 @@
              <input type="text" id="price" name="price" placeholder="Total Price" required><br>
         </div>
               
+        <div class="input-group">
+             <input type="text" id="distance" name="distance" placeholder="Total Distance" required><br>
+        </div>        
+                
         <div class="input-group">
              <input type="date" id="time" name="time" placeholder="Choose Time" required><br>
         </div>         

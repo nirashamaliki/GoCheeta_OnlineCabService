@@ -24,7 +24,7 @@ package Class;
     private String description;
     private String order_email;
 
-    public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile,String email) {
+    public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile,String order_email) {
         super(mobile);
         this.order_Id = order_Id;
         this.pick_location = pick_location;
@@ -38,7 +38,7 @@ package Class;
         this.feedback_id = feedback_id;
         this.subject = subject;
         this.description = description;
-        this.order_email=email;
+        this.order_email=order_email;
     }
     
     public User(int order_Id, String pick_location, String drop_loction, String area_branch, String distance, String price, String time, String v_type, String driver_mobile, int feedback_id, String subject, String description, String mobile) {
@@ -102,7 +102,7 @@ package Class;
         this.price = price;
         this.time = time;
         this.v_type = v_type;
-        this.driver_mobile = order_email;
+        this.order_email = order_email;
         this.city = city;
         this.driver_mobile = driver_mobile;
         this.option = option;

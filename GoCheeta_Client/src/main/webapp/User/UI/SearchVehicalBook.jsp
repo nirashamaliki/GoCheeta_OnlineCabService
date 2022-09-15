@@ -30,6 +30,9 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%
+           out.print(session.getAttribute("msg"));
+        %>
         <form action ="" method="post"> 
             <input type="text" name="VehicalType"/>
             <input type ="submit" value="Search">

@@ -12,7 +12,8 @@
 <%@page import="java.util.List"%>
 
 <%
-
+    
+    String msg = "";
     String driver_mobile    = request.getParameter("driver_mobile");
     String mobile           = request.getParameter("mobile");
     String order_email      = request.getParameter("order_email");
@@ -32,7 +33,9 @@
     
     if(userProxy.addUserOrder(mobile,order_email,pick_location,drop_loction,city,area_branch,distance,price,time,v_type,driver_mobile,option)) {
         
-        //session.g("driver_mobile");
+      
+      //  session.getAttribute("msg");
+        session.setAttribute("Your Order Added Successfully", msg);
         response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
         
     }else{
