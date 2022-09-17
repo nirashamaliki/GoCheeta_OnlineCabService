@@ -45,6 +45,23 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getBranchDrop">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBranchDropResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:branch" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="branch">
+<xs:sequence>
+<xs:element name="b_name" type="xs:string" minOccurs="0"/>
+<xs:element name="branch_id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getActiveBookingDetails">
 <xs:sequence>
 <xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
@@ -53,7 +70,7 @@
 
 <xs:complexType name="getActiveBookingDetailsResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:user" minOccurs="0"/>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -87,23 +104,6 @@
 <xs:element name="email" type="xs:string" minOccurs="0"/>
 <xs:element name="mobile" type="xs:string" minOccurs="0"/>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getBranchDrop">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getBranchDropResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:branch" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="branch">
-<xs:sequence>
-<xs:element name="b_name" type="xs:string" minOccurs="0"/>
-<xs:element name="branch_id" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

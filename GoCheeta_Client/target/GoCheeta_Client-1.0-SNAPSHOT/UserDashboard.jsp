@@ -26,13 +26,13 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="/GoCheeta_Client/UserDashboard.jsp" class="active">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/GoCheeta_Client/User/UI/AddCustomerOrder.jsp">
             <i class='bx bx-list-ul'></i>
             <span class="links_name">Order Details</span>
           </a>
@@ -45,7 +45,7 @@
         </li>
         
         <li>
-          <a href="#">
+          <a href="/GoCheeta_Client/User/UI/AddNewFeedback.jsp">
             <i class='bx bx-message' ></i>
             <span class="links_name">Feedback</span>
           </a>
@@ -78,7 +78,7 @@
 
       <div>
         <div>
-            <%@ include file="Admin/UI/ViewAllPrice.jsp" %>  
+            <%@ include file="User/UI/ViewAllPrice.jsp" %>  
       </div>
     </div>
   </section>

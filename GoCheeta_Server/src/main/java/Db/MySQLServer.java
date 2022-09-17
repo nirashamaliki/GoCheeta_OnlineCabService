@@ -778,11 +778,13 @@ public class MySQLServer implements DBUtil {
         }
     }*/
     
-  /*  @Override
+ @Override
     public List<User> getActiveBookingDetails(String vehicle_no) {
         try {
+            
+            
             this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details WHERE vehicle_no = " + vehicle_no);
+            this.rs    = this.stmt.executeQuery("SELECT * FROM gocheeta_db.booking_details where WHERE vehicle_no = '"+ vehicle_no+"'" );
 
             List<User> users = new ArrayList<>();
 
@@ -799,14 +801,13 @@ public class MySQLServer implements DBUtil {
             return null;
         }
     } 
-    */
-    
-    @Override
+   
+  /* @Override
     public User getActiveBookingDetails(String vehicle_no) {
         
         try {
             this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details WHERE booking_details.vehicle_no = " + vehicle_no);
+            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details WHERE booking_details.vehicle_no = '"+ vehicle_no+"'" );
 
             if(rs.next()) {
                 
@@ -822,7 +823,6 @@ public class MySQLServer implements DBUtil {
             System.out.println(e.getMessage());
             return null;
         }
-    }
-    
+    }*/
 
 }

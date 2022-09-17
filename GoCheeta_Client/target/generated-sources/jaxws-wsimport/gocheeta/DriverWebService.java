@@ -27,21 +27,6 @@ public interface DriverWebService {
 
     /**
      * 
-     * @param vehicleNo
-     * @return
-     *     returns gocheeta.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getActiveBookingDetails", targetNamespace = "http://gocheeta/", className = "gocheeta.GetActiveBookingDetails")
-    @ResponseWrapper(localName = "getActiveBookingDetailsResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetActiveBookingDetailsResponse")
-    @Action(input = "http://gocheeta/DriverWebService/getActiveBookingDetailsRequest", output = "http://gocheeta/DriverWebService/getActiveBookingDetailsResponse")
-    public User getActiveBookingDetails(
-        @WebParam(name = "vehicle_no", targetNamespace = "")
-        String vehicleNo);
-
-    /**
-     * 
      * @param dPassword
      * @param driverMobile
      * @param dName
@@ -81,6 +66,21 @@ public interface DriverWebService {
     @ResponseWrapper(localName = "getBranchDropResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetBranchDropResponse")
     @Action(input = "http://gocheeta/DriverWebService/getBranchDropRequest", output = "http://gocheeta/DriverWebService/getBranchDropResponse")
     public List<Branch> getBranchDrop();
+
+    /**
+     * 
+     * @param vehicleNo
+     * @return
+     *     returns java.util.List<gocheeta.User>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getActiveBookingDetails", targetNamespace = "http://gocheeta/", className = "gocheeta.GetActiveBookingDetails")
+    @ResponseWrapper(localName = "getActiveBookingDetailsResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetActiveBookingDetailsResponse")
+    @Action(input = "http://gocheeta/DriverWebService/getActiveBookingDetailsRequest", output = "http://gocheeta/DriverWebService/getActiveBookingDetailsResponse")
+    public List<User> getActiveBookingDetails(
+        @WebParam(name = "vehicle_no", targetNamespace = "")
+        String vehicleNo);
 
     /**
      * 

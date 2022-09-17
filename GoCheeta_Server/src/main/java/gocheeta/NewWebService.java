@@ -174,7 +174,7 @@ public class NewWebService {
         return this.dbUtil.deleteVehicleDriver(driver_mobile);
     }
 
-    @WebMethod(operationName = "getVehicleUserbyId")
+   @WebMethod(operationName = "getVehicleUserbyId")
     public Vehicle getVehicleUserbyId(@WebParam(name = "vehicle_no") String vehicle_no) {
         return this.dbUtil.getVehicleUserbyId(vehicle_no);
     }

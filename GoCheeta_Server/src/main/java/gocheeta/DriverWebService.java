@@ -45,9 +45,15 @@ public class DriverWebService {
          return this.dbUtil.getBranchDrop();
     }
      
-   @WebMethod(operationName = "getActiveBookingDetails")
-    public User getActiveBookingDetails(@WebParam(name = "vehicle_no") String vehicle_no) {
+  @WebMethod(operationName = "getActiveBookingDetails")
+    public List<User> getActiveBookingDetails(@WebParam(name = "vehicle_no") String vehicle_no) {
         return this.dbUtil.getActiveBookingDetails(vehicle_no);
    }
+     
+  /*  @WebMethod(operationName = "getActiveBookingDetails")
+    public User getActiveBookingDetails(@WebParam(name = "vehicle_no") String vehicle_no) {
+        return this.dbUtil.getActiveBookingDetails(vehicle_no);
+    } */
+     
 
 }

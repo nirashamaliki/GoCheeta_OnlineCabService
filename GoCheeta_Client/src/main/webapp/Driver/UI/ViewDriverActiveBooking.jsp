@@ -17,9 +17,11 @@
     DriverWebService_Service service = new DriverWebService_Service();
     DriverWebService customerProxy = service.getDriverWebServicePort();
     
-    //List<User> users= customerProxy.getActiveBookingDetails(vehicle_no);
+    List<User> users= customerProxy.getActiveBookingDetails(vehicle_no);
         
 %>
+
+
 
 <!DOCTYPE html>
 <html>

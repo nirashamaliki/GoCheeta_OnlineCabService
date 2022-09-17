@@ -88,7 +88,7 @@ public interface  DBUtil {
     public Vehicle getVehicleUserbyId(String vehicle_no);
 
     //Driver Booking Details view
-    public User getActiveBookingDetails(String vehicle_no);
-
+   public List<User>getActiveBookingDetails(String vehicle_no);
+   //public User getActiveBookingDetails(String vehicle_no);
 }
 

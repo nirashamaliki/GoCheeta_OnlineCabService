@@ -12,9 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="/GoCheeta_Client/Driver/UI/ViewDriverActiveBooking.jsp">
-            <input type="text" name="vehicle_no"/>
-            <input type="submit"/>
+        
+      <div class="container">
+          <form class="form-inline" method="post" action="/GoCheeta_Client/Driver/UI/ViewDriverActiveBooking.jsp">
+          <input type="text" name="vehicle_no" class="form-control" placeholder="Search roll no..">
+          <button type="submit" name="save" class="btn btn-primary">Search</button>
         </form>
+       </div>
     </body>
 </html>

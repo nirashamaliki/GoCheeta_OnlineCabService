@@ -22,7 +22,7 @@
     
     if(driverProxy.addCustomer(email,name,mobile,password)) {
         
-        response.sendRedirect("/GoCheeta_Client/Customer/UI/CustomerRegister.jsp");
+        response.sendRedirect("/GoCheeta_Client/User/UI/UserLogin.jsp");
         
     }else{
        

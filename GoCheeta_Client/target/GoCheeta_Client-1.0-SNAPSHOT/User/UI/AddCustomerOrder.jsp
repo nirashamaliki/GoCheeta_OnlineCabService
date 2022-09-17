@@ -216,7 +216,10 @@
        </th>
        
     <th style="width:400px;margin-left:-20%;margin-top:-20%" >
-         <table id="table" class="table table-bordered" style="width:350px;margin-left:5%;margin-top:-35%">
+         <table id="table" class="table table-bordered" style="width:400px;margin-left:2%;margin-top:-40%;
+        background: #FFF;
+        box-shadow: 0 0 0px rgba(0,0,0,.3);
+        padding: 40px 30px;">
         <thead>
          <th scope="col"style="text-align:center; ">No</th>
          <th scope="col"style="text-align:center;width:200px;">Vehicle TYpe</th>
