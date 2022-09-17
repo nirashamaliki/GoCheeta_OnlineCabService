@@ -12,9 +12,8 @@
 <%@page import="java.util.List"%>
 
 <%
-    
-    String msg = "";
     String driver_mobile    = request.getParameter("driver_mobile");
+    String vehicle_no       = request.getParameter("vehicle_no");
     String mobile           = request.getParameter("mobile");
     String order_email      = request.getParameter("order_email");
     String pick_location    = request.getParameter("pick_location");
@@ -31,16 +30,22 @@
     UserWebService userProxy   = service.getUserWebServicePort();
         
     
-    if(userProxy.addUserOrder(mobile,order_email,pick_location,drop_loction,city,area_branch,distance,price,time,v_type,driver_mobile,option)) {
+    if(userProxy.addUserOrder(mobile,order_email,pick_location,drop_loction,city,area_branch,distance,price,time,vehicle_no,v_type,driver_mobile,option)) {
+
+       request.setAttribute("msg","Thank You!!Your Booking Added Successfully");
+       RequestDispatcher rd = request.getRequestDispatcher("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
+       rd.include(request, response);
         
-      
-      //  session.getAttribute("msg");
-        session.setAttribute("Your Order Added Successfully", msg);
-        response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
+    /*String msg = "Thank You!!Your Booking Added Successfully";
+        request.setAttribute("msg",msg);
+        response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");*/
         
     }else{
-       
-        out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
-        //response.sendRedirect("/GoCheeta_Client/Driver/UI/DriverRegister.jsp");
+
+       request.setAttribute("msg","Thank You!!Your Booking Added Successfully");
+       RequestDispatcher rd = request.getRequestDispatcher("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
+       rd.include(request, response);
+       // out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
+        //response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
     }
 %>

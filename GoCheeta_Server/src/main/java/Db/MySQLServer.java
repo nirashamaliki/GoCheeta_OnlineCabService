@@ -476,12 +476,12 @@ public class MySQLServer implements DBUtil {
         public List<Vehicle> getAllVehicle() {
         try {
             this.stmt  = this.con.createStatement();
-            this.rs    = this.stmt.executeQuery("SELECT vehicle.vehicle_no,vehicle.vehicle_model,vehicle.vehical_Type,vehicle.Branch,vehicle.driver_mobile  FROM vehicle INNER JOIN driver ON driver.driver_mobile = vehicle.driver_mobile ORDER BY vehicle_no ASC;");
+            this.rs    = this.stmt.executeQuery("SELECT * FROM vehicle INNER JOIN driver ON driver.driver_mobile = vehicle.driver_mobile ORDER BY vehicle_no ASC;");
             
             List<Vehicle> vehicles = new ArrayList<>();
 
             while (rs.next()) {
-                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"),rs.getString("vehicle_model"),rs.getString("vehical_Type"), rs.getString("Branch"),rs.getInt("driver_mobile"));
+                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"),rs.getString("vehicle_model"),rs.getString("vehical_Type"),rs.getInt("driver_mobile"), rs.getString("branch"));
                    
                 vehicles .add(vehicle);
             }
@@ -714,9 +714,9 @@ public class MySQLServer implements DBUtil {
         try {
             
         this.stmt  = this.con.prepareCall("INSERT INTO `booking_details`(`order_mobile`, `email`, `pick_location`, `drop_location`, `area_branch`, "
-                + "`city`, `distance`, `price`, `time`, `v_type`, `driver_mobile`,`option`) VALUES ('"+user.getMobile()+"', '"+user.getOrder_email()+"', "
+                + "`city`, `distance`, `price`, `time`, `vehicle_no`, `v_type`, `driver_mobile`,`option`) VALUES ('"+user.getMobile()+"', '"+user.getOrder_email()+"', "
                         + "'"+user.getPick_location()+"', '"+user.getDrop_loction()+"','"+user.getArea_branch()+"','"+user.getCity()+"', '"+user.getDistance()+"',"
-                                + " '"+user.getPrice()+"', '"+user.getTime()+"', '"+user.getV_type()+"', '"+user.getDriver_mobile()+"','No Active');");
+                                + " '"+user.getPrice()+"', '"+user.getTime()+"', '"+user.getVehicle_no()+"', '"+user.getV_type()+"', '"+user.getDriver_mobile()+"','No Active');");
       
             //this.stmt  = this.con.prepareCall("INSERT INTO `booking_details`(`order_mobile`,`email`,`pick_location`,`drop_location`,`area_branch`,`city`,`distance`,`price`,`time`,`v_type`,`driver_mobile`,`option`) VALUES ('"+user.getMobile()+"','"+user.getOrder_email()+"','"+user.getPick_location()+"','"+user.getDrop_loction()+"','"+user.getArea_branch()+"','"+user.getDistance()+"','"+user.getPrice()+"','"+user.getTime()+"','"+user.getV_type()+"','"+user.getDriver_mobile()+"','No Active');");
             
@@ -727,6 +727,102 @@ public class MySQLServer implements DBUtil {
             return false;
         }
     }
-      
+
+
+    @Override
+    public Vehicle getVehicleUserbyId(String vehicle_no) {
+
+        try {
+            
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM vehicle WHERE vehicle_no = " + vehicle_no);
+            
+            if(rs.next()) {
+                Vehicle vehicle = new Vehicle(rs.getString("vehicle_no"), rs.getString("vehical_Type"), rs.getInt("driver_mobile"));             
+                
+                return vehicle;
+            } else {
+                return null;
+            }
+            
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    /* @Override
+    public List<User> getActiveBookingDetails(String vehicle_no) {
+      try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details WHERE booking_details.vehicle_no = " + vehicle_no); 
+
+            List<User> users = new ArrayList<>();
+
+            while (rs.next()) {
+
+
+                User user = new User (rs.getInt("order_id"),rs.getString("order_mobile"),
+                        rs.getString("pick_location"), rs.getString("drop_location"), 
+                        rs.getString("distance"), rs.getString("price"), 
+                        rs.getString("time"),
+                        rs.getString("option"));
+                users.add(user);
+            }
+            
+            return users;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            
+        }
+    }*/
+    
+  /*  @Override
+    public List<User> getActiveBookingDetails(String vehicle_no) {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details WHERE vehicle_no = " + vehicle_no);
+
+            List<User> users = new ArrayList<>();
+
+            while (rs.next()) {
+                
+               User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
+               users.add(user);
+            }
+            
+            return users;
+            
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    } 
+    */
+    
+    @Override
+    public User getActiveBookingDetails(String vehicle_no) {
+        
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM booking_details WHERE booking_details.vehicle_no = " + vehicle_no);
+
+            if(rs.next()) {
+                
+               User user= new User(rs.getInt("order_id"),rs.getString("order_mobile"),rs.getString("pick_location"), rs.getString("drop_location"), rs.getString("area_branch"), rs.getString("distance"), rs.getString("price"), rs.getString("time"), rs.getString("v_type"), rs.getString ("driver_mobile"), rs.getString("option"));
+               return user;
+            }
+            else{
+               return null;
+            }
+          
+   
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
 
 }

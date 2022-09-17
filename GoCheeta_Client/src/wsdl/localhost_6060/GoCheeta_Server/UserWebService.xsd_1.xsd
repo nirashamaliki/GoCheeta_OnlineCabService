@@ -32,18 +32,6 @@
 
 <xs:element name="loginDriverResponse" type="tns:loginDriverResponse"/>
 
-<xs:complexType name="hello">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="helloResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getViewUsersBooks">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -75,6 +63,7 @@
 <xs:element name="subject" type="xs:string" minOccurs="0"/>
 <xs:element name="time" type="xs:string" minOccurs="0"/>
 <xs:element name="v_type" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:extension>
 </xs:complexContent>
@@ -85,6 +74,18 @@
 <xs:element name="email" type="xs:string" minOccurs="0"/>
 <xs:element name="mobile" type="xs:string" minOccurs="0"/>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -102,6 +103,7 @@
 <xs:complexContent>
 <xs:extension base="tns:driver">
 <xs:sequence>
+<xs:element name="branch_name" type="xs:string" minOccurs="0"/>
 <xs:element name="vehical_Type" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_model" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
@@ -134,6 +136,21 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addCustomer">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addUserOrder">
 <xs:sequence>
 <xs:element name="mobile" type="xs:string" minOccurs="0"/>
@@ -145,6 +162,7 @@
 <xs:element name="distance" type="xs:string" minOccurs="0"/>
 <xs:element name="price" type="xs:string" minOccurs="0"/>
 <xs:element name="time" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
 <xs:element name="v_type" type="xs:string" minOccurs="0"/>
 <xs:element name="driver_mobile" type="xs:string" minOccurs="0"/>
 <xs:element name="option" type="xs:string" minOccurs="0"/>
@@ -152,21 +170,6 @@
 </xs:complexType>
 
 <xs:complexType name="addUserOrderResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCustomer">
-<xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="mobile" type="xs:string" minOccurs="0"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCustomerResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

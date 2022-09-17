@@ -5,6 +5,7 @@ gocheeta\DriverWebService_Service.class
 gocheeta\LoginAdminDriver.class
 gocheeta\GetViewUsersBooksResponse.class
 gocheeta\AddUserOrderResponse.class
+gocheeta\GetActiveBookingDetailsResponse.class
 gocheeta\LoginCustomerResponse.class
 gocheeta\GetBranchDrop.class
 gocheeta\GetDriverbyMobile.class
@@ -24,10 +25,12 @@ gocheeta\UserWebService.class
 gocheeta\DeleteVehicleDriver.class
 gocheeta\LoginDriverResponse.class
 gocheeta\AddVehicleResponse.class
+gocheeta\GetVehicleUserbyIdResponse.class
 gocheeta\UpdateVehicleDriver.class
 gocheeta\GetBranchDropDown.class
 gocheeta\LoginAdminDriverResponse.class
 gocheeta\AddDriverResponse.class
+gocheeta\GetActiveBookingDetails.class
 gocheeta\GetViewAllVehicleDriverResponse.class
 gocheeta\UpdateDriver.class
 gocheeta\GetViewUsersBooks.class
@@ -37,6 +40,7 @@ gocheeta\LoginDriver.class
 gocheeta\DeleteCategoryResponse.class
 gocheeta\LoginAdminResponse.class
 gocheeta\GetVehicleTypeDropResponse.class
+gocheeta\GetVehicleUserbyId.class
 gocheeta\AddDriver.class
 gocheeta\GetViewFeedbacks.class
 gocheeta\LoginCustomer.class

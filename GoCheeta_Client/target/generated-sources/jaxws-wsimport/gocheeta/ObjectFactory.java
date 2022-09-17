@@ -26,7 +26,9 @@ public class ObjectFactory {
 
     private final static QName _AddDriverResponse_QNAME = new QName("http://gocheeta/", "addDriverResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://gocheeta/", "helloResponse");
+    private final static QName _GetActiveBookingDetails_QNAME = new QName("http://gocheeta/", "getActiveBookingDetails");
     private final static QName _GetBranchDrop_QNAME = new QName("http://gocheeta/", "getBranchDrop");
+    private final static QName _GetActiveBookingDetailsResponse_QNAME = new QName("http://gocheeta/", "getActiveBookingDetailsResponse");
     private final static QName _Hello_QNAME = new QName("http://gocheeta/", "hello");
     private final static QName _AddDriver_QNAME = new QName("http://gocheeta/", "addDriver");
     private final static QName _GetBranchDropResponse_QNAME = new QName("http://gocheeta/", "getBranchDropResponse");
@@ -55,11 +57,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetActiveBookingDetails }
+     * 
+     */
+    public GetActiveBookingDetails createGetActiveBookingDetails() {
+        return new GetActiveBookingDetails();
+    }
+
+    /**
      * Create an instance of {@link GetBranchDrop }
      * 
      */
     public GetBranchDrop createGetBranchDrop() {
         return new GetBranchDrop();
+    }
+
+    /**
+     * Create an instance of {@link GetActiveBookingDetailsResponse }
+     * 
+     */
+    public GetActiveBookingDetailsResponse createGetActiveBookingDetailsResponse() {
+        return new GetActiveBookingDetailsResponse();
     }
 
     /**
@@ -84,6 +102,22 @@ public class ObjectFactory {
      */
     public GetBranchDropResponse createGetBranchDropResponse() {
         return new GetBranchDropResponse();
+    }
+
+    /**
+     * Create an instance of {@link Person }
+     * 
+     */
+    public Person createPerson() {
+        return new Person();
+    }
+
+    /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
     }
 
     /**
@@ -113,12 +147,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetActiveBookingDetails }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getActiveBookingDetails")
+    public JAXBElement<GetActiveBookingDetails> createGetActiveBookingDetails(GetActiveBookingDetails value) {
+        return new JAXBElement<GetActiveBookingDetails>(_GetActiveBookingDetails_QNAME, GetActiveBookingDetails.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetBranchDrop }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://gocheeta/", name = "getBranchDrop")
     public JAXBElement<GetBranchDrop> createGetBranchDrop(GetBranchDrop value) {
         return new JAXBElement<GetBranchDrop>(_GetBranchDrop_QNAME, GetBranchDrop.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetActiveBookingDetailsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getActiveBookingDetailsResponse")
+    public JAXBElement<GetActiveBookingDetailsResponse> createGetActiveBookingDetailsResponse(GetActiveBookingDetailsResponse value) {
+        return new JAXBElement<GetActiveBookingDetailsResponse>(_GetActiveBookingDetailsResponse_QNAME, GetActiveBookingDetailsResponse.class, null, value);
     }
 
     /**

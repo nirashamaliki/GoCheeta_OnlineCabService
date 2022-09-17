@@ -32,6 +32,7 @@
     <body>
         <%
            out.print(session.getAttribute("msg"));
+          
         %>
         <form action ="" method="post"> 
             <input type="text" name="VehicalType"/>
@@ -45,12 +46,12 @@
             <tr> 
                 <td style="width:15%;"><% out.print(vehicle.getVehicleModel()); %></td>
                 <td style="width:15%;"><% out.print(vehicle.getVehicalType()); %></td>
-                <td><% out.print(vehicle.getBranch()); %></td>
+                <td><% out.print(vehicle.getBranchName()); %></td>
                 <td><% out.print(vehicle.getDriverMobile()); %></td>
                 <td><% out.print(vehicle.getVehicleNo()); %></td>
              
                 <td style="width:30%;text-align: center">
-                   <a href="/GoCheeta_Client/Category/function/editCategory.jsp?id=<% out.print(vehicle.getVehicleNo()); %>" class="btn btn-primary"style="width:80px;height:40px;text-align:center;margin-right:5px;">Order</a>
+                   <a href="/GoCheeta_Client/User/UI/AddCustomerOrder.jsp?id=<% out.print(vehicle.getVehicleNo()); %>" class="btn btn-primary"style="width:80px;height:40px;text-align:center;margin-right:5px;">Order</a>
                   
             </tr>
             <% } %>

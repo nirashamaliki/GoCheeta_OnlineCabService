@@ -85,5 +85,10 @@ public interface  DBUtil {
     //Add Order
     public boolean addUserOrder(User user);
 
+    public Vehicle getVehicleUserbyId(String vehicle_no);
+
+    //Driver Booking Details view
+    public User getActiveBookingDetails(String vehicle_no);
+
 }
 

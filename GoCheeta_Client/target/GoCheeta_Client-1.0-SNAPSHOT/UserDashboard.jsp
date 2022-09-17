@@ -34,9 +34,16 @@
         <li>
           <a href="#">
             <i class='bx bx-list-ul'></i>
+            <span class="links_name">Order Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-list-ul'></i>
             <span class="links_name">View Details</span>
           </a>
         </li>
+        
         <li>
           <a href="#">
             <i class='bx bx-message' ></i>

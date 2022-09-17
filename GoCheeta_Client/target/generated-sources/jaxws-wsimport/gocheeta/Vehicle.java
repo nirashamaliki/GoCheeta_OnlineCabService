@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://gocheeta/}driver">
  *       &lt;sequence>
+ *         &lt;element name="branch_name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="vehical_Type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="vehicle_model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="vehicle_no" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -30,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "vehicle", propOrder = {
+    "branchName",
     "vehicalType",
     "vehicleModel",
     "vehicleNo"
@@ -38,12 +40,38 @@ public class Vehicle
     extends Driver
 {
 
+    @XmlElement(name = "branch_name")
+    protected String branchName;
     @XmlElement(name = "vehical_Type")
     protected String vehicalType;
     @XmlElement(name = "vehicle_model")
     protected String vehicleModel;
     @XmlElement(name = "vehicle_no")
     protected String vehicleNo;
+
+    /**
+     * Gets the value of the branchName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBranchName() {
+        return branchName;
+    }
+
+    /**
+     * Sets the value of the branchName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBranchName(String value) {
+        this.branchName = value;
+    }
 
     /**
      * Gets the value of the vehicalType property.

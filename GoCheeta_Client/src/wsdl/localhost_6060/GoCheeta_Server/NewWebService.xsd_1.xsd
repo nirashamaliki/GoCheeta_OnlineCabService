@@ -56,6 +56,10 @@
 
 <xs:element name="getVehicleTypeDropResponse" type="tns:getVehicleTypeDropResponse"/>
 
+<xs:element name="getVehicleUserbyId" type="tns:getVehicleUserbyId"/>
+
+<xs:element name="getVehicleUserbyIdResponse" type="tns:getVehicleUserbyIdResponse"/>
+
 <xs:element name="getViewAllVehicleDriver" type="tns:getViewAllVehicleDriver"/>
 
 <xs:element name="getViewAllVehicleDriverResponse" type="tns:getViewAllVehicleDriverResponse"/>
@@ -201,6 +205,7 @@
 <xs:element name="subject" type="xs:string" minOccurs="0"/>
 <xs:element name="time" type="xs:string" minOccurs="0"/>
 <xs:element name="v_type" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:extension>
 </xs:complexContent>
@@ -228,6 +233,7 @@
 <xs:complexContent>
 <xs:extension base="tns:driver">
 <xs:sequence>
+<xs:element name="branch_name" type="xs:string" minOccurs="0"/>
 <xs:element name="vehical_Type" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_model" type="xs:string" minOccurs="0"/>
 <xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
@@ -300,6 +306,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getAllVehicle">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllVehicleResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addCategory">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
@@ -310,16 +326,6 @@
 <xs:complexType name="addCategoryResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getAllVehicle">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getAllVehicleResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -373,6 +379,18 @@
 <xs:complexType name="getUsersResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleUserbyId">
+<xs:sequence>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleUserbyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:vehicle" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

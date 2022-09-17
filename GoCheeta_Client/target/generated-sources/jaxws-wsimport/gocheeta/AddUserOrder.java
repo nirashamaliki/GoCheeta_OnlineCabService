@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="distance" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="time" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="vehicle_no" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="v_type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="option" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -48,6 +49,7 @@ import javax.xml.bind.annotation.XmlType;
     "distance",
     "price",
     "time",
+    "vehicleNo",
     "vType",
     "driverMobile",
     "option"
@@ -67,6 +69,8 @@ public class AddUserOrder {
     protected String distance;
     protected String price;
     protected String time;
+    @XmlElement(name = "vehicle_no")
+    protected String vehicleNo;
     @XmlElement(name = "v_type")
     protected String vType;
     @XmlElement(name = "driver_mobile")
@@ -287,6 +291,30 @@ public class AddUserOrder {
      */
     public void setTime(String value) {
         this.time = value;
+    }
+
+    /**
+     * Gets the value of the vehicleNo property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVehicleNo() {
+        return vehicleNo;
+    }
+
+    /**
+     * Sets the value of the vehicleNo property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVehicleNo(String value) {
+        this.vehicleNo = value;
     }
 
     /**
