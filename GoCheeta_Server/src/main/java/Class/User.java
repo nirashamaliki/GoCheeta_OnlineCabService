@@ -7,7 +7,7 @@ package Class;
 
    public class User extends Person {
     
-    public int order_Id;
+    private int order_Id;
     private String pick_location;
     private String drop_loction;
     private String area_branch;
@@ -109,8 +109,6 @@ package Class;
         this.driver_mobile = driver_mobile;
         this.option = option;
        }
-
-       
         
        public User(int order_Id, String mobile,String order_email, String pick_location, String drop_loction,String city ,String area_branch, String distance, String price, String time, String vehicle_no,String v_type, String driver_mobile,String option) {
         super(mobile);
@@ -249,6 +247,13 @@ package Class;
         this.vehicle_no = vehicle_no;
     }
 
-    
-   
+    public int getOrder_Id() {
+        return order_Id;
+    }
+
+    public void setOrder_Id(int order_Id) {
+        this.order_Id = order_Id;
+    }
+
+
 }

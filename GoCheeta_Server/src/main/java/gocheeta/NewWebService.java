@@ -149,10 +149,9 @@ public class NewWebService {
     }
 
     @WebMethod(operationName = "updateVehicleDriver")
-    public boolean updateVehicleDriver(@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "vehical_Type") String vehical_Type,
-        @WebParam(name = "vehicle_model") String vehicle_model,@WebParam(name = "d_name") String d_name,
-        @WebParam(name = "d_email") String d_email,@WebParam(name = "d_password") String d_password,@WebParam(name = "branch") String branch, @WebParam(name = "time_type") String time_type) {
-        Vehicle vehicle = new Vehicle(vehicle_no, vehical_Type,vehicle_model,d_name,d_email,d_password,branch, time_type);
+    public boolean updateVehicleDriver(@WebParam(name = "driver_mobile") int driver_mobile,@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "vehical_Type") String vehical_Type,
+        @WebParam(name = "vehicle_model") String vehicle_model) {
+        Vehicle vehicle = new Vehicle(driver_mobile,vehicle_no, vehical_Type,vehicle_model);
         return this.dbUtil.updateVehicleDriver(vehicle);
     }
     
@@ -170,13 +169,15 @@ public class NewWebService {
     
     
     @WebMethod(operationName = "deleteVehicleDriver")
-    public boolean deleteVehicleDriver(@WebParam(name = "driver_mobile") int driver_mobile) {
-        return this.dbUtil.deleteVehicleDriver(driver_mobile);
+    public boolean deleteVehicleDriver(@WebParam(name = "vehicle_no") String vehicle_no) {
+        return this.dbUtil.deleteVehicleDriver(vehicle_no);
     }
 
    @WebMethod(operationName = "getVehicleUserbyId")
     public Vehicle getVehicleUserbyId(@WebParam(name = "vehicle_no") String vehicle_no) {
         return this.dbUtil.getVehicleUserbyId(vehicle_no);
     }
+    
+
        
 }

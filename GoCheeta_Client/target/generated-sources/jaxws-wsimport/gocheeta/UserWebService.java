@@ -27,21 +27,117 @@ public interface UserWebService {
 
     /**
      * 
-     * @param password
-     * @param email
+     * @param orderMobile
+     * @return
+     *     returns java.util.List<gocheeta.User>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUserBookingDetails", targetNamespace = "http://gocheeta/", className = "gocheeta.GetUserBookingDetails")
+    @ResponseWrapper(localName = "getUserBookingDetailsResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetUserBookingDetailsResponse")
+    @Action(input = "http://gocheeta/UserWebService/getUserBookingDetailsRequest", output = "http://gocheeta/UserWebService/getUserBookingDetailsResponse")
+    public List<User> getUserBookingDetails(
+        @WebParam(name = "order_mobile", targetNamespace = "")
+        String orderMobile);
+
+    /**
+     * 
+     * @param dropLoction
+     * @param distance
+     * @param orderId
+     * @param city
+     * @param pickLocation
+     * @param mobile
+     * @param orderEmail
+     * @param vehicleNo
+     * @param price
+     * @param vType
+     * @param driverMobile
+     * @param areaBranch
+     * @param time
+     * @param option
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "loginAdmin", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdmin")
-    @ResponseWrapper(localName = "loginAdminResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdminResponse")
-    @Action(input = "http://gocheeta/UserWebService/loginAdminRequest", output = "http://gocheeta/UserWebService/loginAdminResponse")
-    public boolean loginAdmin(
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
+    @RequestWrapper(localName = "updateAccept", targetNamespace = "http://gocheeta/", className = "gocheeta.UpdateAccept")
+    @ResponseWrapper(localName = "updateAcceptResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.UpdateAcceptResponse")
+    @Action(input = "http://gocheeta/UserWebService/updateAcceptRequest", output = "http://gocheeta/UserWebService/updateAcceptResponse")
+    public boolean updateAccept(
+        @WebParam(name = "order_id", targetNamespace = "")
+        int orderId,
+        @WebParam(name = "mobile", targetNamespace = "")
+        String mobile,
+        @WebParam(name = "order_email", targetNamespace = "")
+        String orderEmail,
+        @WebParam(name = "pick_location", targetNamespace = "")
+        String pickLocation,
+        @WebParam(name = "drop_loction", targetNamespace = "")
+        String dropLoction,
+        @WebParam(name = "city", targetNamespace = "")
+        String city,
+        @WebParam(name = "area_branch", targetNamespace = "")
+        String areaBranch,
+        @WebParam(name = "distance", targetNamespace = "")
+        String distance,
+        @WebParam(name = "price", targetNamespace = "")
+        String price,
+        @WebParam(name = "time", targetNamespace = "")
+        String time,
+        @WebParam(name = "vehicle_no", targetNamespace = "")
+        String vehicleNo,
+        @WebParam(name = "v_type", targetNamespace = "")
+        String vType,
+        @WebParam(name = "driver_mobile", targetNamespace = "")
+        String driverMobile,
+        @WebParam(name = "option", targetNamespace = "")
+        String option);
+
+    /**
+     * 
+     * @param orderId
+     * @return
+     *     returns gocheeta.User
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAcceptbyId", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAcceptbyId")
+    @ResponseWrapper(localName = "getAcceptbyIdResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetAcceptbyIdResponse")
+    @Action(input = "http://gocheeta/UserWebService/getAcceptbyIdRequest", output = "http://gocheeta/UserWebService/getAcceptbyIdResponse")
+    public User getAcceptbyId(
+        @WebParam(name = "order_id", targetNamespace = "")
+        int orderId);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<gocheeta.User>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getViewUsersBooks", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewUsersBooks")
+    @ResponseWrapper(localName = "getViewUsersBooksResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewUsersBooksResponse")
+    @Action(input = "http://gocheeta/UserWebService/getViewUsersBooksRequest", output = "http://gocheeta/UserWebService/getViewUsersBooksResponse")
+    public List<User> getViewUsersBooks(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "hello", targetNamespace = "http://gocheeta/", className = "gocheeta.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.HelloResponse")
+    @Action(input = "http://gocheeta/UserWebService/helloRequest", output = "http://gocheeta/UserWebService/helloResponse")
+    public String hello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
     /**
      * 
@@ -97,30 +193,6 @@ public interface UserWebService {
     /**
      * 
      * @param password
-     * @param name
-     * @param mobile
-     * @param email
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomer")
-    @ResponseWrapper(localName = "addCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomerResponse")
-    @Action(input = "http://gocheeta/UserWebService/addCustomerRequest", output = "http://gocheeta/UserWebService/addCustomerResponse")
-    public boolean addCustomer(
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "name", targetNamespace = "")
-        String name,
-        @WebParam(name = "mobile", targetNamespace = "")
-        String mobile,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param password
      * @param email
      * @return
      *     returns boolean
@@ -157,6 +229,48 @@ public interface UserWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "loginAdmin", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdmin")
+    @ResponseWrapper(localName = "loginAdminResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginAdminResponse")
+    @Action(input = "http://gocheeta/UserWebService/loginAdminRequest", output = "http://gocheeta/UserWebService/loginAdminResponse")
+    public boolean loginAdmin(
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
+     * @param password
+     * @param name
+     * @param mobile
+     * @param email
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addCustomer", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomer")
+    @ResponseWrapper(localName = "addCustomerResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.AddCustomerResponse")
+    @Action(input = "http://gocheeta/UserWebService/addCustomerRequest", output = "http://gocheeta/UserWebService/addCustomerResponse")
+    public boolean addCustomer(
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "name", targetNamespace = "")
+        String name,
+        @WebParam(name = "mobile", targetNamespace = "")
+        String mobile,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
+     * @param password
+     * @param email
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "loginDriver", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginDriver")
     @ResponseWrapper(localName = "loginDriverResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.LoginDriverResponse")
     @Action(input = "http://gocheeta/UserWebService/loginDriverRequest", output = "http://gocheeta/UserWebService/loginDriverResponse")
@@ -165,35 +279,5 @@ public interface UserWebService {
         String email,
         @WebParam(name = "password", targetNamespace = "")
         String password);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<gocheeta.User>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getViewUsersBooks", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewUsersBooks")
-    @ResponseWrapper(localName = "getViewUsersBooksResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.GetViewUsersBooksResponse")
-    @Action(input = "http://gocheeta/UserWebService/getViewUsersBooksRequest", output = "http://gocheeta/UserWebService/getViewUsersBooksResponse")
-    public List<User> getViewUsersBooks(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param name
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://gocheeta/", className = "gocheeta.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://gocheeta/", className = "gocheeta.HelloResponse")
-    @Action(input = "http://gocheeta/UserWebService/helloRequest", output = "http://gocheeta/UserWebService/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
 
 }

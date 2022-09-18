@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="driver_mobile" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="vehicle_no" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,27 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "deleteVehicleDriver", propOrder = {
-    "driverMobile"
+    "vehicleNo"
 })
 public class DeleteVehicleDriver {
 
-    @XmlElement(name = "driver_mobile")
-    protected int driverMobile;
+    @XmlElement(name = "vehicle_no")
+    protected String vehicleNo;
 
     /**
-     * Gets the value of the driverMobile property.
+     * Gets the value of the vehicleNo property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getDriverMobile() {
-        return driverMobile;
+    public String getVehicleNo() {
+        return vehicleNo;
     }
 
     /**
-     * Sets the value of the driverMobile property.
+     * Sets the value of the vehicleNo property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setDriverMobile(int value) {
-        this.driverMobile = value;
+    public void setVehicleNo(String value) {
+        this.vehicleNo = value;
     }
 
 }

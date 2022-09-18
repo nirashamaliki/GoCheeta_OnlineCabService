@@ -10,16 +10,21 @@
 
 <%
 
-    int driver_mobile = Integer.parseInt(request.getParameter("id"));
+    String vehicle_no = request.getParameter("id");
     
     NewWebService_Service service = new NewWebService_Service();
     NewWebService vehicleProxy = service.getNewWebServicePort();
+    HttpSession sesion = request.getSession();
+    
+    if(vehicleProxy.deleteVehicleDriver(vehicle_no)) {
         
-    if(vehicleProxy.deleteVehicleDriver(driver_mobile)) {
-        out.print("Delete Successfully");
-       response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
+        sesion.setAttribute("msg", "Delete Successfully");
+        response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
+        
     }else {
-        out.print("Delete Unsuccessfully");
+
+        sesion.setAttribute("msg", "Delete Unsuccessfully");
+        response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
     }
 
 %>

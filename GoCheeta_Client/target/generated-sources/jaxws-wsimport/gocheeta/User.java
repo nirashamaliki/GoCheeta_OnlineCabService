@@ -17,7 +17,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://gocheeta/}person">
  *       &lt;sequence>
- *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="area_branch" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -26,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="drop_loction" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="feedback_id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="option" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="order_Id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="order_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="pick_location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -43,7 +43,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "user", propOrder = {
-    "orderId",
     "areaBranch",
     "city",
     "description",
@@ -52,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
     "dropLoction",
     "feedbackId",
     "option",
+    "orderId",
     "orderEmail",
     "pickLocation",
     "price",
@@ -64,8 +64,6 @@ public class User
     extends Person
 {
 
-    @XmlElement(name = "order_Id")
-    protected int orderId;
     @XmlElement(name = "area_branch")
     protected String areaBranch;
     protected String city;
@@ -78,6 +76,8 @@ public class User
     @XmlElement(name = "feedback_id")
     protected int feedbackId;
     protected String option;
+    @XmlElement(name = "order_Id")
+    protected int orderId;
     @XmlElement(name = "order_email")
     protected String orderEmail;
     @XmlElement(name = "pick_location")
@@ -89,22 +89,6 @@ public class User
     protected String vType;
     @XmlElement(name = "vehicle_no")
     protected String vehicleNo;
-
-    /**
-     * Gets the value of the orderId property.
-     * 
-     */
-    public int getOrderId() {
-        return orderId;
-    }
-
-    /**
-     * Sets the value of the orderId property.
-     * 
-     */
-    public void setOrderId(int value) {
-        this.orderId = value;
-    }
 
     /**
      * Gets the value of the areaBranch property.
@@ -288,6 +272,22 @@ public class User
      */
     public void setOption(String value) {
         this.option = value;
+    }
+
+    /**
+     * Gets the value of the orderId property.
+     * 
+     */
+    public int getOrderId() {
+        return orderId;
+    }
+
+    /**
+     * Sets the value of the orderId property.
+     * 
+     */
+    public void setOrderId(int value) {
+        this.orderId = value;
     }
 
     /**

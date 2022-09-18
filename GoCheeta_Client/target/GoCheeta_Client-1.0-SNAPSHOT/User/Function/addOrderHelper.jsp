@@ -28,24 +28,24 @@
     
     UserWebService_Service service = new UserWebService_Service();
     UserWebService userProxy   = service.getUserWebServicePort();
+    HttpSession sesion = request.getSession();
         
     
     if(userProxy.addUserOrder(mobile,order_email,pick_location,drop_loction,city,area_branch,distance,price,time,vehicle_no,v_type,driver_mobile,option)) {
-
-       request.setAttribute("msg","Thank You!!Your Booking Added Successfully");
-       RequestDispatcher rd = request.getRequestDispatcher("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
-       rd.include(request, response);
         
-    /*String msg = "Thank You!!Your Booking Added Successfully";
-        request.setAttribute("msg",msg);
-        response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");*/
+        sesion.setAttribute("msg", "Booking order successful");
+        response.sendRedirect("/GoCheeta_Client/Driver/UI/SearchVehicalBook.jsp");
         
     }else{
 
-       request.setAttribute("msg","Thank You!!Your Booking Added Successfully");
+        sesion.setAttribute("msg","Sorry!!Your Booking Added UnSuccessfully");
+        response.sendRedirect("/GoCheeta_Client/Driver/UI/SearchVehicalBook.jsp");
+
+     /*request.setAttribute("msg","Thank You!!Your Booking Added Successfully");
        RequestDispatcher rd = request.getRequestDispatcher("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
-       rd.include(request, response);
-       // out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
-        //response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");
+       rd.include(request, response);*/
+
+      /* out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
+       response.sendRedirect("/GoCheeta_Client/User/UI/SearchVehicalBook.jsp");*/
     }
 %>

@@ -18,15 +18,17 @@
 
     NewWebService_Service service = new NewWebService_Service();
     NewWebService vehicleProxy   = service.getNewWebServicePort();
-        
+    HttpSession sesion = request.getSession();   
+    
     if(vehicleProxy.addVehicle(driver_mobile,vehicle_no,vehical_Type, vehicle_model)) {
     
-        
+        sesion.setAttribute("msg", "Added Successfully");
         response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
         
     }else{
-       
-        out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
+        
+        sesion.setAttribute("msg", "Added Unsuccessfully.Please Try Again");
+        response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
     }
 %>
 

@@ -70,7 +70,7 @@ public interface  DBUtil {
     //Vehicle and driver details update
     public Vehicle getDriverbyMobile(int driver_mobile);
     public boolean updateVehicleDriver(Vehicle vehicle);
-    public boolean deleteVehicleDriver(int driver_mobile);
+    public boolean deleteVehicleDriver(String vehicle_no);
     public boolean updateDriver(Driver driver);
     public Driver getDriverbyEmail(String driver_email);
     
@@ -89,6 +89,13 @@ public interface  DBUtil {
 
     //Driver Booking Details view
    public List<User>getActiveBookingDetails(String vehicle_no);
-   //public User getActiveBookingDetails(String vehicle_no);
+   
+    public User getAcceptbyId(int order_id);
+    public boolean updateAccept(User user);
+    
+   //Driver Booking Details view
+   public List<User>getUserBookingDetails(String order_mobile);
+    
+    
 }
 

@@ -32,24 +32,26 @@
           </a>
         </li>
         <li>
-          <a href="/GoCheeta_Client/User/UI/AddCustomerOrder.jsp">
+          <a href="/GoCheeta_Client/Driver/UI/SearchVehicalBook.jsp">
             <i class='bx bx-list-ul'></i>
             <span class="links_name">Order Details</span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-list-ul'></i>
-            <span class="links_name">View Details</span>
-          </a>
-        </li>
-        
         <li>
           <a href="/GoCheeta_Client/User/UI/AddNewFeedback.jsp">
             <i class='bx bx-message' ></i>
             <span class="links_name">Feedback</span>
           </a>
         </li>
+        
+       <li>
+          <a href="/GoCheeta_Client/index.html">
+            <i class='bx bx-list-ul'></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        
+        
         <li>
         <li class="log_out">
           <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">

@@ -76,4 +76,27 @@ public class UserWebService {
     
      }
      
+     
+    @WebMethod(operationName = "getAcceptbyId")
+    public User getAcceptbyId(@WebParam(name = "order_id") int order_id) {
+        return this.dbUtil.getAcceptbyId(order_id);
+    }
+
+    @WebMethod(operationName = "updateAccept")
+    public boolean updateAccept
+             (@WebParam(name = "order_id") int order_id,@WebParam(name = "mobile") String mobile,@WebParam(name = "order_email") String order_email,@WebParam(name = "pick_location") String pick_location,
+             @WebParam(name = "drop_loction") String drop_loction,@WebParam(name = "city") String city,@WebParam(name = "area_branch") String area_branch 
+             ,@WebParam(name = "distance") String distance,@WebParam(name = "price") String price,@WebParam(name = "time") String time
+             ,@WebParam(name = "vehicle_no") String vehicle_no,@WebParam(name = "v_type") String v_type,@WebParam(name = "driver_mobile") String driver_mobile,@WebParam(name = "option") String option){
+       
+       User user = new User(order_id,mobile,order_email,pick_location,drop_loction,city,area_branch,distance,price,time,vehicle_no,v_type,driver_mobile,option);  
+        return this.dbUtil.updateAccept(user);
+    }  
+     
+     
+    @WebMethod(operationName = "getUserBookingDetails")
+    public List<User> getUserBookingDetails(@WebParam(name = "order_mobile") String order_mobile) {
+        return this.dbUtil.getUserBookingDetails(order_mobile);
+   }         
+     
 }
