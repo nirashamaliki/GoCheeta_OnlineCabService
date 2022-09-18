@@ -26,7 +26,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="/GoCheeta_Client/AdminDashboard.jsp" class="active">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -61,6 +61,14 @@
             <span class="links_name">Feedback</span>
           </a>
         </li>
+        
+         <li>
+          <a href="/GoCheeta_Client/index.html">
+            <i class='bx bx-home' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        
         <li>
         <li class="log_out">
           <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">

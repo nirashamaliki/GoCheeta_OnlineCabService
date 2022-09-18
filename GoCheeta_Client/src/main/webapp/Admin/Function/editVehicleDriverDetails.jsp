@@ -51,12 +51,6 @@
     <div class="container" style="width:40%; height:630px;">     
       <form action="/GoCheeta_Client/Admin/controller/updateVehicleDriver.jsp" method="post" class="login-email">
            <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Vehicle Details</p>     
-        <div>
-            <input type="text" id="driver_mobile" name="driver_mobile" value="<% out.print(vehicle.getDriverMobile()); %>" placeholder="Driver Mobile" required>  
-            <input type="text" id="d_password" name="d_password" value="<% out.print(vehicle.getDPassword()); %>" placeholder="Password" required><br>
-            <input type="text" id="d_name" name="d_name" value="<% out.print(vehicle.getDName()); %>" placeholder="Vehicle Model" required><br>
-            <input type="text" id="d_email" name="d_email" value="<% out.print(vehicle.getDEmail()); %>" placeholder="Vehicle Model" required><br>
-        </div>
        
 	<div class="input-group">
             <input type="text" id="vehicle_no" name="vehicle_no" placeholder="Vehicle Number" required value="<% out.print(vehicle.getVehicleNo()); %>"<br>
@@ -66,28 +60,6 @@
             <input type="text" id="vehicle_model" name="vehicle_model" value="<% out.print(vehicle.getVehicleModel()); %>" placeholder="Vehicle Model" required><br>
         </div>
         
-           <div class="input-group"> 
-            <table style="width:100%">
-              <th>
-               <select id="branch" name="branch" value="<% out.print(vehicle.getBranch()); %>" style="font-size:0.9rem;">
-                <option>Select Branch</option>
-                   <% for(Branch branch: branches){ %>  %>
-                   <option>
-                   <% out.print(branch.getBName());%>     
-                   </option> 
-                  <% } %>
-              </select>   
-               </th>   
-               
-               <th>
-               <select id="time_type" name="time_type" value="<% out.print(vehicle.getTimeType());%>" style="font-size:0.9rem;padding-right:15px;padding-left:15px;">
-                   <option>Select Option</option>
-                   <option>Full Time</option> 
-                   <option>Part Time</option> 
-                </select>  
-               </th>
-            </table>    
-        </div>
         
         <div class="input-group">          
              <select id="vehical_Type" name="vehical_Type" value="<% out.print(vehicle.getVehicalType()); %>" style="font-size:0.9rem;padding-right:15px;padding-left:15px;">

@@ -20,17 +20,17 @@
     
     DriverWebService_Service service = new DriverWebService_Service();
     DriverWebService driverProxy   = service.getDriverWebServicePort();
-        
+    HttpSession sesion = request.getSession();    
     
     if(driverProxy.addDriver(driver_mobile,d_email,d_name, d_password, branch, time_type)) {
         
-        session.setAttribute("driver_mobile", driver_mobile);
+        sesion.setAttribute("msg", "Registation Successfully");
         response.sendRedirect("/GoCheeta_Client/Admin/UI/VehicleRegister.jsp");
-        
+ 
     }else{
-       
-        out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
-        //response.sendRedirect("/GoCheeta_Client/Driver/UI/DriverRegister.jsp");
+        
+        sesion.setAttribute("msg", "Registation Unsuccessfully.Please Try Again");
+        response.sendRedirect("/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp");
     }
 %>
 

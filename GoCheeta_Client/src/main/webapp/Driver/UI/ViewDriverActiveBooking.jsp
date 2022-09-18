@@ -32,6 +32,15 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
+      <div class="container">
+         <form class="form-inline" method="post" action="/GoCheeta_Client/Driver/UI/ViewDriverActiveBooking.jsp">
+          <input type="text" name="vehicle_no" class="form-control" placeholder="Search your vehicle number..">
+          <button type="submit" name="save" class="btn btn-primary">Search</button>
+         </form>
+       </div>
+        
+        
         <table  class="table table-bordered" style="width:80%;margin-left:2%;margin-right:1%;margin-left:10%;margin-top:10%">
             <thead>
                 <th scope="col"style="width:10%;text-align:center; ">Order ID</th>
@@ -45,9 +54,7 @@
 
                 <th scope="col"style="width:15%;text-align:center; ">Driver Mobile</th>
                 <th scope="col"style="width:15%;text-align:center; ">Option</th>
-               
-                
-           
+                <th scope="col"style="width:15%;text-align:center; ">Active/No Active</th>
             </thead>
         <tbody>
             <% for(User user: users){ %>
@@ -63,11 +70,19 @@
      
                 <td><% out.print(user.getDriverMobile()); %></td>
                 <td><% out.print(user.getOption()); %></td>      
-              
+               <td style="width:30%;text-align: center">
+                   <a href="/GoCheeta_Client/Driver/UI/AcceptOrderBooking.jsp?id=<% out.print(user.getOrderId()); %>" class="btn btn-primary"style="width:80px;height:40px;text-align:center;margin-right:5px;">Update</a>
+                </td>
               
             </tr>
             <% } %>
         </tbody>
     </table> 
+        
+          <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+       </script>     
        
 </html>

@@ -8,9 +8,17 @@
 
 <xs:element name="addUserOrderResponse" type="tns:addUserOrderResponse"/>
 
+<xs:element name="getAcceptbyId" type="tns:getAcceptbyId"/>
+
+<xs:element name="getAcceptbyIdResponse" type="tns:getAcceptbyIdResponse"/>
+
 <xs:element name="getAllVehicle" type="tns:getAllVehicle"/>
 
 <xs:element name="getAllVehicleResponse" type="tns:getAllVehicleResponse"/>
+
+<xs:element name="getUserBookingDetails" type="tns:getUserBookingDetails"/>
+
+<xs:element name="getUserBookingDetailsResponse" type="tns:getUserBookingDetailsResponse"/>
 
 <xs:element name="getViewUsersBooks" type="tns:getViewUsersBooks"/>
 
@@ -32,6 +40,10 @@
 
 <xs:element name="loginDriverResponse" type="tns:loginDriverResponse"/>
 
+<xs:element name="updateAccept" type="tns:updateAccept"/>
+
+<xs:element name="updateAcceptResponse" type="tns:updateAcceptResponse"/>
+
 <xs:complexType name="getViewUsersBooks">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -48,7 +60,6 @@
 <xs:complexContent>
 <xs:extension base="tns:person">
 <xs:sequence>
-<xs:element name="order_Id" type="xs:int"/>
 <xs:element name="area_branch" type="xs:string" minOccurs="0"/>
 <xs:element name="city" type="xs:string" minOccurs="0"/>
 <xs:element name="description" type="xs:string" minOccurs="0"/>
@@ -57,6 +68,7 @@
 <xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
 <xs:element name="feedback_id" type="xs:int"/>
 <xs:element name="option" type="xs:string" minOccurs="0"/>
+<xs:element name="order_Id" type="xs:int"/>
 <xs:element name="order_email" type="xs:string" minOccurs="0"/>
 <xs:element name="pick_location" type="xs:string" minOccurs="0"/>
 <xs:element name="price" type="xs:string" minOccurs="0"/>
@@ -120,6 +132,18 @@
 <xs:element name="d_password" type="xs:string" minOccurs="0"/>
 <xs:element name="driver_mobile" type="xs:int"/>
 <xs:element name="time_type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserBookingDetails">
+<xs:sequence>
+<xs:element name="order_mobile" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserBookingDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -188,6 +212,31 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="updateAccept">
+<xs:sequence>
+<xs:element name="order_id" type="xs:int"/>
+<xs:element name="mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="order_email" type="xs:string" minOccurs="0"/>
+<xs:element name="pick_location" type="xs:string" minOccurs="0"/>
+<xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
+<xs:element name="city" type="xs:string" minOccurs="0"/>
+<xs:element name="area_branch" type="xs:string" minOccurs="0"/>
+<xs:element name="distance" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:string" minOccurs="0"/>
+<xs:element name="time" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
+<xs:element name="v_type" type="xs:string" minOccurs="0"/>
+<xs:element name="driver_mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="option" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateAcceptResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="loginDriver">
 <xs:sequence>
 <xs:element name="email" type="xs:string" minOccurs="0"/>
@@ -198,6 +247,18 @@
 <xs:complexType name="loginDriverResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAcceptbyId">
+<xs:sequence>
+<xs:element name="order_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAcceptbyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

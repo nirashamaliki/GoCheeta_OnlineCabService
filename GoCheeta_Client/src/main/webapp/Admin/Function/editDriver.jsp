@@ -84,6 +84,11 @@
                    <option>Part Time</option> 
                 </select>  
                </th>
+               
+             <div class="input-group">             
+            <input type="hidden" name="order_id" value="<%= request.getParameter("id") %>">
+             <input type="submit" value="Accept" class="btn">
+        </div> 
             </table>    
         </div>
         <div class="input-group">             

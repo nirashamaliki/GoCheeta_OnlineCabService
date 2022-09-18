@@ -1,4 +1,6 @@
 
+<%@page import="gocheeta.DriverWebService"%>
+<%@page import="gocheeta.DriverWebService_Service"%>
 <%@page import="gocheeta.NewWebService"%>
 <%@page import="gocheeta.NewWebService_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,11 +14,13 @@
     String branch = request.getParameter("branch");
     String time_type = request.getParameter("time_type");
     
-    NewWebService_Service service = new NewWebService_Service();
-    NewWebService driverProxy = service.getNewWebServicePort();
-   
+    DriverWebService_Service service = new DriverWebService_Service();
+    DriverWebService driverProxy = service.getDriverWebServicePort();
+    HttpSession sesion = request.getSession();
+    
     if(driverProxy.addDriver(driver_mobile,d_name, d_email, d_password, branch, time_type)) {
-        //out.print("Successfully");
+        
+        sesion.setAttribute("msg", "Added Successfully");
         response.sendRedirect("/GoCheeta_Client/Admin/UI/AddNewDriver.jsp");
         
     }else{

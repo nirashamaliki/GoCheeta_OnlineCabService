@@ -27,6 +27,7 @@
     
     UserWebService_Service service = new UserWebService_Service();
     UserWebService customerProxy = service.getUserWebServicePort();
+    HttpSession sesion = request.getSession();
     
     Boolean loginAdmin = customerProxy.loginAdmin(email,password);
     Boolean loginCustomer = customerProxy.loginCustomer(email,password);
@@ -35,24 +36,25 @@
 
          if (email.equals ("admin@456")&& password.equals("456admin@")) 
          {
-            session.setAttribute("email", email);
-            response.sendRedirect("/GoCheeta_Client/AdminDashboard.jsp");               
+            session.setAttribute("email", email); 
+            sesion.setAttribute("msg", "User Login Successfully");
+            response.sendRedirect("/GoCheeta_Client/AdminDashboard.jsp");  
           }
       
         else
         {
           if (loginCustomer == true)
            {
-            session.setAttribute("email",email);
-            response.sendRedirect("/GoCheeta_Client/UserDashboard.jsp");    
+            session.setAttribute("email", email); 
+            sesion.setAttribute("msg", "User Login Successfully");
+            response.sendRedirect("/GoCheeta_Client/UserDashboard.jsp");      
             }
         }     
 
      }
     else{
-
-          out.print("<script>alert('Login Unsuccessful.Try Again')</script>");
-          //out.print("Login Unsuccessful");
+          sesion.setAttribute("msg", "User Login Unsuccessful.Try Again");
+          response.sendRedirect("/GoCheeta_Client/User/UI/UserLogin.jsp");      
     }
 
 %>
@@ -83,6 +85,11 @@
         </form>
         </div>
 
-        
+        <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+       </script>
+       
     </body>
 </html>

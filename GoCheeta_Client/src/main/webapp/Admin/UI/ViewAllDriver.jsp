@@ -82,8 +82,8 @@
                 <td><% out.print(vehicle.getBranch()); %></td>
                 <td><% out.print(vehicle.getTimeType()); %></td> 
                 <td style="width:30%;text-align: center">
-                   <a href="/GoCheeta_Client/Admin/Function/editDriver.jsp?id=<% out.print(vehicle.getDEmail()); %>" class="btn btn-primary"style="width:80px;height:40px;text-align:center;margin-right:5px;">Update</a>
-                   <a href="/GoCheeta_Client/Admin/controller/deleteVehicle.jsp?id=<% out.print(vehicle.getDriverMobile()); %>" class="btn btn-danger" style="width:80px;height:40px;text-align:center;margin-left:5px;">Delete</a>
+          
+                   <a href="/GoCheeta_Client/Admin/controller/deleteVehicle.jsp?id=<% out.print(vehicle.getVehicleNo()); %>" class="btn btn-danger" style="width:80px;height:40px;text-align:center;margin-left:5px;">Delete</a>
                 </td>
             </tr>
             <% } %>

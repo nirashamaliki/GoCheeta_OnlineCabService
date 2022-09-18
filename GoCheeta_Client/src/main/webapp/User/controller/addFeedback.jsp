@@ -19,12 +19,17 @@
     
     NewWebService_Service service = new NewWebService_Service();
     NewWebService customerProxy = service.getNewWebServicePort();
-        
+    HttpSession sesion = request.getSession();      
   
     if(customerProxy.addFeedback(subject, description, order_id)) {
+          
+        sesion.setAttribute("msg", "Added Successfully"); 
         response.sendRedirect("/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp");
+
+        
     }else{
-        out.print("Added Unsuccessfully");
+        sesion.setAttribute("msg", "Added Unsuccessfully.Plese try again!!!"); 
+        response.sendRedirect("/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp");
     }
 
 %>
