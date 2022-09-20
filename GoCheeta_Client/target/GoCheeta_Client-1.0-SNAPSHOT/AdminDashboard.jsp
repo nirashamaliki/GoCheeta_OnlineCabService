@@ -18,8 +18,8 @@
 
   </head>
 
-<body>
-  <div class="sidebar">
+<body style="background:#FFF">
+  <div class="sidebar" style="background:#3a4c76;">
     <div class="logo-details">
         <i><img src="image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
       <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
@@ -32,33 +32,33 @@
           </a>
         </li>
         <li>
-          <a href="/GoCheeta_Client/Admin/UI/ViewAllDriver.jsp">
-            <i class='bx bx-list-ul'></i>
-            <span class="links_name">Driver Details</span>
-          </a>
-        </li>
-        <li>
-          <a href="/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp">
-            <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Vehicle Details</span>
-          </a>
-        </li>
-        <li>
           <a href="/GoCheeta_Client/Category/UI/ViewAllPrice.jsp">
-            <i class='bx bx-pie-chart-alt-2' ></i>
+            <i class='bx bx-list-ul'></i>
             <span class="links_name">Category Details</span>
           </a>
         </li>
         <li>
           <a href="/GoCheeta_Client/Admin/UI/ViewAllBookingFullDetails.jsp">
-            <i class='bx bx-coin-stack' ></i>
+            <i class='bx bx-list-ul' ></i>
             <span class="links_name">Branch Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Admin/UI/ViewAllDriver.jsp">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Driver Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Vehicle Details</span>
           </a>
         </li>
         <li>
           <a href="/GoCheeta_Client/Admin/UI/ViewAllFeedback.jsp">
             <i class='bx bx-message' ></i>
-            <span class="links_name">Feedback</span>
+            <span class="links_name">Feedback Details</span>
           </a>
         </li>
         
@@ -78,14 +78,14 @@
         </li>
       </ul>
   </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
+ <section class="home-section">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
+        <span class="dashboard"style="color:#ffffff;">Dashboard</span>
       </div>
 
-      <div class="profile-details">
+      <div style="background:#3a4c76;">
         <span class="admin_name">
         <%
            out.print(session.getAttribute("email"));
@@ -95,9 +95,9 @@
       </div>
     </nav>
 
-      <div>
+      <div style="background:#FFF">
         <div>
-            <%@ include file="Admin/UI/ViewAllPrice.jsp" %>  
+          <img src="image/Logo/Full_Logo.png" alt="alt"style="text-align:center;margin-left:28%;margin-top:10%">
       </div>
     </div>
   </section>
@@ -113,6 +113,12 @@ sidebarBtn.onclick = function() {
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
+
+    <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+    </script>
 
 </body>
 </html>

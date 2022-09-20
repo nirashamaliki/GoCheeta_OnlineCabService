@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `driver`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `driver` (
   `driver_mobile` int NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `d_password` varchar(45) DEFAULT NULL,
+  `driver_email` varchar(45) DEFAULT NULL,
+  `driver_name` varchar(45) DEFAULT NULL,
+  `driver_password` varchar(45) DEFAULT NULL,
   `branch` varchar(45) DEFAULT NULL,
   `time_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`driver_mobile`)
@@ -39,7 +39,7 @@ CREATE TABLE `driver` (
 
 LOCK TABLES `driver` WRITE;
 /*!40000 ALTER TABLE `driver` DISABLE KEYS */;
-INSERT INTO `driver` VALUES (77879635,'amila','amila@gmail.com','1234','Galle','Full time');
+INSERT INTO `driver` VALUES (456,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(8478988,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(77879635,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(77896541,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(84789887,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(728963547,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(728965412,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(775478988,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988111,'kamal378@gmail.com','Kamal','123','Gampaha','Full Time'),(778988200,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988222,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988251,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988253,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988256,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988296,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988856,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988896,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(778988985,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(783456666,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(783456789,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time'),(785963201,'kamal378@gmail.com','Kamal','null','Gampaha','Full Time');
 /*!40000 ALTER TABLE `driver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-28 22:51:27
+-- Dump completed on 2022-09-19 22:16:50

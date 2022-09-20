@@ -55,6 +55,11 @@
          <p class="login-register-text" style="text-align:center;">Already have an account? <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">Sign in</a>.</p>
          </form>
      </div>  
-                
+       <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+       </script>
+  
     </body>
 </html>

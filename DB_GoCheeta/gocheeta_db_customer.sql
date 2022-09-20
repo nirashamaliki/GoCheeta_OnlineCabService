@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer` (
-  `c_id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(30) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
   `mobile` int DEFAULT NULL,
   `password` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`email`),
+  KEY `order_mobile_idx` (`mobile`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (4,'uiduf8i','nirashamaliki@gmail.com',8478,'454ijik'),(5,'UIII','nirashamaliki1999@gmail.com',8478988,'454ijikIOJIO'),(6,'Maliki','nirashamaliki@gmail.com',8478988,'454ijik'),(7,'UIII','nirashamaliki1999@gmail.com',8478988,'454ijik'),(8,'uhuhuyg','gyhgbyhg',5665,'ygbyh'),(9,'G','JJJJJHUI',876,'1234');
+INSERT INTO `customer` VALUES ('admin@456','admin',456,'456admin@'),('kamal123@gmail.com','Kamal ',7886468,'123'),('nirashamaliki@gmail.com','maliki',778654679,'123'),('nirashamaliki123@gmail.com','Nirasha',778954233,'321'),('nirashamaliki2344','nirasha',778965412,'12365'),('nirashamaliki898@gmail.com','Maliki',77897769,'4848'),('nirashamaliki899@gmail.com','Maliki',77689898,'1236'),('nirashamalikiihng@gmail.com','Maliki',778998,'1233'),('nirashamalikiihng7@gmail.com','Maliki',787989,'4487'),('sunil@gmail.com','sunil',773456247,'123');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-28 22:51:26
+-- Dump completed on 2022-09-19 22:16:50

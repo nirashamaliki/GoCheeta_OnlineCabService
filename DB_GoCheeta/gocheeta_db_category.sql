@@ -38,7 +38,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Car',3),(2,'Van',4),(3,'Bus',5),(4,'Lorry',5),(5,'Bike',1),(6,'Three Wheel',2);
+INSERT INTO `category` VALUES (1,'Car',3),(2,'Van',4),(3,'Bus',5),(4,'Lorry',5),(5,'Bike',1),(6,'Three Wheel',2),(7,'Rosa Bus',7),(8,'Buddy Van',5),(9,'Alto Car',3);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-28 22:51:26
+-- Dump completed on 2022-09-19 22:16:49

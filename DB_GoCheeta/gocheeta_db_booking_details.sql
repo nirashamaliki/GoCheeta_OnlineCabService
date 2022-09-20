@@ -24,19 +24,23 @@ DROP TABLE IF EXISTS `booking_details`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `booking_details` (
   `order_id` int NOT NULL AUTO_INCREMENT,
-  `order_mobile` varchar(45) DEFAULT NULL,
+  `order_mobile` varchar(11) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
   `pick_location` varchar(45) DEFAULT NULL,
   `drop_location` varchar(45) DEFAULT NULL,
   `area_branch` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
   `distance` varchar(45) DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL,
   `time` varchar(45) DEFAULT NULL,
+  `vehicle_no` varchar(20) DEFAULT NULL,
   `v_type` varchar(45) DEFAULT NULL,
-  `driver_mobile` int DEFAULT NULL,
+  `driver_mobile` varchar(45) DEFAULT NULL,
   `option` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`order_id`),
-  KEY `driver_mobile_idx` (`driver_mobile`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `vehicle_no_idx` (`vehicle_no`),
+  CONSTRAINT `vehicle_no` FOREIGN KEY (`vehicle_no`) REFERENCES `vehicle` (`vehicle_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +49,7 @@ CREATE TABLE `booking_details` (
 
 LOCK TABLES `booking_details` WRITE;
 /*!40000 ALTER TABLE `booking_details` DISABLE KEYS */;
-INSERT INTO `booking_details` VALUES (1,'08978575','gampha','divulapitiya','gampha','5km','500.000','7.45','van',77879635,'No Active'),(2,'0778965432','Galle','Galle','Galle','6km','700.00','8.45','car',788512452,'Active');
+INSERT INTO `booking_details` VALUES (1,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','null','2022/09/24','CAE-3457','Lorry','778988111','Option'),(2,'07789410','nirashamlik874899@gmail.com','Galle','Galle','Galle','Galle','10','2000.00','2022/09/25','CBJ-2356','Bus','77879635','Active'),(3,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Galle','Galle','5','null','2022-09-15','CA-3427','Van','728965412','No Active'),(4,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','15','null','2022-08-31','CA-3427','Van','728965412','No Active'),(5,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','9','null','2022-09-22','CA-3427','Van','728965412','No Active'),(6,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','20','null','2022-09-12','CA-3427','Van','728965412','No Active'),(7,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','null','2022/09/24','CAE-3457','Lorry','778988111','No Active'),(8,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','null','2022/09/24','CAE-3457','Lorry','778988111','No Active');
 /*!40000 ALTER TABLE `booking_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-28 22:51:27
+-- Dump completed on 2022-09-19 22:16:49

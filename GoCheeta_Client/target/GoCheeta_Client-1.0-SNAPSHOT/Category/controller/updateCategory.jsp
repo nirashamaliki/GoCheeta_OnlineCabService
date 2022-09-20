@@ -11,12 +11,14 @@
    
     NewWebService_Service service = new NewWebService_Service();
     NewWebService customerProxy = service.getNewWebServicePort();
-
-    if(customerProxy.updateCategory(category_id, name,distance,price)) {
+    HttpSession sesion = request.getSession(); 
     
-        response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
+    if(customerProxy.updateCategory(category_id, name,distance,price)) {
+         sesion.setAttribute("msg", "Update Successfully!!");
+          response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
     } else {
-        out.print("false");
+          sesion.setAttribute("msg", "Update Unsuccessfully!!");
+          response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
     }
 
 %>

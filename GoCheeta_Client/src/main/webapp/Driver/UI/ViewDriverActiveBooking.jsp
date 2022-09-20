@@ -22,26 +22,76 @@
 %>
 
 
-
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>JSP Page</title>
+       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="/GoCheeta_Client/Css/style.css">
+       <title>GoCheetacab.lk</title>
+       <link rel="icon" href="/GoCheeta_Client/image/Logo/Logo.png">
     </head>
-    <body>
+    
+
+ <body style="background:#FFF">
+     
+  <div class="sidebar" style="background:#3a4c76;">
+    <div class="logo-details">
+        <i><img src="/GoCheeta_Client/image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
+      <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/GoCheeta_Client/DriverDashboard.jsp">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Driver/UI/ViewDriverActiveBooking.jsp"class="active" style="margin-top:-10px;background-color:#153c61 ">
+            <i class='bx bx-list-ul'></i>
+            <span class="links_name">Order Details</span>
+          </a>
+        </li>
+       <li>
+          <a href="/GoCheeta_Client/index.html">
+            <i class='bx bx-home'></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li> 
         
-      <div class="container">
-         <form class="form-inline" method="post" action="/GoCheeta_Client/Driver/UI/ViewDriverActiveBooking.jsp">
-          <input type="text" name="vehicle_no" class="form-control" placeholder="Search your vehicle number..">
-          <button type="submit" name="save" class="btn btn-primary">Search</button>
+        <li>
+        <li class="log_out">
+          <a href="/GoCheeta_Client/Driver/UI/DriverLogin.jsp">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard"style="color:#ffffff;">Order Details</span>
+      </div>
+
+    </nav>
+
+      <div >
+        <div>
+            <br><br><br><br>
+        
+         <form class="form-inline" method="post" action="/GoCheeta_Client/Driver/UI/ViewDriverActiveBooking.jsp"style="margin-left:2%;">
+          <input type="text" name="vehicle_no" class="form-control" placeholder="Search your vehicle number.."style="width:400px;padding:10px;">
+          <button type="submit" name="save" class="btn btn-primary"style="padding:10px;">Search</button>
          </form>
-       </div>
+
         
         
-        <table  class="table table-bordered" style="width:80%;margin-left:2%;margin-right:1%;margin-left:10%;margin-top:10%">
+        <table  class="table table-bordered" style="width:90%;margin-left:2%;margin-right:2%;margin-top:2%">
             <thead>
                 <th scope="col"style="width:10%;text-align:center; ">Order ID</th>
                 <th scope="col"style="text-align:center; ">Mobile</th>
@@ -77,12 +127,33 @@
             </tr>
             <% } %>
         </tbody>
-    </table> 
-        
-          <script>
+    </table>        
+            
+            
+            
+            
+            
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+   let sidebarBtn = document.querySelector(".sidebarBtn");
+   sidebarBtn.onclick = function() {
+   sidebar.classList.toggle("active");
+   if(sidebar.classList.contains("active")){
+   sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+ }else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+ 
+        <script>
            <% if(session.getAttribute("msg") != null) { %>
                     alert("<%= session.getAttribute("msg") %>");
             <% session.removeAttribute("msg"); } %>
-       </script>     
+       </script>    
+ </body>  
        
 </html>

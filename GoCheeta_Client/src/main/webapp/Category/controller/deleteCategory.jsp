@@ -10,12 +10,16 @@
     
     NewWebService_Service service = new NewWebService_Service();
     NewWebService customerProxy = service.getNewWebServicePort();
-        
+    HttpSession sesion = request.getSession();
+     
     if(customerProxy.deleteCategory(category_id)) {
-        out.print("Delete Successfully");
-       response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
+        sesion.setAttribute("msg", "Delete Successfully!!");
+        response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
+
+      
     }else {
-        out.print("Delete Unsuccessfully");
+        sesion.setAttribute("msg", "Delete Unsuccessfully!!");
+        response.sendRedirect("/GoCheeta_Client/Category/UI/ViewAllPrice.jsp");
     }
 
 %>

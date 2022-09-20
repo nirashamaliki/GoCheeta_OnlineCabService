@@ -90,7 +90,11 @@
            }
         </script>  
         
-        
+          <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+       </script>
         
     </body>
 </html>

@@ -27,7 +27,7 @@ CREATE TABLE `price_rate` (
   `distance` varchar(45) DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`rate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `price_rate` (
 
 LOCK TABLES `price_rate` WRITE;
 /*!40000 ALTER TABLE `price_rate` DISABLE KEYS */;
-INSERT INTO `price_rate` VALUES (1,'1km','Rs.20.00'),(2,'1km','Rs.30.00'),(3,'1km','Rs.50.00'),(4,'1km','Rs.100.00'),(5,'1km','Rs.120.00');
+INSERT INTO `price_rate` VALUES (1,'1km','20.00'),(2,'1km','30.00'),(3,'1km','50.00'),(4,'1km','100.00'),(5,'1km','120.00'),(6,'1km','250.00'),(7,'1km','300.00');
 /*!40000 ALTER TABLE `price_rate` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-28 22:51:27
+-- Dump completed on 2022-09-19 22:16:49

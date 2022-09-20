@@ -45,6 +45,23 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getBranchDrop">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBranchDropResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:branch" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="branch">
+<xs:sequence>
+<xs:element name="b_name" type="xs:string" minOccurs="0"/>
+<xs:element name="branch_id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getActiveBookingDetails">
 <xs:sequence>
 <xs:element name="vehicle_no" type="xs:string" minOccurs="0"/>
@@ -61,7 +78,6 @@
 <xs:complexContent>
 <xs:extension base="tns:person">
 <xs:sequence>
-<xs:element name="order_Id" type="xs:int"/>
 <xs:element name="area_branch" type="xs:string" minOccurs="0"/>
 <xs:element name="city" type="xs:string" minOccurs="0"/>
 <xs:element name="description" type="xs:string" minOccurs="0"/>
@@ -70,6 +86,7 @@
 <xs:element name="drop_loction" type="xs:string" minOccurs="0"/>
 <xs:element name="feedback_id" type="xs:int"/>
 <xs:element name="option" type="xs:string" minOccurs="0"/>
+<xs:element name="order_Id" type="xs:int"/>
 <xs:element name="order_email" type="xs:string" minOccurs="0"/>
 <xs:element name="pick_location" type="xs:string" minOccurs="0"/>
 <xs:element name="price" type="xs:string" minOccurs="0"/>
@@ -87,23 +104,6 @@
 <xs:element name="email" type="xs:string" minOccurs="0"/>
 <xs:element name="mobile" type="xs:string" minOccurs="0"/>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getBranchDrop">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getBranchDropResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:branch" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="branch">
-<xs:sequence>
-<xs:element name="b_name" type="xs:string" minOccurs="0"/>
-<xs:element name="branch_id" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

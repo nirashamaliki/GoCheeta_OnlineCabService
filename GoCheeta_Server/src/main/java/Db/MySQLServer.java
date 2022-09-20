@@ -834,7 +834,7 @@ public class MySQLServer implements DBUtil {
             
             this.stmt  = this.con.prepareCall("UPDATE `booking_details` SET `order_mobile` = '"+user.getMobile()+"', `email` = '"+user.getOrder_email()+"', "
                     + "`pick_location` = '"+user.getPick_location()+"', `drop_location` = '"+user.getDrop_loction()+"', `area_branch` = '"+user.getArea_branch()+"',"
-                    + " `city` = '"+user.getCity()+"', `distance` = '"+user.getDistance()+"', `price` = '"+user.getPrice()+"', `time` = '"+user.getTime()+"',"
+                    + " `city` = '"+user.getCity()+"', `distance` = '"+user.getDistance()+"',`time` = '"+user.getTime()+"',"
                     + " `vehicle_no` = '"+user.getVehicle_no()+"', `v_type` = '"+user.getV_type()+"', `driver_mobile` = '"+user.getDriver_mobile()+"',"
                     + " `option` = '"+user.getOption()+"' WHERE (`order_id`= '"+user.getOrder_Id()+"');");
         

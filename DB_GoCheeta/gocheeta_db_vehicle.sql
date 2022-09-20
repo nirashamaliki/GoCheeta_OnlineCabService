@@ -24,7 +24,6 @@ DROP TABLE IF EXISTS `vehicle`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehicle` (
   `vehicle_no` varchar(20) NOT NULL,
-  `Branch` varchar(45) DEFAULT NULL,
   `vehical_Type` varchar(45) DEFAULT NULL,
   `vehicle_model` varchar(45) DEFAULT NULL,
   `driver_mobile` int DEFAULT NULL,
@@ -41,7 +40,7 @@ CREATE TABLE `vehicle` (
 
 LOCK TABLES `vehicle` WRITE;
 /*!40000 ALTER TABLE `vehicle` DISABLE KEYS */;
-INSERT INTO `vehicle` VALUES ('CBJ-2356','Galle','Van','Susuki Alto',77879635);
+INSERT INTO `vehicle` VALUES ('CA-3427','Car','Bajaj',728965412),('CAE-3457','Lorry','Toyota',778988111),('cbc-3889','Bus','Rosa',778988896),('CBJ-2356','Bus','Susuki Alto',77879635);
 /*!40000 ALTER TABLE `vehicle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-28 22:51:26
+-- Dump completed on 2022-09-19 22:16:50

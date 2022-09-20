@@ -20,49 +20,13 @@
         <title>User Login</title>
     </head>
     <body>
-        
-    <%
-    String email    = request.getParameter("email");
-    String password = request.getParameter("password");
-    
-    UserWebService_Service service = new UserWebService_Service();
-    UserWebService customerProxy = service.getUserWebServicePort();
-    
-    Boolean loginAdmin = customerProxy.loginAdmin(email,password);
-    Boolean loginDriver = customerProxy.loginDriver(email,password);
-    
-     if (loginDriver == true) {
 
-         if (email.equals ("admin@456")&& password.equals("456admin@")) 
-         {
-            session.setAttribute("email", email);
-            response.sendRedirect("/GoCheeta_Client/AdminDashboard.jsp");               
-          }
-      
-        else
-        {
-          if (loginDriver == true)
-           {
-            session.setAttribute("email",email);
-            response.sendRedirect("/GoCheeta_Client/DriverDashboard.jsp");    
-            }
-        }     
-
-     }
-    else{
-
-          out.print("<script>alert('Login Unsuccessful.Try Again')</script>");
-          //out.print("Login Unsuccessful");
-    }
-
-%>
         <div class="container" style="width: 450px; height:480px;">
-        <form action="/GoCheeta_Client/Driver/UI/DriverLogin.jsp" method="post" class="login-email">
+        <form action="/GoCheeta_Client/Driver/Function/loginDriver.jsp" method="post" class="login-email">
 
           <br><br>
           <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Sign In</p>
           <br>
-          
           
             <div class="input-group">
             <input type="text" id="email" name="email" placeholder="Email Address" required><br>
@@ -82,6 +46,10 @@
         </form>
         </div>
 
-        
+        <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+       </script>  
     </body>
 </html>

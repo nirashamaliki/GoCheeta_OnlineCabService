@@ -17,14 +17,16 @@
     
     NewWebService_Service service = new NewWebService_Service();
     NewWebService customerProxy = service.getNewWebServicePort();
-        
-//    customerProxy.addCustomer(name, email, mobile, password);
+    HttpSession sesion = request.getSession();    
+    
     
     if(customerProxy.addCategory(name,rate_id)) {
-    
-        response.sendRedirect("/GoCheeta_Client/Category/UI/AddNewCategory.jsp");
+         
+         sesion.setAttribute("msg", "Added Successfully!!");
+         response.sendRedirect("/GoCheeta_Client/Category/UI/AddNewCategory.jsp");
     }else{
-        out.print("false");
+         sesion.setAttribute("msg", "Added Unuccessfully!!");
+         response.sendRedirect("/GoCheeta_Client/Category/UI/AddNewCategory.jsp");
     }
 
 %>

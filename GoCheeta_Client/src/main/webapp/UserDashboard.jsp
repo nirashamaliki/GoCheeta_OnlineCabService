@@ -18,15 +18,15 @@
 
   </head>
 
-<body>
-  <div class="sidebar">
+<body style="background:#FFF">
+  <div class="sidebar" style="background:#3a4c76;">
     <div class="logo-details">
         <i><img src="image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
       <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
     </div>
       <ul class="nav-links">
         <li>
-          <a href="/GoCheeta_Client/UserDashboard.jsp" class="active">
+          <a href="/GoCheeta_Client/UserDashboard.jsp" class="active" style="margin-top:-10px;background-color:#153c61 ">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -38,7 +38,7 @@
           </a>
         </li>
         <li>
-          <a href="/GoCheeta_Client/User/UI/AddNewFeedback.jsp">
+          <a href="/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp">
             <i class='bx bx-message' ></i>
             <span class="links_name">Feedback</span>
           </a>
@@ -46,7 +46,7 @@
         
        <li>
           <a href="/GoCheeta_Client/index.html">
-            <i class='bx bx-list-ul'></i>
+            <i class='bx bx-home'></i>
             <span class="links_name">Home</span>
           </a>
         </li>
@@ -62,13 +62,13 @@
       </ul>
   </div>
   <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
+        <span class="dashboard"style="color:#ffffff;">Dashboard</span>
       </div>
 
-      <div class="profile-details">
+      <div style="background:#3a4c76;">
         <span class="admin_name">
         <%
            out.print(session.getAttribute("email"));
@@ -78,9 +78,9 @@
       </div>
     </nav>
 
-      <div>
+      <div style="background:#FFF">
         <div>
-            <%@ include file="User/UI/ViewAllPrice.jsp" %>  
+          <img src="image/Logo/Full_Logo.png" alt="alt"style="text-align:center;margin-left:28%;margin-top:10%">
       </div>
     </div>
   </section>
@@ -96,6 +96,12 @@
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
+ 
+  <script>
+           <% if(session.getAttribute("msg") != null) { %>
+                    alert("<%= session.getAttribute("msg") %>");
+            <% session.removeAttribute("msg"); } %>
+       </script>
 
 </body>
 </html>

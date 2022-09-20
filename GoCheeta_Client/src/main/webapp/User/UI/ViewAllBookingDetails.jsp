@@ -42,14 +42,15 @@
     </head>
     <body>
 
-  <div class="sidebar">
+<body style="background:#FFF">
+  <div class="sidebar" style="background:#3a4c76;">
     <div class="logo-details">
         <i><img src="/GoCheeta_Client/Driver/image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
       <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
     </div>
       <ul class="nav-links">
         <li>
-          <a href="/GoCheeta_Client/UserDashboard.jsp">
+          <a href="/GoCheeta_Client/UserDashboard.jsp" \>
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -59,21 +60,21 @@
             <i class='bx bx-list-ul'></i>
             <span class="links_name">Order Details</span>
           </a>
-        </li>     
+        </li>
         <li>
-          <a href="/GoCheeta_Client/User/UI/AddNewFeedback.jsp" class="active">
+          <a href="/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp"class="active" style="margin-top:-10px;background-color:#153c61 ">
             <i class='bx bx-message' ></i>
             <span class="links_name">Feedback</span>
           </a>
         </li>
         
-        <li>
+       <li>
           <a href="/GoCheeta_Client/index.html">
-            <i class='bx bx-list-ul'></i>
+            <i class='bx bx-home'></i>
             <span class="links_name">Home</span>
           </a>
         </li>
-
+        
         <li>
         <li class="log_out">
           <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">
@@ -83,26 +84,24 @@
         </li>
       </ul>
   </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
+  <section class="home-section" style="background:#FFF">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
-      </div>
-
-    </nav>
+        <span class="dashboard"style="color:#ffffff;">Feedback</span>
+      </div></nav>
 
       <div>
         <div>
             
-     <div class="container" style="padding-top:10%;margin-left:10%; ">
+     <div class="container" style="padding-top:10%;margin-left:1%; ">
          <form class="form-inline" method="post" action="/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp">
           <input type="text" name="order_mobile" class="form-control" placeholder="Search your mobile number.." style="width:300px;padding:10px;">
           <button type="submit" name="save" class="btn btn-primary">Search</button>
          </form>
       </div>   
         
-        <table  class="table table-bordered" style="width:80%;margin-left:2%;margin-right:1%;margin-left:2%;margin-top:2%">
+        <table  class="table table-bordered" style="width:95%;margin-left:5%;margin-right:1%;margin-left:2%;margin-top:2%">
             <thead>
                 <th scope="col"style="width:10%;text-align:center; ">Order ID</th>
                 <th scope="col"style="text-align:center; ">Mobile</th>

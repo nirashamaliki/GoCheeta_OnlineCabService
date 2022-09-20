@@ -33,36 +33,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/GoCheeta_Client/Css/style.css">
     <title>GoCheetacab.lk</title>
-    <link rel="icon" href="GoCheeta_Ckient/Driver/image/Logo/Logo.png">
+    <link rel="icon" href="/GoCheeta_Client/Driver/image/Logo/Logo.png">
 
   </head>
         
   <title>Search Vehicle booking</title>
     </head>
-    <body>
-        
-        
-  <body>
-  <div class="sidebar">
+<body style="background:#FFF">
+  <div class="sidebar" style="background:#3a4c76;">
     <div class="logo-details">
         <i><img src="/GoCheeta_Client/Driver/image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
       <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
     </div>
       <ul class="nav-links">
         <li>
-          <a href="/GoCheeta_Client/UserDashboard.jsp">
+          <a href="/GoCheeta_Client/UserDashboard.jsp" \>
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="/GoCheeta_Client/Driver/UI/SearchVehicalBook.jsp"class="active">
+          <a href="/GoCheeta_Client/Driver/UI/SearchVehicalBook.jsp"class="active" style="margin-top:-10px;background-color:#153c61 ">
             <i class='bx bx-list-ul'></i>
             <span class="links_name">Order Details</span>
           </a>
         </li>
-
-       
         <li>
           <a href="/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp">
             <i class='bx bx-message' ></i>
@@ -70,13 +65,12 @@
           </a>
         </li>
         
-        <li>
+       <li>
           <a href="/GoCheeta_Client/index.html">
-            <i class='bx bx-list-ul'></i>
+            <i class='bx bx-home'></i>
             <span class="links_name">Home</span>
           </a>
         </li>
-        
         
         <li>
         <li class="log_out">
@@ -87,15 +81,13 @@
         </li>
       </ul>
   </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
+  <section class="home-section" style="background:#FFF">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
-      </div>
-
-    </nav>
-
+        <span class="dashboard"style="color:#ffffff;">Order Details</span>
+      </div></nav>
+      <div style="background:#FFF">
       <div>
         <div>
             
@@ -124,7 +116,7 @@
             <% } %>
         </tbody>
     </table> 
-        
+       </div> 
           <script type="application/javascript">
         function tableSearch() {
             let input, filter, table, tr, td, txtValue;

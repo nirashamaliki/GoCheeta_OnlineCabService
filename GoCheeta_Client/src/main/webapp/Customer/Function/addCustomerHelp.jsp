@@ -18,16 +18,18 @@
     
     UserWebService_Service service = new UserWebService_Service();
     UserWebService driverProxy   = service.getUserWebServicePort();
-        
+    HttpSession sesion = request.getSession();   
     
     if(driverProxy.addCustomer(email,name,mobile,password)) {
         
+        
+        sesion.setAttribute("msg", "Registation Successfully");
         response.sendRedirect("/GoCheeta_Client/User/UI/UserLogin.jsp");
         
+        
     }else{
-       
-        out.print("<script>alert('Your Registation Unsuccessfully.PLease Try Again')</script>"); 
-        //response.sendRedirect("/GoCheeta_Client/Driver/UI/DriverRegister.jsp");
+        sesion.setAttribute("msg", "Your Registation Unsuccessfully.PLease Try Again");
+        response.sendRedirect("/GoCheeta_Client/Customer/UI/CustomerRegister.jsp");
     }
 %>
 

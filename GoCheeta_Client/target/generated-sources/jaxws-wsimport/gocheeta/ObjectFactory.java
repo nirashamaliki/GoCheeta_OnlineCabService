@@ -24,48 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetViewFeedbacksResponse_QNAME = new QName("http://gocheeta/", "getViewFeedbacksResponse");
-    private final static QName _UpdateDriverResponse_QNAME = new QName("http://gocheeta/", "updateDriverResponse");
-    private final static QName _GetPriceRateResponse_QNAME = new QName("http://gocheeta/", "getPriceRateResponse");
-    private final static QName _GetPriceView_QNAME = new QName("http://gocheeta/", "getPriceView");
-    private final static QName _AddFeedbackResponse_QNAME = new QName("http://gocheeta/", "addFeedbackResponse");
-    private final static QName _GetCategorybyId_QNAME = new QName("http://gocheeta/", "getCategorybyId");
-    private final static QName _DeleteVehicleDriver_QNAME = new QName("http://gocheeta/", "deleteVehicleDriver");
-    private final static QName _GetDriverbyMobileResponse_QNAME = new QName("http://gocheeta/", "getDriverbyMobileResponse");
-    private final static QName _GetViewAllVehicleDriverResponse_QNAME = new QName("http://gocheeta/", "getViewAllVehicleDriverResponse");
-    private final static QName _GetViewFeedbacks_QNAME = new QName("http://gocheeta/", "getViewFeedbacks");
-    private final static QName _AddVehicle_QNAME = new QName("http://gocheeta/", "addVehicle");
-    private final static QName _GetPriceRate_QNAME = new QName("http://gocheeta/", "getPriceRate");
-    private final static QName _GetViewAllVehicleDriver_QNAME = new QName("http://gocheeta/", "getViewAllVehicleDriver");
-    private final static QName _DeleteCategory_QNAME = new QName("http://gocheeta/", "deleteCategory");
-    private final static QName _UpdateDriver_QNAME = new QName("http://gocheeta/", "updateDriver");
-    private final static QName _DeleteVehicleDriverResponse_QNAME = new QName("http://gocheeta/", "deleteVehicleDriverResponse");
-    private final static QName _GetDriverbyMobile_QNAME = new QName("http://gocheeta/", "getDriverbyMobile");
+    private final static QName _AddDriverResponse_QNAME = new QName("http://gocheeta/", "addDriverResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://gocheeta/", "helloResponse");
-    private final static QName _UpdateVehicleDriverResponse_QNAME = new QName("http://gocheeta/", "updateVehicleDriverResponse");
-    private final static QName _UpdateCategoryResponse_QNAME = new QName("http://gocheeta/", "updateCategoryResponse");
-    private final static QName _GetVehicleUserbyId_QNAME = new QName("http://gocheeta/", "getVehicleUserbyId");
+    private final static QName _GetActiveBookingDetails_QNAME = new QName("http://gocheeta/", "getActiveBookingDetails");
+    private final static QName _GetBranchDrop_QNAME = new QName("http://gocheeta/", "getBranchDrop");
+    private final static QName _GetActiveBookingDetailsResponse_QNAME = new QName("http://gocheeta/", "getActiveBookingDetailsResponse");
     private final static QName _Hello_QNAME = new QName("http://gocheeta/", "hello");
-    private final static QName _GetPriceViewResponse_QNAME = new QName("http://gocheeta/", "getPriceViewResponse");
-    private final static QName _GetUsersResponse_QNAME = new QName("http://gocheeta/", "getUsersResponse");
-    private final static QName _GetAllVehicleResponse_QNAME = new QName("http://gocheeta/", "getAllVehicleResponse");
-    private final static QName _AddFeedback_QNAME = new QName("http://gocheeta/", "addFeedback");
-    private final static QName _GetVehicleTypeDropResponse_QNAME = new QName("http://gocheeta/", "getVehicleTypeDropResponse");
-    private final static QName _UpdateVehicleDriver_QNAME = new QName("http://gocheeta/", "updateVehicleDriver");
-    private final static QName _UpdateCategory_QNAME = new QName("http://gocheeta/", "updateCategory");
-    private final static QName _AddCategoryResponse_QNAME = new QName("http://gocheeta/", "addCategoryResponse");
-    private final static QName _GetBranchResponse_QNAME = new QName("http://gocheeta/", "getBranchResponse");
-    private final static QName _AddVehicleResponse_QNAME = new QName("http://gocheeta/", "addVehicleResponse");
-    private final static QName _GetCategorybyIdResponse_QNAME = new QName("http://gocheeta/", "getCategorybyIdResponse");
-    private final static QName _AddCategory_QNAME = new QName("http://gocheeta/", "addCategory");
-    private final static QName _GetAllVehicle_QNAME = new QName("http://gocheeta/", "getAllVehicle");
-    private final static QName _GetVehicleTypeDrop_QNAME = new QName("http://gocheeta/", "getVehicleTypeDrop");
-    private final static QName _GetDriverbyEmail_QNAME = new QName("http://gocheeta/", "getDriverbyEmail");
-    private final static QName _GetUsers_QNAME = new QName("http://gocheeta/", "getUsers");
-    private final static QName _DeleteCategoryResponse_QNAME = new QName("http://gocheeta/", "deleteCategoryResponse");
-    private final static QName _GetVehicleUserbyIdResponse_QNAME = new QName("http://gocheeta/", "getVehicleUserbyIdResponse");
-    private final static QName _GetDriverbyEmailResponse_QNAME = new QName("http://gocheeta/", "getDriverbyEmailResponse");
-    private final static QName _GetBranch_QNAME = new QName("http://gocheeta/", "getBranch");
+    private final static QName _AddDriver_QNAME = new QName("http://gocheeta/", "addDriver");
+    private final static QName _GetBranchDropResponse_QNAME = new QName("http://gocheeta/", "getBranchDropResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: gocheeta
@@ -75,283 +41,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllVehicleResponse }
+     * Create an instance of {@link AddDriverResponse }
      * 
      */
-    public GetAllVehicleResponse createGetAllVehicleResponse() {
-        return new GetAllVehicleResponse();
-    }
-
-    /**
-     * Create an instance of {@link AddFeedback }
-     * 
-     */
-    public AddFeedback createAddFeedback() {
-        return new AddFeedback();
-    }
-
-    /**
-     * Create an instance of {@link GetVehicleTypeDropResponse }
-     * 
-     */
-    public GetVehicleTypeDropResponse createGetVehicleTypeDropResponse() {
-        return new GetVehicleTypeDropResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateVehicleDriver }
-     * 
-     */
-    public UpdateVehicleDriver createUpdateVehicleDriver() {
-        return new UpdateVehicleDriver();
-    }
-
-    /**
-     * Create an instance of {@link UpdateCategory }
-     * 
-     */
-    public UpdateCategory createUpdateCategory() {
-        return new UpdateCategory();
-    }
-
-    /**
-     * Create an instance of {@link AddCategoryResponse }
-     * 
-     */
-    public AddCategoryResponse createAddCategoryResponse() {
-        return new AddCategoryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetBranchResponse }
-     * 
-     */
-    public GetBranchResponse createGetBranchResponse() {
-        return new GetBranchResponse();
-    }
-
-    /**
-     * Create an instance of {@link AddVehicleResponse }
-     * 
-     */
-    public AddVehicleResponse createAddVehicleResponse() {
-        return new AddVehicleResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCategorybyIdResponse }
-     * 
-     */
-    public GetCategorybyIdResponse createGetCategorybyIdResponse() {
-        return new GetCategorybyIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link AddCategory }
-     * 
-     */
-    public AddCategory createAddCategory() {
-        return new AddCategory();
-    }
-
-    /**
-     * Create an instance of {@link GetAllVehicle }
-     * 
-     */
-    public GetAllVehicle createGetAllVehicle() {
-        return new GetAllVehicle();
-    }
-
-    /**
-     * Create an instance of {@link GetVehicleTypeDrop }
-     * 
-     */
-    public GetVehicleTypeDrop createGetVehicleTypeDrop() {
-        return new GetVehicleTypeDrop();
-    }
-
-    /**
-     * Create an instance of {@link GetDriverbyEmail }
-     * 
-     */
-    public GetDriverbyEmail createGetDriverbyEmail() {
-        return new GetDriverbyEmail();
-    }
-
-    /**
-     * Create an instance of {@link GetUsers }
-     * 
-     */
-    public GetUsers createGetUsers() {
-        return new GetUsers();
-    }
-
-    /**
-     * Create an instance of {@link DeleteCategoryResponse }
-     * 
-     */
-    public DeleteCategoryResponse createDeleteCategoryResponse() {
-        return new DeleteCategoryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetVehicleUserbyIdResponse }
-     * 
-     */
-    public GetVehicleUserbyIdResponse createGetVehicleUserbyIdResponse() {
-        return new GetVehicleUserbyIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetDriverbyEmailResponse }
-     * 
-     */
-    public GetDriverbyEmailResponse createGetDriverbyEmailResponse() {
-        return new GetDriverbyEmailResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetBranch }
-     * 
-     */
-    public GetBranch createGetBranch() {
-        return new GetBranch();
-    }
-
-    /**
-     * Create an instance of {@link GetViewFeedbacksResponse }
-     * 
-     */
-    public GetViewFeedbacksResponse createGetViewFeedbacksResponse() {
-        return new GetViewFeedbacksResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateDriverResponse }
-     * 
-     */
-    public UpdateDriverResponse createUpdateDriverResponse() {
-        return new UpdateDriverResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetPriceRateResponse }
-     * 
-     */
-    public GetPriceRateResponse createGetPriceRateResponse() {
-        return new GetPriceRateResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetPriceView }
-     * 
-     */
-    public GetPriceView createGetPriceView() {
-        return new GetPriceView();
-    }
-
-    /**
-     * Create an instance of {@link AddFeedbackResponse }
-     * 
-     */
-    public AddFeedbackResponse createAddFeedbackResponse() {
-        return new AddFeedbackResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCategorybyId }
-     * 
-     */
-    public GetCategorybyId createGetCategorybyId() {
-        return new GetCategorybyId();
-    }
-
-    /**
-     * Create an instance of {@link DeleteVehicleDriver }
-     * 
-     */
-    public DeleteVehicleDriver createDeleteVehicleDriver() {
-        return new DeleteVehicleDriver();
-    }
-
-    /**
-     * Create an instance of {@link GetDriverbyMobileResponse }
-     * 
-     */
-    public GetDriverbyMobileResponse createGetDriverbyMobileResponse() {
-        return new GetDriverbyMobileResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetViewAllVehicleDriverResponse }
-     * 
-     */
-    public GetViewAllVehicleDriverResponse createGetViewAllVehicleDriverResponse() {
-        return new GetViewAllVehicleDriverResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetViewFeedbacks }
-     * 
-     */
-    public GetViewFeedbacks createGetViewFeedbacks() {
-        return new GetViewFeedbacks();
-    }
-
-    /**
-     * Create an instance of {@link AddVehicle }
-     * 
-     */
-    public AddVehicle createAddVehicle() {
-        return new AddVehicle();
-    }
-
-    /**
-     * Create an instance of {@link GetPriceRate }
-     * 
-     */
-    public GetPriceRate createGetPriceRate() {
-        return new GetPriceRate();
-    }
-
-    /**
-     * Create an instance of {@link GetViewAllVehicleDriver }
-     * 
-     */
-    public GetViewAllVehicleDriver createGetViewAllVehicleDriver() {
-        return new GetViewAllVehicleDriver();
-    }
-
-    /**
-     * Create an instance of {@link DeleteCategory }
-     * 
-     */
-    public DeleteCategory createDeleteCategory() {
-        return new DeleteCategory();
-    }
-
-    /**
-     * Create an instance of {@link UpdateDriver }
-     * 
-     */
-    public UpdateDriver createUpdateDriver() {
-        return new UpdateDriver();
-    }
-
-    /**
-     * Create an instance of {@link DeleteVehicleDriverResponse }
-     * 
-     */
-    public DeleteVehicleDriverResponse createDeleteVehicleDriverResponse() {
-        return new DeleteVehicleDriverResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetDriverbyMobile }
-     * 
-     */
-    public GetDriverbyMobile createGetDriverbyMobile() {
-        return new GetDriverbyMobile();
+    public AddDriverResponse createAddDriverResponse() {
+        return new AddDriverResponse();
     }
 
     /**
@@ -363,27 +57,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateVehicleDriverResponse }
+     * Create an instance of {@link GetActiveBookingDetails }
      * 
      */
-    public UpdateVehicleDriverResponse createUpdateVehicleDriverResponse() {
-        return new UpdateVehicleDriverResponse();
+    public GetActiveBookingDetails createGetActiveBookingDetails() {
+        return new GetActiveBookingDetails();
     }
 
     /**
-     * Create an instance of {@link UpdateCategoryResponse }
+     * Create an instance of {@link GetBranchDrop }
      * 
      */
-    public UpdateCategoryResponse createUpdateCategoryResponse() {
-        return new UpdateCategoryResponse();
+    public GetBranchDrop createGetBranchDrop() {
+        return new GetBranchDrop();
     }
 
     /**
-     * Create an instance of {@link GetVehicleUserbyId }
+     * Create an instance of {@link GetActiveBookingDetailsResponse }
      * 
      */
-    public GetVehicleUserbyId createGetVehicleUserbyId() {
-        return new GetVehicleUserbyId();
+    public GetActiveBookingDetailsResponse createGetActiveBookingDetailsResponse() {
+        return new GetActiveBookingDetailsResponse();
     }
 
     /**
@@ -395,43 +89,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPriceViewResponse }
+     * Create an instance of {@link AddDriver }
      * 
      */
-    public GetPriceViewResponse createGetPriceViewResponse() {
-        return new GetPriceViewResponse();
+    public AddDriver createAddDriver() {
+        return new AddDriver();
     }
 
     /**
-     * Create an instance of {@link GetUsersResponse }
+     * Create an instance of {@link GetBranchDropResponse }
      * 
      */
-    public GetUsersResponse createGetUsersResponse() {
-        return new GetUsersResponse();
-    }
-
-    /**
-     * Create an instance of {@link Branch }
-     * 
-     */
-    public Branch createBranch() {
-        return new Branch();
-    }
-
-    /**
-     * Create an instance of {@link Dropdown }
-     * 
-     */
-    public Dropdown createDropdown() {
-        return new Dropdown();
-    }
-
-    /**
-     * Create an instance of {@link Driver }
-     * 
-     */
-    public Driver createDriver() {
-        return new Driver();
+    public GetBranchDropResponse createGetBranchDropResponse() {
+        return new GetBranchDropResponse();
     }
 
     /**
@@ -443,19 +113,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Vehicle }
+     * Create an instance of {@link Branch }
      * 
      */
-    public Vehicle createVehicle() {
-        return new Vehicle();
-    }
-
-    /**
-     * Create an instance of {@link Category }
-     * 
-     */
-    public Category createCategory() {
-        return new Category();
+    public Branch createBranch() {
+        return new Branch();
     }
 
     /**
@@ -467,156 +129,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetViewFeedbacksResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddDriverResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getViewFeedbacksResponse")
-    public JAXBElement<GetViewFeedbacksResponse> createGetViewFeedbacksResponse(GetViewFeedbacksResponse value) {
-        return new JAXBElement<GetViewFeedbacksResponse>(_GetViewFeedbacksResponse_QNAME, GetViewFeedbacksResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateDriverResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "updateDriverResponse")
-    public JAXBElement<UpdateDriverResponse> createUpdateDriverResponse(UpdateDriverResponse value) {
-        return new JAXBElement<UpdateDriverResponse>(_UpdateDriverResponse_QNAME, UpdateDriverResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPriceRateResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getPriceRateResponse")
-    public JAXBElement<GetPriceRateResponse> createGetPriceRateResponse(GetPriceRateResponse value) {
-        return new JAXBElement<GetPriceRateResponse>(_GetPriceRateResponse_QNAME, GetPriceRateResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPriceView }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getPriceView")
-    public JAXBElement<GetPriceView> createGetPriceView(GetPriceView value) {
-        return new JAXBElement<GetPriceView>(_GetPriceView_QNAME, GetPriceView.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddFeedbackResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "addFeedbackResponse")
-    public JAXBElement<AddFeedbackResponse> createAddFeedbackResponse(AddFeedbackResponse value) {
-        return new JAXBElement<AddFeedbackResponse>(_AddFeedbackResponse_QNAME, AddFeedbackResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategorybyId }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getCategorybyId")
-    public JAXBElement<GetCategorybyId> createGetCategorybyId(GetCategorybyId value) {
-        return new JAXBElement<GetCategorybyId>(_GetCategorybyId_QNAME, GetCategorybyId.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteVehicleDriver }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "deleteVehicleDriver")
-    public JAXBElement<DeleteVehicleDriver> createDeleteVehicleDriver(DeleteVehicleDriver value) {
-        return new JAXBElement<DeleteVehicleDriver>(_DeleteVehicleDriver_QNAME, DeleteVehicleDriver.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverbyMobileResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getDriverbyMobileResponse")
-    public JAXBElement<GetDriverbyMobileResponse> createGetDriverbyMobileResponse(GetDriverbyMobileResponse value) {
-        return new JAXBElement<GetDriverbyMobileResponse>(_GetDriverbyMobileResponse_QNAME, GetDriverbyMobileResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetViewAllVehicleDriverResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getViewAllVehicleDriverResponse")
-    public JAXBElement<GetViewAllVehicleDriverResponse> createGetViewAllVehicleDriverResponse(GetViewAllVehicleDriverResponse value) {
-        return new JAXBElement<GetViewAllVehicleDriverResponse>(_GetViewAllVehicleDriverResponse_QNAME, GetViewAllVehicleDriverResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetViewFeedbacks }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getViewFeedbacks")
-    public JAXBElement<GetViewFeedbacks> createGetViewFeedbacks(GetViewFeedbacks value) {
-        return new JAXBElement<GetViewFeedbacks>(_GetViewFeedbacks_QNAME, GetViewFeedbacks.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddVehicle }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "addVehicle")
-    public JAXBElement<AddVehicle> createAddVehicle(AddVehicle value) {
-        return new JAXBElement<AddVehicle>(_AddVehicle_QNAME, AddVehicle.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPriceRate }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getPriceRate")
-    public JAXBElement<GetPriceRate> createGetPriceRate(GetPriceRate value) {
-        return new JAXBElement<GetPriceRate>(_GetPriceRate_QNAME, GetPriceRate.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetViewAllVehicleDriver }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getViewAllVehicleDriver")
-    public JAXBElement<GetViewAllVehicleDriver> createGetViewAllVehicleDriver(GetViewAllVehicleDriver value) {
-        return new JAXBElement<GetViewAllVehicleDriver>(_GetViewAllVehicleDriver_QNAME, GetViewAllVehicleDriver.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteCategory }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "deleteCategory")
-    public JAXBElement<DeleteCategory> createDeleteCategory(DeleteCategory value) {
-        return new JAXBElement<DeleteCategory>(_DeleteCategory_QNAME, DeleteCategory.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateDriver }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "updateDriver")
-    public JAXBElement<UpdateDriver> createUpdateDriver(UpdateDriver value) {
-        return new JAXBElement<UpdateDriver>(_UpdateDriver_QNAME, UpdateDriver.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteVehicleDriverResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "deleteVehicleDriverResponse")
-    public JAXBElement<DeleteVehicleDriverResponse> createDeleteVehicleDriverResponse(DeleteVehicleDriverResponse value) {
-        return new JAXBElement<DeleteVehicleDriverResponse>(_DeleteVehicleDriverResponse_QNAME, DeleteVehicleDriverResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverbyMobile }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getDriverbyMobile")
-    public JAXBElement<GetDriverbyMobile> createGetDriverbyMobile(GetDriverbyMobile value) {
-        return new JAXBElement<GetDriverbyMobile>(_GetDriverbyMobile_QNAME, GetDriverbyMobile.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "addDriverResponse")
+    public JAXBElement<AddDriverResponse> createAddDriverResponse(AddDriverResponse value) {
+        return new JAXBElement<AddDriverResponse>(_AddDriverResponse_QNAME, AddDriverResponse.class, null, value);
     }
 
     /**
@@ -629,30 +147,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateVehicleDriverResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetActiveBookingDetails }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "updateVehicleDriverResponse")
-    public JAXBElement<UpdateVehicleDriverResponse> createUpdateVehicleDriverResponse(UpdateVehicleDriverResponse value) {
-        return new JAXBElement<UpdateVehicleDriverResponse>(_UpdateVehicleDriverResponse_QNAME, UpdateVehicleDriverResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getActiveBookingDetails")
+    public JAXBElement<GetActiveBookingDetails> createGetActiveBookingDetails(GetActiveBookingDetails value) {
+        return new JAXBElement<GetActiveBookingDetails>(_GetActiveBookingDetails_QNAME, GetActiveBookingDetails.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateCategoryResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBranchDrop }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "updateCategoryResponse")
-    public JAXBElement<UpdateCategoryResponse> createUpdateCategoryResponse(UpdateCategoryResponse value) {
-        return new JAXBElement<UpdateCategoryResponse>(_UpdateCategoryResponse_QNAME, UpdateCategoryResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getBranchDrop")
+    public JAXBElement<GetBranchDrop> createGetBranchDrop(GetBranchDrop value) {
+        return new JAXBElement<GetBranchDrop>(_GetBranchDrop_QNAME, GetBranchDrop.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVehicleUserbyId }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetActiveBookingDetailsResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getVehicleUserbyId")
-    public JAXBElement<GetVehicleUserbyId> createGetVehicleUserbyId(GetVehicleUserbyId value) {
-        return new JAXBElement<GetVehicleUserbyId>(_GetVehicleUserbyId_QNAME, GetVehicleUserbyId.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getActiveBookingDetailsResponse")
+    public JAXBElement<GetActiveBookingDetailsResponse> createGetActiveBookingDetailsResponse(GetActiveBookingDetailsResponse value) {
+        return new JAXBElement<GetActiveBookingDetailsResponse>(_GetActiveBookingDetailsResponse_QNAME, GetActiveBookingDetailsResponse.class, null, value);
     }
 
     /**
@@ -665,183 +183,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPriceViewResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddDriver }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getPriceViewResponse")
-    public JAXBElement<GetPriceViewResponse> createGetPriceViewResponse(GetPriceViewResponse value) {
-        return new JAXBElement<GetPriceViewResponse>(_GetPriceViewResponse_QNAME, GetPriceViewResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "addDriver")
+    public JAXBElement<AddDriver> createAddDriver(AddDriver value) {
+        return new JAXBElement<AddDriver>(_AddDriver_QNAME, AddDriver.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUsersResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBranchDropResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getUsersResponse")
-    public JAXBElement<GetUsersResponse> createGetUsersResponse(GetUsersResponse value) {
-        return new JAXBElement<GetUsersResponse>(_GetUsersResponse_QNAME, GetUsersResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllVehicleResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getAllVehicleResponse")
-    public JAXBElement<GetAllVehicleResponse> createGetAllVehicleResponse(GetAllVehicleResponse value) {
-        return new JAXBElement<GetAllVehicleResponse>(_GetAllVehicleResponse_QNAME, GetAllVehicleResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddFeedback }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "addFeedback")
-    public JAXBElement<AddFeedback> createAddFeedback(AddFeedback value) {
-        return new JAXBElement<AddFeedback>(_AddFeedback_QNAME, AddFeedback.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVehicleTypeDropResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getVehicleTypeDropResponse")
-    public JAXBElement<GetVehicleTypeDropResponse> createGetVehicleTypeDropResponse(GetVehicleTypeDropResponse value) {
-        return new JAXBElement<GetVehicleTypeDropResponse>(_GetVehicleTypeDropResponse_QNAME, GetVehicleTypeDropResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateVehicleDriver }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "updateVehicleDriver")
-    public JAXBElement<UpdateVehicleDriver> createUpdateVehicleDriver(UpdateVehicleDriver value) {
-        return new JAXBElement<UpdateVehicleDriver>(_UpdateVehicleDriver_QNAME, UpdateVehicleDriver.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateCategory }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "updateCategory")
-    public JAXBElement<UpdateCategory> createUpdateCategory(UpdateCategory value) {
-        return new JAXBElement<UpdateCategory>(_UpdateCategory_QNAME, UpdateCategory.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddCategoryResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "addCategoryResponse")
-    public JAXBElement<AddCategoryResponse> createAddCategoryResponse(AddCategoryResponse value) {
-        return new JAXBElement<AddCategoryResponse>(_AddCategoryResponse_QNAME, AddCategoryResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBranchResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getBranchResponse")
-    public JAXBElement<GetBranchResponse> createGetBranchResponse(GetBranchResponse value) {
-        return new JAXBElement<GetBranchResponse>(_GetBranchResponse_QNAME, GetBranchResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddVehicleResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "addVehicleResponse")
-    public JAXBElement<AddVehicleResponse> createAddVehicleResponse(AddVehicleResponse value) {
-        return new JAXBElement<AddVehicleResponse>(_AddVehicleResponse_QNAME, AddVehicleResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategorybyIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getCategorybyIdResponse")
-    public JAXBElement<GetCategorybyIdResponse> createGetCategorybyIdResponse(GetCategorybyIdResponse value) {
-        return new JAXBElement<GetCategorybyIdResponse>(_GetCategorybyIdResponse_QNAME, GetCategorybyIdResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddCategory }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "addCategory")
-    public JAXBElement<AddCategory> createAddCategory(AddCategory value) {
-        return new JAXBElement<AddCategory>(_AddCategory_QNAME, AddCategory.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllVehicle }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getAllVehicle")
-    public JAXBElement<GetAllVehicle> createGetAllVehicle(GetAllVehicle value) {
-        return new JAXBElement<GetAllVehicle>(_GetAllVehicle_QNAME, GetAllVehicle.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVehicleTypeDrop }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getVehicleTypeDrop")
-    public JAXBElement<GetVehicleTypeDrop> createGetVehicleTypeDrop(GetVehicleTypeDrop value) {
-        return new JAXBElement<GetVehicleTypeDrop>(_GetVehicleTypeDrop_QNAME, GetVehicleTypeDrop.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverbyEmail }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getDriverbyEmail")
-    public JAXBElement<GetDriverbyEmail> createGetDriverbyEmail(GetDriverbyEmail value) {
-        return new JAXBElement<GetDriverbyEmail>(_GetDriverbyEmail_QNAME, GetDriverbyEmail.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUsers }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getUsers")
-    public JAXBElement<GetUsers> createGetUsers(GetUsers value) {
-        return new JAXBElement<GetUsers>(_GetUsers_QNAME, GetUsers.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteCategoryResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "deleteCategoryResponse")
-    public JAXBElement<DeleteCategoryResponse> createDeleteCategoryResponse(DeleteCategoryResponse value) {
-        return new JAXBElement<DeleteCategoryResponse>(_DeleteCategoryResponse_QNAME, DeleteCategoryResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVehicleUserbyIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getVehicleUserbyIdResponse")
-    public JAXBElement<GetVehicleUserbyIdResponse> createGetVehicleUserbyIdResponse(GetVehicleUserbyIdResponse value) {
-        return new JAXBElement<GetVehicleUserbyIdResponse>(_GetVehicleUserbyIdResponse_QNAME, GetVehicleUserbyIdResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverbyEmailResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getDriverbyEmailResponse")
-    public JAXBElement<GetDriverbyEmailResponse> createGetDriverbyEmailResponse(GetDriverbyEmailResponse value) {
-        return new JAXBElement<GetDriverbyEmailResponse>(_GetDriverbyEmailResponse_QNAME, GetDriverbyEmailResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBranch }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://gocheeta/", name = "getBranch")
-    public JAXBElement<GetBranch> createGetBranch(GetBranch value) {
-        return new JAXBElement<GetBranch>(_GetBranch_QNAME, GetBranch.class, null, value);
+    @XmlElementDecl(namespace = "http://gocheeta/", name = "getBranchDropResponse")
+    public JAXBElement<GetBranchDropResponse> createGetBranchDropResponse(GetBranchDropResponse value) {
+        return new JAXBElement<GetBranchDropResponse>(_GetBranchDropResponse_QNAME, GetBranchDropResponse.class, null, value);
     }
 
 }

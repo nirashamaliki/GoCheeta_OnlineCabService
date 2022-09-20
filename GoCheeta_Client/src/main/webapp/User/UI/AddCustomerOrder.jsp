@@ -59,36 +59,39 @@
     </head>
     <body>     
   
-    <div class="sidebar">
+<body style="background:#FFF">
+  <div class="sidebar" style="background:#3a4c76;">
     <div class="logo-details">
-        <i><img src="image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
+        <i><img src="/GoCheeta_Client/Driver/image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
       <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#">
+          <a href="/GoCheeta_Client/UserDashboard.jsp" \>
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="/GoCheeta_Client/User/UI/AddCustomerOrder.jsp" class="active">
+          <a href="/GoCheeta_Client/Driver/UI/SearchVehicalBook.jsp"class="active" style="margin-top:-10px;background-color:#153c61 ">
             <i class='bx bx-list-ul'></i>
             <span class="links_name">Order Details</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class='bx bx-list-ul'></i>
-            <span class="links_name">View Details</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
+          <a href="/GoCheeta_Client/User/UI/ViewAllBookingDetails.jsp">
             <i class='bx bx-message' ></i>
             <span class="links_name">Feedback</span>
           </a>
         </li>
+        
+       <li>
+          <a href="/GoCheeta_Client/index.html">
+            <i class='bx bx-home'></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        
         <li>
         <li class="log_out">
           <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">
@@ -98,26 +101,18 @@
         </li>
       </ul>
   </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
+  <section class="home-section" style="background:#FFF">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Order Details</span>
-      </div>
-
-    </nav>  
-        
-        <div>
-            <div>
+        <span class="dashboard"style="color:#ffffff;">Order Details</span>
+      </div></nav>
                         
-    <table style="width:90%; height:780px;margin-left:5%;margin-bottom:2%">  
+    <table style="width:90%; height:780px;margin-left:2%;margin-bottom:2%">  
    
     <th style="width:85%; height:780px;" >
      <div class="container" style="width:85%; height:780px;margin-top:15%">
          <form action="/GoCheeta_Client/User/Function/addOrderHelper.jsp" method="post" class="login-email">
-          
-          <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Booking Order</p>
-        <br>
 
        <table>
              <tr colspan="2">
@@ -215,8 +210,8 @@
          </form> </div>  
        </th>
        
-    <th style="width:400px;margin-left:-20%;margin-top:-20%" >
-         <table id="table" class="table table-bordered" style="width:400px;margin-left:2%;margin-top:-40%;
+    <th style="width:400px;margin-left:-10%;" >
+         <table id="table" class="table table-bordered" style="width:400px;margin-left:2%;margin-top:-20%;
         background: #FFF;
         box-shadow: 0 0 0px rgba(0,0,0,.3);
         padding: 40px 30px;">
