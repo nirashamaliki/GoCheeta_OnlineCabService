@@ -21,23 +21,37 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="/GoCheeta_Client/Css/signup.css">
-	<title style="text-align: center;">User Register</title>
-	<link rel="icon" href="image/homepage/icon/logo.png">
-        
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <form action="/GoCheeta_Client/Category/controller/updateCategory.jsp" method="post">
+	<link rel="stylesheet" type="text/css" href="/GoCheeta_Client/Css/update.css">
+	
+        <title style="text-align: center;">Update Details</title>
+	<link rel="icon" href="/Gocheeta_Client/image/Logo/Logo_remove.png">
 
-            <label for="fname">Your Name</label><br>
-            <input type="text" id="name" name="name" placeholder="Name" value="<% out.print(category.getName()); %>"><br>
-            <input type="text" id="distance" name="distance" placeholder="Distance" value="<% out.print(category.getDistance()); %>"><br>
-            <input type="text" id="price" name="price" placeholder="Price" value="<% out.print(category.getPrice()); %>"><br>
+    </head>
+    <body> 
+     <div class="container" style="width:40%; height:630px;">    
+         
+         
+        <form action="/GoCheeta_Client/Category/controller/updateCategory.jsp" method="post" class="login-email">
+            
+            <br>  <br>
+            <p class="login-text" style="font-size: 1.8rem; font-weight:800;margin-top:-15px;">Category Details</p> 
             <br>
+          <div class="input-group">
+            <input type="text" id="name" name="name" placeholder="Name" value="<% out.print(category.getName()); %>"><br>
+          </div>
+          <div class="input-group">
+            <input type="text" id="distance" name="distance" placeholder="Distance" value="<% out.print(category.getDistance()); %>"><br>
+          </div>
+          <div class="input-group">
+            <input type="text" id="price" name="price" placeholder="Price" value="<% out.print(category.getPrice()); %>"><br>
+          </div>
+            <br>
+          <div class="input-group">  
             <input type="hidden" name="id" value="<% out.print(category.getCategoryId()); %>"><br>
-      
-            <input type="submit" class="btn btn-primary" value="update">
-        </form>
+          </div>
+          <div class="input-group">
+            <input type="submit" class="btn btn-primary" value="update" class="btn">
+          </div>
+        </form></div>
     </body>
 </html>

@@ -40,7 +40,7 @@ CREATE TABLE `booking_details` (
   PRIMARY KEY (`order_id`),
   KEY `vehicle_no_idx` (`vehicle_no`),
   CONSTRAINT `vehicle_no` FOREIGN KEY (`vehicle_no`) REFERENCES `vehicle` (`vehicle_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `booking_details` (
 
 LOCK TABLES `booking_details` WRITE;
 /*!40000 ALTER TABLE `booking_details` DISABLE KEYS */;
-INSERT INTO `booking_details` VALUES (1,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','null','2022/09/24','CAE-3457','Lorry','778988111','Option'),(2,'07789410','nirashamlik874899@gmail.com','Galle','Galle','Galle','Galle','10','2000.00','2022/09/25','CBJ-2356','Bus','77879635','Active'),(3,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Galle','Galle','5','null','2022-09-15','CA-3427','Van','728965412','No Active'),(4,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','15','null','2022-08-31','CA-3427','Van','728965412','No Active'),(5,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','9','null','2022-09-22','CA-3427','Van','728965412','No Active'),(6,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','20','null','2022-09-12','CA-3427','Van','728965412','No Active'),(7,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','null','2022/09/24','CAE-3457','Lorry','778988111','No Active'),(8,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','null','2022/09/24','CAE-3457','Lorry','778988111','No Active');
+INSERT INTO `booking_details` VALUES (1,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','2000.00','2022/09/24','CAE-3457','Lorry','778988111','No Active'),(2,'07789410','nirashamlik874899@gmail.com','Galle','Galle','Galle','Galle','10','2000.00','2022/09/25','CBJ-2356','Bus','77879635','Active'),(3,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Galle','Galle','5','2000.00','2022-09-15','CA-3427','Van','728965412','No Active'),(4,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','15','5200.00','2022-08-31','CA-3427','Van','728965412','No Active'),(5,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','9','1000.00','2022-09-22','CA-3427','Van','728965412','No Active'),(6,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Gampaha','Gampaha','20','2500.00','2022-09-12','CA-3427','Van','728965412','No Active'),(7,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','2000.00','2022/09/24','CAE-3457','Lorry','778988111','No Active'),(8,'07789655','nirashamliki!@gmail.com','Gampaha','Gampaha','Gampaha','Gampaha','15','2500.00','2022/09/24','CAE-3457','Lorry','778988111','No Active'),(9,'0778988256','kamal0303@gmail.com','gampaha','gampaha','Galle','Galle','12','678.00','2022-09-20','CA-3427','Car','728965412','No Active'),(10,'07748374','maliki@gmail.com','Jaffna','jaffna','Galle','Galle','500','2800.00','2022-09-05','CA-3427','Car','728965412','No Active');
 /*!40000 ALTER TABLE `booking_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-19 22:16:49
+-- Dump completed on 2022-09-24 21:57:06

@@ -93,7 +93,7 @@
     <nav style="background:#3a4c76;">
       <div class="sidebar-button"style="color:#ffffff;">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard"style="color:#ffffff;">Dashboard</span>
+        <span class="dashboard"style="color:#ffffff;">Category Details</span>
       </div>
 
    

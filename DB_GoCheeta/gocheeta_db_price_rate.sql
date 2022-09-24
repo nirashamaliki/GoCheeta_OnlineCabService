@@ -36,7 +36,7 @@ CREATE TABLE `price_rate` (
 
 LOCK TABLES `price_rate` WRITE;
 /*!40000 ALTER TABLE `price_rate` DISABLE KEYS */;
-INSERT INTO `price_rate` VALUES (1,'1km','20.00'),(2,'1km','30.00'),(3,'1km','50.00'),(4,'1km','100.00'),(5,'1km','120.00'),(6,'1km','250.00'),(7,'1km','300.00');
+INSERT INTO `price_rate` VALUES (1,'1km','20.00'),(2,'1km','30.00'),(3,'1km','60.00'),(4,'1km','100.00'),(5,'1km','120.00'),(6,'1km','250.00'),(7,'1km','300.00');
 /*!40000 ALTER TABLE `price_rate` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-19 22:16:49
+-- Dump completed on 2022-09-24 21:57:06

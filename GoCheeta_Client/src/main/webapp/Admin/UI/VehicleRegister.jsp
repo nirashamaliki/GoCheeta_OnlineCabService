@@ -6,6 +6,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
+    
+    
     NewWebService_Service service = new NewWebService_Service();
     NewWebService TypeProxy = service.getNewWebServicePort();
 

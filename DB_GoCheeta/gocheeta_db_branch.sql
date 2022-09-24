@@ -35,7 +35,7 @@ CREATE TABLE `branch` (
 
 LOCK TABLES `branch` WRITE;
 /*!40000 ALTER TABLE `branch` DISABLE KEYS */;
-INSERT INTO `branch` VALUES ('1','Galle'),('2','Gampaha');
+INSERT INTO `branch` VALUES ('1','Galle'),('2','Kandy'),('3','Nugegoda'),('4','Gampaha'),('5','Kurunegela'),('6','Jaffna');
 /*!40000 ALTER TABLE `branch` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-19 22:16:51
+-- Dump completed on 2022-09-24 21:57:06

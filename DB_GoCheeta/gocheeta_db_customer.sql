@@ -38,7 +38,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES ('admin@456','admin',456,'456admin@'),('kamal123@gmail.com','Kamal ',7886468,'123'),('nirashamaliki@gmail.com','maliki',778654679,'123'),('nirashamaliki123@gmail.com','Nirasha',778954233,'321'),('nirashamaliki2344','nirasha',778965412,'12365'),('nirashamaliki898@gmail.com','Maliki',77897769,'4848'),('nirashamaliki899@gmail.com','Maliki',77689898,'1236'),('nirashamalikiihng@gmail.com','Maliki',778998,'1233'),('nirashamalikiihng7@gmail.com','Maliki',787989,'4487'),('sunil@gmail.com','sunil',773456247,'123');
+INSERT INTO `customer` VALUES ('admin@456','admin',456,'456admin@'),('kamal123@gmail.com','Kamal ',7886468,'123'),('nira@gmail.com','Maliki NIrasha',77654345,'12'),('nira132@gmail.com','Maliki NIrasha',77483745,'456'),('nirashamaliki@gmail.com','maliki',778654679,'123'),('nirashamaliki123@gmail.com','Nirasha',778954233,'321'),('nirashamaliki2344','nirasha',778965412,'12365'),('nirashamaliki898@gmail.com','Maliki',77897769,'4848'),('nirashamaliki899@gmail.com','Maliki',77689898,'1236'),('nirashamalikiihng@gmail.com','Maliki',778998,'1233'),('nirashamalikiihng7@gmail.com','Maliki',787989,'4487'),('sunil@gmail.com','sunil',773456247,'123');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-19 22:16:50
+-- Dump completed on 2022-09-24 21:57:07

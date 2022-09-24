@@ -20,18 +20,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-       
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-      
-        <title>View Vehicle</title>
+        <link rel="stylesheet" href="/GoCheeta_Client/Css/style.css">
+        <title>GoCheetacab.lk</title>
+        <link rel="icon" href="/GoCheeta_Client/image/Logo/Logo.png">
+        <title>JSP Page</title>
         
         <style>
             .tableFixHead {
@@ -47,16 +42,85 @@
         </style>
   
     </head>
-    <body>
+<body style="background:#FFF">
+  <div class="sidebar" style="background:#3a4c76;">
+    <div class="logo-details">
+        <i><img src="/GoCheeta_Client/image/Logo/Logo_remove.png" alt="alt" style="width:30px"/></i>
+      <span class="logo_name"style="font-size:20px;margin-left:-10px;">oCheetacab</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/GoCheeta_Client/AdminDashboard.jsp" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Category/UI/ViewAllPrice.jsp">
+            <i class='bx bx-list-ul'></i>
+            <span class="links_name">Category Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Admin/UI/ViewAllBookingFullDetails.jsp">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Branch Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Admin/UI/ViewAllDriver.jsp" class="active">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Driver Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Admin/UI/ViewAllVehicleDriver.jsp">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Vehicle Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/GoCheeta_Client/Admin/UI/ViewAllFeedback.jsp">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Feedback Details</span>
+          </a>
+        </li>
         
-        <a href="/GoCheeta_Client/Driver/UI/DriverRegister.jsp" class="btn btn-info" style="width:80px;height:40px;text-align:center;margin-left:12%;margin-top:5%">Add</a>
+         <li>
+          <a href="/GoCheeta_Client/index.html">
+            <i class='bx bx-home' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        
+        <li>
+        <li class="log_out">
+          <a href="/GoCheeta_Client/User/UI/UserLogin.jsp">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav style="background:#3a4c76;">
+      <div class="sidebar-button"style="color:#ffffff;">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard"style="color:#ffffff;">Branch Details</span>
+      </div>
+    </nav>
+
+      <div style="background:#FFF">
+        <div>
+            <br><br>
+        <a href="/GoCheeta_Client/Driver/UI/DriverRegister.jsp" class="btn btn-info" style="width:80px;height:40px;text-align:center;margin-left:5%;margin-top:5%">Add</a>
        
         <div class="input-group">
-        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Name" style="padding:10px;width:40%;margin-left:50%;border-radius:30px;border: 2px solid #e7e7e7;padding: 12px 20px;
+        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search Vehicle Name" style="padding:10px;width:40%;margin-left:52%;border-radius:30px;border: 2px solid #e7e7e7;padding: 12px 20px;
                font-size: 1rem;border-radius: 30px;background: transparent;outline: none;transition: .3s;"><img src="/GoCheeta_Client/image/icon/search.png" style="width:35px;height:35px;margin-left:-50px;margin-top:8px;">
         </div>
         <div class="tableFixHead">
-        <table  class="table table-bordered" id="myTable" data-filter-control="true" data-show-search-clear-button="true" style="width:80%;margin-left:15%;margin-right:2%;margin-left:10%;margin-top:2%">
+        <table  class="table table-bordered" id="myTable" data-filter-control="true" data-show-search-clear-button="true" style="width:90%;margin-right:1%;margin-left:1%;margin-top:2%">
             <thead>
                 <th scope="col"style="width:10%;text-align:center; ">Vehicle No</th>
                 <th scope="col"style="text-align:center; ">Vehicle Type</th>
@@ -66,7 +130,6 @@
                 <th scope="col"style="text-align:center; ">Driver Email</th>
                 <th scope="col"style="text-align:center; ">Branch</th>
                 <th scope="col"style="text-align:center; ">Option</th>
-                <th scope="col"style="text-align:center; ">Action</th>
          
             </thead>
         <tbody>
@@ -81,10 +144,7 @@
                 <td><% out.print(vehicle.getDEmail()); %></td>
                 <td><% out.print(vehicle.getBranch()); %></td>
                 <td><% out.print(vehicle.getTimeType()); %></td> 
-                <td style="width:30%;text-align: center">
-          
-                   <a href="/GoCheeta_Client/Admin/controller/deleteVehicle.jsp?id=<% out.print(vehicle.getVehicleNo()); %>" class="btn btn-danger" style="width:80px;height:40px;text-align:center;margin-left:5px;">Delete</a>
-                </td>
+
             </tr>
             <% } %>
         </tbody>

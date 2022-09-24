@@ -641,7 +641,7 @@ public class MySQLServer implements DBUtil {
     public boolean deleteVehicleDriver(String vehicle_no) {
         try {
    
-            this.stmt  = this.con.prepareCall("DELETE FROM vehicle WHERE vehicle.vehicle_no = " + vehicle_no);
+            this.stmt  = this.con.prepareCall("DELETE FROM vehicle WHERE vehicle.vehicle_no = '"+ vehicle_no+"'");
         
             return ((PreparedStatement) this.stmt).executeUpdate() > 0;
             

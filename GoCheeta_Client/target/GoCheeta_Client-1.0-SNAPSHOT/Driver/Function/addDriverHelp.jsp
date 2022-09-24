@@ -25,6 +25,7 @@
     if(driverProxy.addDriver(driver_mobile,d_email,d_name, d_password, branch, time_type)) {
         
         sesion.setAttribute("msg", "Registation Successfully");
+        sesion.setAttribute("driver_mobile",driver_mobile);
         response.sendRedirect("/GoCheeta_Client/Admin/UI/VehicleRegister.jsp");
  
     }else{

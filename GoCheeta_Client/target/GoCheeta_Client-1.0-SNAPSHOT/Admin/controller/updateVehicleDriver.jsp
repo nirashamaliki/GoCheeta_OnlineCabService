@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 
 <%
-    int driver_mobile     = Integer.parseInt(request.getParameter("id"));
-    String vehicle_no        = request.getParameter("vehicle_no");
+    int driver_mobile        = Integer.parseInt(request.getParameter("driver_mobile"));
+    String vehicle_no        = request.getParameter("id");
     String vehical_Type      = request.getParameter("vehical_Type");
     String vehicle_model     = request.getParameter("vehicle_model");
    /* String d_name            = request.getParameter("d_name");

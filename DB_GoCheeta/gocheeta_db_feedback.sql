@@ -29,7 +29,7 @@ CREATE TABLE `feedback` (
   `order_id` int DEFAULT NULL,
   PRIMARY KEY (`feedback_id`),
   KEY `order_id_idx` (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `feedback` (
 
 LOCK TABLES `feedback` WRITE;
 /*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES (1,'Feedback for service','Very good service',1),(10,'Feedback','Good Service.',2),(11,'Feedback','Good service',3);
+INSERT INTO `feedback` VALUES (1,'Feedback for service','Very good service',1),(10,'Feedback','Good Service.',2),(11,'Feedback','Good service',3),(12,'Feedback','Good Service',3),(13,'Feedback','Good Service system',3);
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-19 22:16:49
+-- Dump completed on 2022-09-24 21:57:07
